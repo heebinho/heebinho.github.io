@@ -1,0 +1,10 @@
+Title: Bangkok II
+Published: 11/17/2019
+Tags: Travel
+Lead: Bangkok, Thailand
+---
+Big City Life - Part II.  
+![Bangkok II](https://lh3.googleusercontent.com/8gBBmojD8M2TljxkzdLMtmDFyS2g8eWkZ7J__zEs6tXFBY-MUaUKPTGXdL1iThH-3LQGqXdZYUququiO-PY-GRSwStHTAojPh-OrVCoOoohFRpeUVaRs2_vRDIYvHDJs0ofLT2WinDDosPNiaViEQwGznnfP6hy0Y33SDEfQ3ByCxVpOITvs9VBdszCgflJfwKm3OW7LRVjuyh-vN3CKquGtEu892HzPRVb-BPednOcHNtiV5MHk0SENv_ALUoEd-pXEXM4bJDY5xvD1v5wjw8anc1XhaSTYekaGewqN2dnEUhh7Qa_vyCNa_6GxgAsxw2E89lKwsVV5sDuEaieteFLVG4KfhtEFEpnyI9_uWB6YlMXyeaKujSrORj04IyeATsPELsC8tzhwJFabilt-ypI9GJJfClksC8IiKvtuZE1VOdUcPM4XAtv00CZOfB9WZU0OxVuqIJBGHYOxeaLdhoblPTvGIN7IJQ1UUU6kLEG0Y5rlfGTCbQjfJwU13-kW3zPhaXEmwAGtDKrAQlAsyhfUHw8iY_Jsek81IoRpvq__n-vlgGi2iJLYJNaQ2BBHh5xSQYk78bWZiCgXkZ2JQ6-QpXvMsZ6wp4J1xCchs72BKyp_JO2SUAg0LbjIRuF2sOzAaH-MqhD8FMy5ayPvAGZnKU6JiLjQ9SL4OL1SQNXjh7hTUUPVgqI=w800-h600-no)  
+<a href="https://photos.app.goo.gl/JoLSUvMhHjwjArJv6" target="_blank">Bangkok</a>
+
+
