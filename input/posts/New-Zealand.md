@@ -1,6 +1,6 @@
 Title: New Zealand
 Published: 04/04/2020
-Tags: Travel, Oz
+Tags: Travel
 Lead: New Zealand
 ---
 
