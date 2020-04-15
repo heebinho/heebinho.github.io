@@ -5,8 +5,8 @@
 		<link>http://renatoheeb.com/</link>
 		<description>Ciao!</description>
 		<copyright>2020</copyright>
-		<pubDate>Wed, 15 Apr 2020 14:40:10 GMT</pubDate>
-		<lastBuildDate>Wed, 15 Apr 2020 14:40:10 GMT</lastBuildDate>
+		<pubDate>Wed, 15 Apr 2020 15:08:03 GMT</pubDate>
+		<lastBuildDate>Wed, 15 Apr 2020 15:08:03 GMT</lastBuildDate>
 		<item>
 			<title>New Zealand</title>
 			<link>http://renatoheeb.com/posts/New-Zealand</link>
@@ -158,11 +158,11 @@
 		<item>
 			<title>Git</title>
 			<link>http://renatoheeb.com/posts/git</link>
-			<description>&lt;p&gt;Resetting a fork&lt;/p&gt;</description>
+			<description>&lt;p&gt;add .pibb to a gist to get the html version: &lt;a href="https://gist.github.com/heebinho/a1d5655901902db3c5399ecf38c9681c.pibb"&gt;https://gist.github.com/heebinho/a1d5655901902db3c5399ecf38c9681c.pibb&lt;/a&gt;&lt;/p&gt;</description>
 			<enclosure url="https://lh3.googleusercontent.com/PA_d1hbTp7_PZb7vl7GFDTQrc0uJG0vYA2kvVXAt91LoeMiJs3MmSiIjaaMgU-J_oS3s1QPY0iDbn5dDULdpmXA-luj7JR1mGs-NMcXESPQsfzci_iGBR9p5sWL7mda2XcRXgIV25iaGqfn-uEm_1QDeke7WvIZiD6Z6r3A96lrq0zbcVl0kyKQg6BaeUBkvqEcdn6fZoRmlc997oom9x-itpyU3RwLcJAECF_j14cV9-xFh54UIj5UdCAfCwzHx10BXfuDRk-1CBxCf6vnFWz-LXnT_3gKWDK7xN-0tHB3csvpr6BhmzjsO6NqSmcGSSvVlKC1fyA2pVG2gLlPmz6xlu3opKRrj6X1yV7xz5Q4sJOqTvMP84zLCtmaDukHNHl-cGTJbiZPhHs0YUsvL2s4wu9CyaqtpTLYjdBwsjciuNmAFOEZVnkTFlx4V-j8Y8ZhgU7JnLohiXA1-b2Ex8zudf-XsRPsUUSLiEjd03UWvi5B0-XEBmMt1nDNYrIj4cjF7Pg8VgzENiu6QdfUxj9K3jJ8RMpjknDCEltCExzhMlpFDTwLi7lA8p1KjhuwWeYgIJh0Bx_Bq7rk1KCDEt7eFeM5a5GoPPjRuFW_yFfAANa1unRPgferQosSnne3uCx9zUZPXydWXabW9swkYrg-QJvxwQ9CRrv_0Jil88ChWofpDsv4PGgoxIIHSDenKQZ03kkAXVfQvvA-Oqo6JAloi2DT7MPPihdsM1w1LL-v8m611=w807-h605-no" length="0" type="image" />
 			<guid>http://renatoheeb.com/posts/git</guid>
 			<pubDate>Wed, 11 Sep 2019 00:00:00 GMT</pubDate>
-			<content:encoded>&lt;p&gt;Resetting a fork&lt;/p&gt;
+			<content:encoded>&lt;h2 id="resetting-a-fork"&gt;Resetting a fork&lt;/h2&gt;
 &lt;pre&gt;&lt;code class="language-bash"&gt;$ cd &amp;lt;your local repo&amp;gt;
 git remote add upstream /url/to/original/repo.git
 git fetch upstream
@@ -170,6 +170,12 @@ git checkout master
 git reset --hard upstream/master  
 git push origin master --force
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="embed-gist"&gt;Embed gist&lt;/h2&gt;
+&lt;p&gt;add .pibb to a gist to get the html version: &lt;a href="https://gist.github.com/heebinho/a1d5655901902db3c5399ecf38c9681c.pibb"&gt;https://gist.github.com/heebinho/a1d5655901902db3c5399ecf38c9681c.pibb&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;&amp;lt;?# Gist a1d5655901902db3c5399ecf38c9681c /?&amp;gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;?# Gist a1d5655901902db3c5399ecf38c9681c /?&gt;
 </content:encoded>
 		</item>
 	</channel>
