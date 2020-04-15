@@ -70,7 +70,7 @@ Task("EmptyMasterBranch")
             var fileName = new FileInfo(filePath).Name;
             fileName = fileName.ToLower();
 
-            if(fileName == "cname"){continue;}
+            if(fileName == "cname" || fileName == "pgp.asc"){continue;}
 
             if(System.IO.File.Exists(filePath))
             {
