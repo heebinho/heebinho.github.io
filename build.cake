@@ -69,8 +69,10 @@ Task("EmptyMasterBranch")
         {
             var fileName = new FileInfo(filePath).Name;
             fileName = fileName.ToLower();
+            //preserve the following files
+            var files = new List<string>(){"cname","pgp.asc",".nojekyll"};
 
-            if(fileName == "cname" || fileName == "pgp.asc"){continue;}
+            if(files.Contains(fileName)){continue;}
 
             if(System.IO.File.Exists(filePath))
             {
