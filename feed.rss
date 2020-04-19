@@ -5,8 +5,8 @@
 		<link>http://renatoheeb.com/</link>
 		<description>Ciao!</description>
 		<copyright>2020</copyright>
-		<pubDate>Sun, 19 Apr 2020 22:48:09 GMT</pubDate>
-		<lastBuildDate>Sun, 19 Apr 2020 22:48:09 GMT</lastBuildDate>
+		<pubDate>Sun, 19 Apr 2020 23:13:02 GMT</pubDate>
+		<lastBuildDate>Sun, 19 Apr 2020 23:13:02 GMT</lastBuildDate>
 		<item>
 			<title>New Zealand</title>
 			<link>http://renatoheeb.com/posts/New-Zealand</link>
@@ -169,6 +169,10 @@ git fetch upstream
 git checkout master
 git reset --hard upstream/master  
 git push origin master --force
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="undo-a-commit-no-trace"&gt;Undo a commit -no trace&lt;/h2&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;git reset sha1
+git push -f &amp;lt;remote-name&amp;gt; &amp;lt;branch-name&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id="embed-gist"&gt;Embed gist&lt;/h2&gt;
 &lt;p&gt;add .pibb to a gist to get the html version: &lt;a href="https://gist.github.com/heebinho/a1d5655901902db3c5399ecf38c9681c.pibb"&gt;https://gist.github.com/heebinho/a1d5655901902db3c5399ecf38c9681c.pibb&lt;/a&gt;&lt;/p&gt;
