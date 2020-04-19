@@ -70,7 +70,7 @@ Task("EmptyMasterBranch")
             var fileName = new FileInfo(filePath).Name;
             fileName = fileName.ToLower();
             //preserve the following files
-            var files = new List<string>(){"cname","pgp.asc",".nojekyll"};
+            var files = new List<string>(){"cname","pgp.asc",".nojekyll",".gitattributes"};
 
             if(files.Contains(fileName)){continue;}
 
