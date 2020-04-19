@@ -109,16 +109,16 @@ Task("CopyToMasterBranch")
     .Does(() => {
         var sourcePath = "./output";
         Information("Copying output files to master branch");
-        Mirror.it(sourcePath);
+        Mirror.it(sourcePath, tempDir);
 
-        var sourcePath = "./profile";
+        var profilePath = "./profile";
         Information("Copying profile files to master branch");
-        Mirror.it(sourcePath);
+        Mirror.it(profilePath, tempDir);
     });
 
 public static class Mirror{
-    public static void it(string sourcePath){
-                // Now Create all of the directories
+    public static void it(string sourcePath, string tempDir){
+        // Now Create all of the directories
         foreach (string dirPath in System.IO.Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
         {
             System.IO.Directory.CreateDirectory(dirPath.Replace(sourcePath, tempDir));
