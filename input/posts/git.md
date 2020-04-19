@@ -15,6 +15,13 @@ git reset --hard upstream/master
 git push origin master --force
 ```
 
+## Undo a commit -no trace
+```bash
+git reset sha1
+git push -f <remote-name> <branch-name>
+```
+
+
 ## Embed gist
 
 add .pibb to a gist to get the html version: https://gist.github.com/heebinho/a1d5655901902db3c5399ecf38c9681c.pibb
