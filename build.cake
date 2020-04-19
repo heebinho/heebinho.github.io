@@ -85,7 +85,7 @@ Task("EmptyMasterBranch")
             var directoryName = new FileInfo(directoryPath).Name;
             directoryName = directoryName.ToLower();
 
-            if(directoryName == ".git")
+            if(directoryName == ".git" || directoryName == "profile")
             {
                 // Do not delete the .git directory
                 continue;
