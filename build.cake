@@ -108,10 +108,17 @@ Task("CopyToMasterBranch")
     .IsDependentOn("EmptyMasterBranch")
     .Does(() => {
         var sourcePath = "./output";
+        Information("Copying output files to master branch");
+        Mirror.it(sourcePath);
 
-        Information("Copying files to master branch");
+        var sourcePath = "./profile";
+        Information("Copying profile files to master branch");
+        Mirror.it(sourcePath);
+    });
 
-        // Now Create all of the directories
+public static class Mirror{
+    public static void it(string sourcePath){
+                // Now Create all of the directories
         foreach (string dirPath in System.IO.Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
         {
             System.IO.Directory.CreateDirectory(dirPath.Replace(sourcePath, tempDir));
@@ -120,7 +127,8 @@ Task("CopyToMasterBranch")
         //Copy all the files & Replaces any files with the same name
         foreach (string newPath in System.IO.Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
             System.IO.File.Copy(newPath, newPath.Replace(sourcePath, tempDir), true);
-    });
+    }
+}    
 
 Task("CommitMasterBranch")
     .IsDependentOn("CopyToMasterBranch")
