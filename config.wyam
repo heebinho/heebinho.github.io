@@ -3,8 +3,8 @@
 
 // Customize your settings and add new ones here
 Settings[Keys.Host] = "renatoheeb.com";
-Settings[BlogKeys.Title] = "ciao";
-Settings[BlogKeys.Description] = "Ciao!";
+Settings[BlogKeys.Title] = "H";
+Settings[BlogKeys.Description] = "Ciao";
 //Settings[BlogKeys.Intro] = "USA, Canada, Russia, Australia, New Zealand, Cuba, Egypt, Borneo, Malaysia, Thailand, Cambodia, Vietnam, Singapoor, Britain, Turkey, Greece, Poland, Germany, Czech, Croatia, Slovenia, Serbia, Spain, Portugal, France, Italy, Austria ... and counting.  ";
 Settings[BlogKeys.Intro] = "Nice to meet you.";
 Settings[BlogKeys.CaseInsensitiveTags] = true;
