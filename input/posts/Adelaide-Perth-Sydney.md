@@ -1,6 +1,6 @@
 Title: Adelaide to Perth and back to Sydney
 Published: 03/03/2020
-Tags: Travel, Oz
+Tags: Travel
 Lead: Adelaide, Nullarbor, Esperance, Albany, Denmark, Margaret River, Perth, Sydney
 ---
 
