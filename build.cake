@@ -64,13 +64,15 @@ Task("EmptyMasterBranch")
         Information("Emptying master branch");
 
         string[] filePaths = System.IO.Directory.GetFiles(tempDir);
+        //keep the following files
+        var files = new List<string>(){"cname","pgp.asc",".nojekyll",".gitattributes"};
+        var directories = new List<string>(){".git","cv"};
+
 
         foreach (string filePath in filePaths)
         {
             var fileName = new FileInfo(filePath).Name;
             fileName = fileName.ToLower();
-            //preserve the following files
-            var files = new List<string>(){"cname","pgp.asc",".nojekyll",".gitattributes"};
 
             if(files.Contains(fileName)){continue;}
 
@@ -87,9 +89,9 @@ Task("EmptyMasterBranch")
             var directoryName = new FileInfo(directoryPath).Name;
             directoryName = directoryName.ToLower();
 
-            if(directoryName == ".git" || directoryName == "profile")
+            if(directories.Contains(directoryName) )
             {
-                // Do not delete the .git directory
+                // Do not delete the .git/cv directories
                 continue;
             }
 
