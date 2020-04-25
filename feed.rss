@@ -1,12 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
-		<title>ciao</title>
+		<title>H</title>
 		<link>http://renatoheeb.com/</link>
-		<description>Ciao!</description>
+		<description>Ciao</description>
 		<copyright>2020</copyright>
-		<pubDate>Sun, 19 Apr 2020 23:13:02 GMT</pubDate>
-		<lastBuildDate>Sun, 19 Apr 2020 23:13:02 GMT</lastBuildDate>
+		<pubDate>Sat, 25 Apr 2020 00:24:32 GMT</pubDate>
+		<lastBuildDate>Sat, 25 Apr 2020 00:24:32 GMT</lastBuildDate>
+		<item>
+			<title>Blazor hosted on github-pages</title>
+			<link>http://renatoheeb.com/posts/blazor-on-github</link>
+			<description>&lt;p&gt;While deploying my first "Blazor webassembly" app to "GitHub pages" I ran into some minor troubles.
+The following notes may be helpful for someone else.&lt;/p&gt;</description>
+			<enclosure url="https://lh3.googleusercontent.com/PA_d1hbTp7_PZb7vl7GFDTQrc0uJG0vYA2kvVXAt91LoeMiJs3MmSiIjaaMgU-J_oS3s1QPY0iDbn5dDULdpmXA-luj7JR1mGs-NMcXESPQsfzci_iGBR9p5sWL7mda2XcRXgIV25iaGqfn-uEm_1QDeke7WvIZiD6Z6r3A96lrq0zbcVl0kyKQg6BaeUBkvqEcdn6fZoRmlc997oom9x-itpyU3RwLcJAECF_j14cV9-xFh54UIj5UdCAfCwzHx10BXfuDRk-1CBxCf6vnFWz-LXnT_3gKWDK7xN-0tHB3csvpr6BhmzjsO6NqSmcGSSvVlKC1fyA2pVG2gLlPmz6xlu3opKRrj6X1yV7xz5Q4sJOqTvMP84zLCtmaDukHNHl-cGTJbiZPhHs0YUsvL2s4wu9CyaqtpTLYjdBwsjciuNmAFOEZVnkTFlx4V-j8Y8ZhgU7JnLohiXA1-b2Ex8zudf-XsRPsUUSLiEjd03UWvi5B0-XEBmMt1nDNYrIj4cjF7Pg8VgzENiu6QdfUxj9K3jJ8RMpjknDCEltCExzhMlpFDTwLi7lA8p1KjhuwWeYgIJh0Bx_Bq7rk1KCDEt7eFeM5a5GoPPjRuFW_yFfAANa1unRPgferQosSnne3uCx9zUZPXydWXabW9swkYrg-QJvxwQ9CRrv_0Jil88ChWofpDsv4PGgoxIIHSDenKQZ03kkAXVfQvvA-Oqo6JAloi2DT7MPPihdsM1w1LL-v8m611=w807-h605-no" length="0" type="image" />
+			<guid>http://renatoheeb.com/posts/blazor-on-github</guid>
+			<pubDate>Tue, 21 Apr 2020 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h3 id="intro"&gt;Intro&lt;/h3&gt;
+&lt;p&gt;While deploying my first &amp;quot;Blazor webassembly&amp;quot; app to &amp;quot;GitHub pages&amp;quot; I ran into some minor troubles.
+The following notes may be helpful for someone else.&lt;/p&gt;
+&lt;h3 id="blazor-webassembly"&gt;Blazor webassembly&lt;/h3&gt;
+&lt;p&gt;Blazor is a web framework using C#, Razor and HTML that runs in the browser with WebAssembly.
+You can find more information on &lt;a href="https://blazor.net/"&gt;https://blazor.net&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="github-pages"&gt;GitHub Pages&lt;/h3&gt;
+&lt;p&gt;GitHub Pages allows you to publish your website for free, hosted directly from your GitHub repository. Just edit, push, and your changes are live.
+You can find more information on &lt;a href="https://pages.github.com/"&gt;https://pages.github.com&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="bypassing-jekyll"&gt;Bypassing Jekyll&lt;/h3&gt;
+&lt;p&gt;GitHub Pages is using the static site generator &lt;a href="https://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; to publish your site.
+When publishing your Blazor app you'll end up with a folder named _framework.
+The problem is that Jekyll won't process that _framework folder because it starts with an underscore:&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;Every file or directory beginning with the following characters: ., _ , # or ~ in the source directory will not be included in the destination folder&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To circumvent that problem you can add a file with the name .nojekyll to the root directory of your repo. (&lt;a href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/"&gt;Bypass Jekyll&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id="hosting-on-subdirecotry-and-spa-routing"&gt;Hosting on Subdirecotry and SPA Routing&lt;/h3&gt;
+&lt;p&gt;I already use a static site generator and publish to the root directory of the master branch. So my Blazor experiment has to go into a subdirectory. To get your app up and running you'll have to set the base as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-html"&gt;&amp;lt;base href=&amp;quot;/subdirectory/&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you're lucky you can reach your Blazor app now. But you can't reach for example domain.com/subdirectory/counter because GitHub Pages doesn't natively support single page apps. You can use a straightforward solution from &lt;a href="https://github.com/rafrex/spa-github-pages#readme"&gt;rafrex&lt;/a&gt; to overcome this routing issue. Just add a custom &lt;a href="https://github.com/rafrex/spa-github-pages/blob/gh-pages/404.html"&gt;404.html&lt;/a&gt; to the root directory of your master branch.
+Dont't forget to adjust the segment count in the script:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var segmentCount = 1;
+
+var l = window.location;
+l.replace(
+  l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+  l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+  l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&amp;amp;/g, '~and~') +
+  (l.search ? '&amp;amp;q=' + l.search.slice(1).replace(/&amp;amp;/g, '~and~') : '') +
+  l.hash
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;One last thing to do - add the following script to your index.html:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+  // Single Page Apps for GitHub Pages
+  // https://github.com/rafrex/spa-github-pages
+  // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+  // ----------------------------------------------------------------------
+  (function(l) {
+    if (l.search) {
+      var q = {};
+      l.search.slice(1).split('&amp;amp;').forEach(function(v) {
+        var a = v.split('=');
+        q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&amp;amp;');
+      });
+      if (q.p !== undefined) {
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + (q.p || '') +
+          (q.q ? ('?' + q.q) : '') +
+          l.hash
+        );
+      }
+    }
+  }(window.location))
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="failing-integrity-checks"&gt;Failing integrity checks&lt;/h3&gt;
+&lt;p&gt;I use Azure DevOps pipelines to publish my &lt;a href="https://wyam.io"&gt;Wyam&lt;/a&gt; site. When I integrated my Blazor app I ended up with failing integrity checks when trying to access it. Probably because I've used a Windows image where the git config option core.autocrlf option was set to true. You can find possible solutions and background informations here: &lt;a href="https://github.com/dotnet/aspnetcore/issues/19796"&gt;https://github.com/dotnet/aspnetcore/issues/19796&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
+		</item>
 		<item>
 			<title>New Zealand</title>
 			<link>http://renatoheeb.com/posts/New-Zealand</link>
