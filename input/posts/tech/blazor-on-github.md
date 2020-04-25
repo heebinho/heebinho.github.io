@@ -10,11 +10,11 @@ The following notes may be helpful for someone else.
 
 ### Blazor webassembly
 Blazor is a web framework using C#, Razor and HTML that runs in the browser with WebAssembly.
-You can find more information on [https://blazor.net/][1]
+You can find more information on [https://blazor.net][1]
 
 ### GitHub Pages
 GitHub Pages allows you to publish your website for free, hosted directly from your GitHub repository. Just edit, push, and your changes are live.
-You can find more information on [https://pages.github.com/][2]
+You can find more information on [https://pages.github.com][2]
 
 ### Bypassing Jekyll
 GitHub Pages is using the static site generator [Jekyll][3] to publish your site.
@@ -34,7 +34,7 @@ I already use a static site generator and publish to the root directory of the m
 ```html
 <base href="/subdirectory/" />
 ```
-If you're lucky you can reach your Blazor app now. But you can't reach for example domain.com/subdirectory/counter because GitHub Pages doesn't natively support single page apps. You can use a straightforward solution from [rafrex][5] to overcome this routing issue. Just add the [404.html][6] to the root directory of your master branch.
+If you're lucky you can reach your Blazor app now. But you can't reach for example domain.com/subdirectory/counter because GitHub Pages doesn't natively support single page apps. You can use a straightforward solution from [rafrex][5] to overcome this routing issue. Just add a custom [404.html][6] to the root directory of your master branch.
 Dont't forget to adjust the segment count in the script:
 
 ```javascript
@@ -77,8 +77,8 @@ One last thing to do - add the following script to your index.html:
 ```
 
 
-### Failing integrity checks when using an Azure pipelines
-I use Azure DevOps pipelines to publish my [Wyam][7] site. When I integrated my Blazor app I ended up with failing integrity checks when trying to access it. Probably because I used a Windows image where the git config option core.autocrlf option was set to true. You can find possible solutions here: [https://github.com/dotnet/aspnetcore/issues/19796][8]
+### Failing integrity checks
+I use Azure DevOps pipelines to publish my [Wyam][7] site. When I integrated my Blazor app I ended up with failing integrity checks when trying to access it. Probably because I've used a Windows image where the git config option core.autocrlf option was set to true. You can find possible solutions and background informations here: [https://github.com/dotnet/aspnetcore/issues/19796][8]
 
 
 
