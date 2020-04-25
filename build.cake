@@ -65,7 +65,7 @@ Task("EmptyMasterBranch")
 
         string[] filePaths = System.IO.Directory.GetFiles(tempDir);
         //keep the following files
-        var files = new List<string>(){"cname","pgp.asc",".nojekyll",".gitattributes"};
+        var files = new List<string>(){"cname","pgp.asc",".nojekyll",".gitattributes, 404.html"};
         var directories = new List<string>(){".git","cv"};
 
 
