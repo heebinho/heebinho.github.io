@@ -6,17 +6,12 @@
 Settings[Keys.Host] = "renatoheeb.com";
 Settings[BlogKeys.Title] = "H";
 Settings[BlogKeys.Description] = "Ciao";
-//Settings[BlogKeys.Intro] = "USA, Canada, Russia, Australia, New Zealand, Cuba, Egypt, Borneo, Malaysia, Thailand, Cambodia, Vietnam, Singapoor, Britain, Turkey, Greece, Poland, Germany, Czech, Croatia, Slovenia, Serbia, Spain, Portugal, France, Italy, Austria ... and counting.  ";
-//Settings[BlogKeys.Intro] = "Australia, Canada, Cambodia, Cuba, Egypt, USA, Russia and more.  
-Settings[BlogKeys.Intro] = "Hey there, nice to meetcha. I've been lucky enough to travel to some amazing places and from time to time I'll share some impressions and other unpredictable gems on my personal website.";
-//Settings[BlogKeys.Intro] = "Nice to meet you.";
+Settings[BlogKeys.Intro] = "Nice to meetcha. I've been lucky enough to travel to some amazing places and from time to time I'll share some impressions and other unpredictable gems on my personal website.";
 Settings[BlogKeys.CaseInsensitiveTags] = true;
 Settings[BlogKeys.GenerateArchive] = true;
 Settings[BlogKeys.IndexFullPosts] = false;
 Settings[BlogKeys.IndexPageSize] = 8;
-Settings[BlogKeys.Image] = "https://lh3.googleusercontent.com/PA_d1hbTp7_PZb7vl7GFDTQrc0uJG0vYA2kvVXAt91LoeMiJs3MmSiIjaaMgU-J_oS3s1QPY0iDbn5dDULdpmXA-luj7JR1mGs-NMcXESPQsfzci_iGBR9p5sWL7mda2XcRXgIV25iaGqfn-uEm_1QDeke7WvIZiD6Z6r3A96lrq0zbcVl0kyKQg6BaeUBkvqEcdn6fZoRmlc997oom9x-itpyU3RwLcJAECF_j14cV9-xFh54UIj5UdCAfCwzHx10BXfuDRk-1CBxCf6vnFWz-LXnT_3gKWDK7xN-0tHB3csvpr6BhmzjsO6NqSmcGSSvVlKC1fyA2pVG2gLlPmz6xlu3opKRrj6X1yV7xz5Q4sJOqTvMP84zLCtmaDukHNHl-cGTJbiZPhHs0YUsvL2s4wu9CyaqtpTLYjdBwsjciuNmAFOEZVnkTFlx4V-j8Y8ZhgU7JnLohiXA1-b2Ex8zudf-XsRPsUUSLiEjd03UWvi5B0-XEBmMt1nDNYrIj4cjF7Pg8VgzENiu6QdfUxj9K3jJ8RMpjknDCEltCExzhMlpFDTwLi7lA8p1KjhuwWeYgIJh0Bx_Bq7rk1KCDEt7eFeM5a5GoPPjRuFW_yFfAANa1unRPgferQosSnne3uCx9zUZPXydWXabW9swkYrg-QJvxwQ9CRrv_0Jil88ChWofpDsv4PGgoxIIHSDenKQZ03kkAXVfQvvA-Oqo6JAloi2DT7MPPihdsM1w1LL-v8m611=w807-h605-no";
-//Settings[BlogKeys.Image] = "https://lh3.googleusercontent.com/tRMMZkIqU1T_ileN72u1XEOS3W3KQicP41gBJSkcckw57LpBmztBiE29bnw8UhsWWPwi2dVpewK10DRMFibIYcYFEHGaJYTYwzDEIDc428AHtWl2h1MK3OHHGO82mDCm-1e0nv35_9jlT9Tg8dxhK9A7tlF4zn1ATqWaX7J8mnHr3gkfuenV7P-5qVmF4OuyfUsa32AWGQWPJVTc4zVl_AMUd1HiKSuRJ2hPYCiKKH1FvbmS8Z9qdbIlUsKnNjWjNXK_u9jW-0-sidrUPkEIUgPMiSKyQMSxaV8xoBtnpACxjLvqiY7FpdEvrt6pA00fouDe3odBCgaSeiiZh3Vlz0aEX6sqshLG87Cr5jGUv1wJpPpgjGq-3unXhvaAw127a_KV24zwI9pka9hcZhEpgEjdRumDi9ZXdBjhHL_TfYrVnO2-p3HnKNe-QCGz045SO3WBeJqpv8wWblTBzpDS_DJxxcwzv-ytQqymVOHCneQPmMrc0cJ2V3P37A10H0r4RNgH1DybL9BPPR4lhRI953Q2Ny8-G2ZUamx98c9_SlVpkM9tkNVJ9l7WGKM2Byx7Uwt5iL0tXY1RIqFWusJaAXD0gaHA8FqJcmNyJF-6vXS1qzWKqPbOQzq7ky33Wzz44ap5O7Qfc_O-ILpH_osVezkRedvHY2h5pM5HnlZYFRp0NZpc_GSgiQdtdKfIKsdt7kl9Pahjm0y7Pb48WQ_hTavQyoRd_1dFPdMkQwweSzrIOd9T=w1250-h937-no";
-
+Settings[BlogKeys.Image] = "background.jpg";
 
 
 
