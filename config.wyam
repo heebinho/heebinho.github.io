@@ -1,5 +1,6 @@
 #recipe Blog
 #theme SolidState
+#n Wyam.Sass
 
 // Customize your settings and add new ones here
 Settings[Keys.Host] = "renatoheeb.com";
@@ -21,3 +22,8 @@ Settings[BlogKeys.Image] = "https://lh3.googleusercontent.com/PA_d1hbTp7_PZb7vl7
 
 
 // Add any pipeline customizations here
+Pipelines.Add("Sass20",
+    ReadFiles("assets/sass/main.scss"),
+    Sass().WithCompactOutputStyle(),
+    WriteFiles(".css")
+);
