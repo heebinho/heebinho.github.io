@@ -1,7 +1,0 @@
-Title: Vietnam
-Published: 12/15/2019
-Tags: Travel
-Lead: Phu Quoc, Can Tho, Saigon, Nha Trang, Da Nang, Hanoi
----
-![Vietnam](https://lh3.googleusercontent.com/35LKa2udum3AudrPDpVHhaC4sd5dkqW9QtpWV46z47mxz89ejth069v9pkYWhfo2oLMcfIoTeJImrZ0f2XjPTJlrDsGM3DyvB41lwBur3O7sPiYRCjJmZN0FQHgLbhkrMl59KrpQlkEHwjhdIvh7DqMcES1_p73HBQZsLM8qhvnmkaTtjRzZ2SM9uLuPYxtcgOYlnWuNglxe2rc8gH29N6BMlJas40iiqdPyBOSixGzgn25B7YjoUqBR3FgaH_SUStvxtf0VfcLAHULLNw4oMm6bsvRf-NZw-FT12O0QMmhw-9PaLn2WrIEEfOjfKP5QXyipJtV20jMHGFjmXI1Slt350okYsB2DAoKvqlLRFFKHwfeqsa9l0N1yI3gaPAJU9Q-dhn-plKaPVhWg4b6-cqVN0hjd0MsGb-5Bp-fNk5F5TxTKWfiNUMAc4Gkyj_TMrNmGFuRTKTsOxetJMrAGk6x7Mr7-6rHbAZhYa17GYw443BGyL85dkHyFnGx-Kvoqu2hxS-hHBWyTVmFatqlozN-AEDYcL7oUqlZb7ZC7P8FnT8Xlet8xtT5_nAZQmwRJA3I2KaAyVeIGfoOJ2e5G2il4k7FXesTsljeCIawoGehk1o6GnleUFUpg69J7P9ltpbAS74dHp2z5HikfruFNwdfPPuQJmx9ia0hgq2tys9qE9QYRReqeGSU=s217-p-k-no)  
-<a href="https://photos.app.goo.gl/ZpPuYp8EKuwc9D8e7" target="_blank">--> Album Vietnam</a>
