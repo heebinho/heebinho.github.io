@@ -5,7 +5,7 @@ Lead: Eliminate duplicates in your google drive
 ---
 
 ### Intro
-While I was traveling I used my GoPro Hero to take some pictures and videos. After importing, my files were synced automatically to my google drive. After syncing I removed the files from my notebook and from my cam.
+While I was traveling I used my GoPro to take some pictures and videos. After importing, my files were synced automatically to my google drive. After syncing I removed the files from my notebook and from my cam.
 To delete the files from my cam I used the GoPro Quick software.
 The "Delete All" function didn't work properly and I reimported the same files over and over. Google's backup and sync tool didn't care and created copies of the same files. 
 
