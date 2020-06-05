@@ -2,3 +2,4 @@ output
 config.wyam.*
 tools
 .*/
+web
