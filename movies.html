@@ -58,85 +58,123 @@
                     </div>
                 </nav>
 
-
-    
 <section id="banner">
   <div class="inner">
-    <h2>Blazor hosted on github-pages</h2>
-        <p>Blazor Webassembly</p>
-            <p><em>Published on Tuesday, April 21, 2020</em></p>
-                    <a role="button" href="/tags/Blazor" class="button small">Blazor</a>
+      <h2>Movies</h2>
   </div>
-</section>
-
+</section>  
                 <!-- Main -->
                 <section id="wrapper">
                     <section class="wrapper style2">
                         <div class="inner">
-                            
-
-<h3 id="intro">Intro</h3>
-<p>While deploying my first &quot;Blazor webassembly&quot; app to &quot;GitHub pages&quot; I ran into some minor troubles.
-The following notes may be helpful for someone else.</p>
-<h3 id="blazor-webassembly">Blazor webassembly</h3>
-<p>Blazor is a web framework using C#, Razor and HTML that runs in the browser with WebAssembly.
-You can find more information on <a href="https://blazor.net/">https://blazor.net</a></p>
-<h3 id="github-pages">GitHub Pages</h3>
-<p>GitHub Pages allows you to publish your website for free, hosted directly from your GitHub repository. Just edit, push, and your changes are live.
-You can find more information on <a href="https://pages.github.com/">https://pages.github.com</a></p>
-<h3 id="bypassing-jekyll">Bypassing Jekyll</h3>
-<p>GitHub Pages is using the static site generator <a href="https://jekyllrb.com/">Jekyll</a> to publish your site.
-When publishing your Blazor app you'll end up with a folder named _framework.
-The problem is that Jekyll won't process that _framework folder because it starts with an underscore:</p>
-<blockquote class="blockquote">
-<p>Every file or directory beginning with the following characters: ., _ , # or ~ in the source directory will not be included in the destination folder</p>
-</blockquote>
-<p>To circumvent that problem you can add a file with the name .nojekyll to the root directory of your repo. (<a href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/">Bypass Jekyll</a>)</p>
-<h3 id="hosting-on-subdirecotry-and-spa-routing">Hosting on Subdirecotry and SPA Routing</h3>
-<p>I already use a static site generator and publish to the root directory of the master branch. So my Blazor experiment has to go into a subdirectory. To get your app up and running you'll have to set the base as follows:</p>
-<pre><code class="language-html">&lt;base href=&quot;/subdirectory/&quot; /&gt;
-</code></pre>
-<p>If you're lucky you can reach your Blazor app now. But you can't reach for example domain.com/subdirectory/counter because GitHub Pages doesn't natively support single page apps. You can use a straightforward solution from <a href="https://github.com/rafrex/spa-github-pages#readme">rafrex</a> to overcome this routing issue. Just add a custom <a href="https://github.com/rafrex/spa-github-pages/blob/gh-pages/404.html">404.html</a> to the root directory of your master branch.
-Dont't forget to adjust the segment count in the script:</p>
-<pre><code class="language-javascript">var segmentCount = 1;
-
-var l = window.location;
-l.replace(
-  l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-  l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-  l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&amp;/g, '~and~') +
-  (l.search ? '&amp;q=' + l.search.slice(1).replace(/&amp;/g, '~and~') : '') +
-  l.hash
-);
-</code></pre>
-<p>One last thing to do - add the following script to your index.html:</p>
-<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
-  // Single Page Apps for GitHub Pages
-  // https://github.com/rafrex/spa-github-pages
-  // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-  // ----------------------------------------------------------------------
-  (function(l) {
-    if (l.search) {
-      var q = {};
-      l.search.slice(1).split('&amp;').forEach(function(v) {
-        var a = v.split('=');
-        q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&amp;');
-      });
-      if (q.p !== undefined) {
-        window.history.replaceState(null, null,
-          l.pathname.slice(0, -1) + (q.p || '') +
-          (q.q ? ('?' + q.q) : '') +
-          l.hash
-        );
-      }
-    }
-  }(window.location))
-&lt;/script&gt;
-</code></pre>
-<h3 id="failing-integrity-checks">Failing integrity checks</h3>
-<p>I use Azure DevOps pipelines to publish my <a href="https://wyam.io">Wyam</a> site. When I integrated my Blazor app I ended up with failing integrity checks when trying to access it. Probably because I've used a Windows image where the git config option core.autocrlf option was set to true. You can find possible solutions and background informations here: <a href="https://github.com/dotnet/aspnetcore/issues/19796">https://github.com/dotnet/aspnetcore/issues/19796</a></p>
-
-
+                            <h2 id="movie-collection">Movie collection</h2>
+<p>Some remarkable/memorable movies.<br />
+--&gt;in progress &amp;&amp; to be continued</p>
+<h3 id="newcomers">Newcomers</h3>
+<ul>
+<li>Knives out</li>
+<li>The Shape of Water</li>
+<li>The Darkest Hour</li>
+<li>Marvel Universe</li>
+<li>E.g. Guardians of the Galaxy</li>
+<li>Bohemian Rhapsody</li>
+</ul>
+<h3 id="new-century">New Century</h3>
+<ul>
+<li>Django</li>
+<li>Inception</li>
+<li>The Dark Knight Rises</li>
+<li>Intouchables</li>
+<li>The Lord of the rings (trilogy)</li>
+<li>Dark Shadows (2012)</li>
+<li>Lucy</li>
+<li>The Hateful Eight</li>
+<li>Straight outta Compton</li>
+<li>The Imitation Game</li>
+</ul>
+<h3 id="classics">Classics</h3>
+<ul>
+<li>23 (Year 1998; Director Hans-Christian Schmid)</li>
+<li>Independence Day</li>
+<li>Braveheart</li>
+<li>Fightclub</li>
+<li>Scarface (1983)</li>
+<li>The Rock</li>
+<li>Demolition Man</li>
+</ul>
+<h3 id="animation">Animation</h3>
+<ul>
+<li>Incredibles</li>
+<li>Kubo and the Two Strings</li>
+<li>Wall-E</li>
+<li>Ralph Breaks the Internet</li>
+<li>How to Train Your Dragon</li>
+<li>Moana</li>
+<li>Inside Out</li>
+</ul>
+<h3 id="docus">Docus</h3>
+<ul>
+<li>The Last Dance (Michael Jordan)</li>
+<li>Heinrich Kieber - Datendieb (2010)</li>
+<li>Apollo 11 (2019)</li>
+</ul>
+<h3 id="timewasters">Timewasters</h3>
+<ul>
+<li>The Revenant</li>
+<li>Joker</li>
+</ul>
+<h3 id="disgraceful-was-erlauben-strunz">Disgraceful (was erlauben Strunz)</h3>
+<ul>
+<li>Independence Day: Resurgence</li>
+</ul>
+<h3 id="watchlist">Watchlist</h3>
+<ul>
+<li>Jack Whitehall: Travels with My Father</li>
+<li>Hunting Hitler</li>
+<li>The Untold History of the United States</li>
+<li>Hitler's Circle of Evil</li>
+<li>Prohibition (2011)</li>
+<li>The '80s: The Decade That Made Us</li>
+<li>The '90s: The Last Great Decade?</li>
+<li>The Beatles</li>
+<li>Andrew Marr's History of the World</li>
+<li>Sinatra: All or Nothing at All</li>
+<li>Connections (1978)</li>
+<li>The National Parks: America's Best Idea</li>
+<li>New York: A Documentary Film (1999)</li>
+<li>1968: The Year That Changed America (2018)</li>
+<li>Becoming Champions</li>
+<li>A History of Britain</li>
+<li>Nuremberg: Nazis on Trial</li>
+<li>Thomas Jefferson</li>
+<li>The Fifties</li>
+<li>A History of Scotland</li>
+<li>Nazis: Evolution of Evil</li>
+<li>Walt Disney</li>
+<li>Benjamin Franklin</li>
+<li>The Mystery of Matter: Search for the Elements</li>
+<li>How We Got to Now</li>
+<li>Hala Madrid (study your opponents)</li>
+<li>Billy Connolly's Route 66</li>
+<li>The Men Who Killed Kennedy</li>
+<li>Churchill</li>
+<li>Watergate</li>
+<li>The Genius of Charles Darwin</li>
+<li>Churchill's Bodyguard</li>
+<li>The British Empire in Colour</li>
+<li>Vice (2018)</li>
+<li>1917 (2019)</li>
+<li>The Twenty-First Century</li>
+<li>Make 'Em Laugh: The Funny Business of America</li>
+<li>Inventions That Changed the World</li>
+<li>America Revealed</li>
+<li>The Mossad: Imperfect Spies</li>
+<li>Soaked in Bleach (2015)</li>
+<li>Cobain: Montage of Heck</li>
+<li>Zeitgeist (2007)</li>
+<li>The Freddie Mercury Story: Who Wants to Live Forever</li>
+</ul>
+<p><a href="https://www.imdb.com/list/ls046696167/?sort=list_order,asc&amp;st_dt=&amp;mode=detail&amp;page=2">IMDB</a></p>
 
                         </div>
                     </section>
