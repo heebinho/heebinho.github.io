@@ -1,6 +1,6 @@
 Title: Calanda
 Published: 06/10/2020
-Tags: Chur
+Tags: [Chur, Hike]
 Lead: Calanda
 ---
 
