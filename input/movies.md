@@ -70,7 +70,7 @@ Some remarkable/memorable movies.
 * The Revenant
 * Joker
 
-### Disgraceful (was erlauben Strunz)
+### Disgraceful
 
 * Independence Day: Resurgence
 
