@@ -4,9 +4,56 @@
 	<title>H</title>
 	<link rel="self" href="http://renatoheeb.com/" />
 	<rights>2020</rights>
-	<updated>2020-06-18T20:11:44Z</updated>
+	<updated>2020-06-19T14:51:19Z</updated>
 	<logo>http://renatoheeb.com/background.jpg</logo>
 	<subtitle>Ciao</subtitle>
+	<entry>
+		<id>http://renatoheeb.com/posts/termux</id>
+		<title>Termux, a cli at your fingertips</title>
+		<link href="http://renatoheeb.com/posts/termux" />
+		<link rel="enclosure" type="image" href="http://renatoheeb.com/background.jpg" />
+		<updated>2020-06-19T00:00:00Z</updated>
+		<content>&lt;h3 id="intro"&gt;Intro&lt;/h3&gt;
+&lt;p&gt;While I was looking for an Android Git client and a Markdown editor I came across the  &lt;a href="https://termux.com"&gt;Termux&lt;/a&gt; project.&lt;/p&gt;
+&lt;blockquote class="blockquote"&gt;
+&lt;p&gt;Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required.&lt;br /&gt;
+A minimal base system is installed automatically - additional packages are available using the APT package manager.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Sounds amazing. To good to be true?&lt;/p&gt;
+&lt;h3 id="setup"&gt;Setup&lt;/h3&gt;
+&lt;p&gt;The setup was as easy as promised. Just install the Termux app from the play store and use the integrated package manager to install git and vim. Don't forget to setup your git config appropriately:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pkg install git
+$ pkg install vim
+$ git config --global user.name &amp;quot;Renato&amp;quot;
+$ git config --global user.email &amp;quot;...&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="usage"&gt;Usage&lt;/h3&gt;
+&lt;p&gt;Now you can use the cli, git and vim to create and edit your blog posts on the go without your notebook.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clone your repo.&lt;/li&gt;
+&lt;li&gt;Create a new Markdown file from a template.&lt;/li&gt;
+&lt;li&gt;Use vim to edit your blog post.&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ git clone https://github.com/heebinho/heebinho.github.io.git
+$ cp input/posts/template.md input/posts/newblogpost.md
+$ vim input/posts/newblogpost.md
+$ git add input/posts/newblogpost.md
+$ git commit -m &amp;quot;new blog post&amp;quot;
+$ git push
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you've never used vim before, you should probably run the vimtutor first to get a basic understandig of how to navigate, save and most importantly exit vim:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-bash"&gt;$ vimtutor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Amazing app. Probably I won't use it to often, but it's a great tool at your fingertips.&lt;/p&gt;
+&lt;p&gt;Here you can see Termux in action:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ML5adkmaXi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+</content>
+		<summary>&lt;p&gt;While I was looking for an Android Git client and a Markdown editor I came across the  &lt;a href="https://termux.com"&gt;Termux&lt;/a&gt; project.&lt;/p&gt;</summary>
+	</entry>
 	<entry>
 		<id>http://renatoheeb.com/posts/Pothole</id>
 		<title>Gletschermühlen</title>

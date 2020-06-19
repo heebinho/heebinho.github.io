@@ -59,49 +59,68 @@
                     </div>
                 </nav>
 
+
+    
 <section id="banner">
   <div class="inner">
-      <h2>Bike</h2>
+    <h2>Termux, a cli at your fingertips</h2>
+        <p>Creating a blog post from your android mobile</p>
+            <p><em>Published on Friday, June 19, 2020</em></p>
+                    <a role="button" href="/tags/cli" class="button small">cli</a>
+                <a role="button" href="/tags/nix" class="button small">nix</a>
   </div>
-</section>  
+</section>
+
                 <!-- Main -->
                 <section id="wrapper">
                     <section class="wrapper style2">
                         <div class="inner">
                             
 
-        <div>
-            <a href="/posts/Pothole">
-                <h3>Gletscherm&#xFC;hlen</h3>
-                    <p>Bike &amp; Hike Gletscherm&#xFC;hlen</p>
-            </a>
-            <p><em>Posted on Sunday, June 14, 2020</em></p>            
-        </div>   
+<h3 id="intro">Intro</h3>
+<p>While I was looking for an Android Git client and a Markdown editor I came across the  <a href="https://termux.com">Termux</a> project.</p>
+<blockquote class="blockquote">
+<p>Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required.<br />
+A minimal base system is installed automatically - additional packages are available using the APT package manager.</p>
+</blockquote>
+<p>Sounds amazing. To good to be true?</p>
+<h3 id="setup">Setup</h3>
+<p>The setup was as easy as promised. Just install the Termux app from the play store and use the integrated package manager to install git and vim. Don't forget to setup your git config appropriately:</p>
+<pre><code>$ pkg install git
+$ pkg install vim
+$ git config --global user.name &quot;Renato&quot;
+$ git config --global user.email &quot;...&quot;
+
+</code></pre>
+<h3 id="usage">Usage</h3>
+<p>Now you can use the cli, git and vim to create and edit your blog posts on the go without your notebook.</p>
+<ul>
+<li>Clone your repo.</li>
+<li>Create a new Markdown file from a template.</li>
+<li>Use vim to edit your blog post.</li>
+<li>...</li>
+</ul>
+<pre><code class="language-bash">$ git clone https://github.com/heebinho/heebinho.github.io.git
+$ cp input/posts/template.md input/posts/newblogpost.md
+$ vim input/posts/newblogpost.md
+$ git add input/posts/newblogpost.md
+$ git commit -m &quot;new blog post&quot;
+$ git push
+
+</code></pre>
+<p>If you've never used vim before, you should probably run the vimtutor first to get a basic understandig of how to navigate, save and most importantly exit vim:</p>
+<pre><code class="language-bash">$ vimtutor
+</code></pre>
+<h3 id="conclusion">Conclusion</h3>
+<p>Amazing app. Probably I won't use it to often, but it's a great tool at your fingertips.</p>
+<p>Here you can see Termux in action:</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ML5adkmaXi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-<nav>
-    <ul class="actions">              
-                </ul>
-</nav>
-		
 
                         </div>
                     </section>
                 
-    
-    <section class="wrapper alt style3">
-        <div class="inner">
-                <a role="button" href="/tags/Travel" class="button small ">Travel (12)</a>
-                <a role="button" href="/tags/Chur" class="button small ">Chur (3)</a>
-                <a role="button" href="/tags/Hike" class="button small ">Hike (2)</a>
-                <a role="button" href="/tags/Git" class="button small ">Git (1)</a>
-                <a role="button" href="/tags/nix" class="button small ">nix (1)</a>
-                <a role="button" href="/tags/cli" class="button small ">cli (1)</a>
-                <a role="button" href="/tags/Drive" class="button small ">Drive (1)</a>
-                <a role="button" href="/tags/Bike" class="button small special">Bike (1)</a>
-                <a role="button" href="/tags/Blazor" class="button small ">Blazor (1)</a>
-        </div>
-    </section>
                 </section>
                 
                 <!-- Footer -->
