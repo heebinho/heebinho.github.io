@@ -10,12 +10,23 @@ Lead: Bike & Hike Adventures
 
 ### Bucket list
 
-* Falknis
 * Pizol
-* Gürgaletsch
 * Fürstensteig / Drei Schwestern
 * Crap Mats
 * Fulhorn / Fulaberg
+* Hochwang
+
+### Completed
+
+* Montalin
+* Fürhörnli
+* Dreibündenstein
+* Calanda
+* Churer Joch
+* Falknis
+* Gürgaletsch
+
+
 
 ## Good to go
 
