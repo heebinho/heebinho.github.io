@@ -94,6 +94,84 @@ git push -f &lt;remote-name&gt; &lt;branch-name&gt;
 <p>&lt;?# Gist a1d5655901902db3c5399ecf38c9681c /?&gt;</p>
 </blockquote>
 <script src="//gist.github.com/a1d5655901902db3c5399ecf38c9681c.js" type="text/javascript"></script>
+<h2 id="configuring-a-remote-for-a-fork">Configuring a remote for a fork</h2>
+<pre><code class="language-bash">$ git remote -v
+&gt;origin  https://github.com/heebinho/functional-csharp-code.git (fetch)
+&gt;origin  https://github.com/heebinho/functional-csharp-code.git (push)
+$ git remote add upstream https://github.com/la-yumba/functional-csharp-code.git
+</code></pre>
+<h2 id="syncing-a-fork">Syncing a fork</h2>
+<pre><code class="language-bash">$ git fetch upstream
+$ git checkout master
+$ git merge upstream/master
+</code></pre>
+<h2 id="git-layers">Git Layers</h2>
+<ul>
+<li>Persistant Map</li>
+<li>Content Tracker</li>
+<li>Revision Control System</li>
+<li>Distribution</li>
+</ul>
+<h3 id="git-as-a-persistant-map">Git as a &quot;Persistant Map&quot;</h3>
+<p>Key;Value
+SHA1(20Bytes);Bytes</p>
+<pre><code class="language-bash">$ echo &quot;Hello World&quot; | git hash-object --stdin
+//persist (w-&gt;write)
+$ echo &quot;Hello World&quot; | git hash-object --stdin -w
+$ ls -a
+$ cd .git/objects/f5
+//type of an object -&gt; -t
+$ git cat-file f5b49699a4524b0a56f1b19a648725971eeb9e6b -t
+//pretty print an object -&gt; -p
+$ git cat-file f5b49699a4524b0a56f1b19a648725971eeb9e6b -p
+$ git count-objects
+</code></pre>
+<h2 id="gits-straightforward-object-model">Git's straightforward object model</h2>
+<ul>
+<li>Blob</li>
+<li>Tree</li>
+<li>Commit</li>
+<li>Annotated Tag</li>
+</ul>
+<pre><code class="language-bash">$ git tag -a V1 -m &quot;Version 1&quot;
+$ git tag
+$ git cat-file V1 -p
+</code></pre>
+<h3 id="as-a-revision-control-system">As a revision control system</h3>
+<pre><code class="language-bash">$ git log
+$ git branch
+$ git .git/refs/heads
+$ cat master
+-&gt; 77bd4774aea4f36a962847e5d789a3702f6b4f8b
+$ git cat-file 77bd4774a -t
+-&gt; commit
+$ git cat-file 77bd4774a -p
+$ git branch 
+$ git branch oki
+$ cat .git/HEAD
+-&gt; ref: refs/heads/master
+$ vim recipes/apple-pie.txt
+$ git commit -m &quot;apple pie Ingredients&quot;
+$ git checkout oki
+
+//Merge
+$ git merge oki
+--&gt;
+On branch master
+You have unmerged paths.
+  (fix conflicts and run &quot;git commit&quot;)
+  (use &quot;git merge --abort&quot; to abort the merge)
+
+Unmerged paths:
+  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)
+
+        both modified:   recipes/applie-pie.txt
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre>
+<p>So a branch is just a reference to a commit.<br />
+And HEAD is just a reference to a branch. (a pointer to a pointer)<br />
+A checkout moves the HEAD and updates the working area</p>
 
 
 
