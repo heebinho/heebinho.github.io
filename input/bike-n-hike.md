@@ -15,6 +15,7 @@ Lead: Bike & Hike Adventures
 * Crap Mats
 * Fulhorn / Fulaberg
 * Hochwang
+* Alvier
 
 ### Completed
 
@@ -25,7 +26,7 @@ Lead: Bike & Hike Adventures
 * Churer Joch
 * Falknis
 * Gürgaletsch
-
+* Gonzen
 
 
 ## Good to go
