@@ -5,15 +5,15 @@
 		<link>http://renatoheeb.com/</link>
 		<description>Ciao</description>
 		<copyright>2020</copyright>
-		<pubDate>Wed, 15 Jul 2020 16:16:42 GMT</pubDate>
-		<lastBuildDate>Wed, 15 Jul 2020 16:16:42 GMT</lastBuildDate>
+		<pubDate>Wed, 15 Jul 2020 16:28:09 GMT</pubDate>
+		<lastBuildDate>Wed, 15 Jul 2020 16:28:09 GMT</lastBuildDate>
 		<item>
 			<title>A functional approach to the using statement in C#</title>
 			<link>http://renatoheeb.com/posts/cs-using</link>
 			<description>&lt;p&gt;Lately I participated in a job interview and was questioned about the C# 8 "using declaration":&lt;/p&gt;</description>
 			<enclosure url="http://renatoheeb.com/background.jpg" length="0" type="image" />
 			<guid>http://renatoheeb.com/posts/cs-using</guid>
-			<pubDate>Wed, 15 Jul 2020 00:00:00 GMT</pubDate>
+			<pubDate>Mon, 13 Jul 2020 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h3 id="intro"&gt;Intro&lt;/h3&gt;
 &lt;p&gt;Lately I participated in a job interview and was questioned about the C# 8 &amp;quot;using declaration&amp;quot;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-csharp"&gt;string lines=&amp;#64;&amp;quot;This is line one

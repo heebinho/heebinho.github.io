@@ -4,7 +4,7 @@
 	<title>H</title>
 	<link rel="self" href="http://renatoheeb.com/" />
 	<rights>2020</rights>
-	<updated>2020-07-15T16:16:42Z</updated>
+	<updated>2020-07-15T16:28:09Z</updated>
 	<logo>http://renatoheeb.com/background.jpg</logo>
 	<subtitle>Ciao</subtitle>
 	<entry>
@@ -12,7 +12,7 @@
 		<title>A functional approach to the using statement in C#</title>
 		<link href="http://renatoheeb.com/posts/cs-using" />
 		<link rel="enclosure" type="image" href="http://renatoheeb.com/background.jpg" />
-		<updated>2020-07-15T00:00:00Z</updated>
+		<updated>2020-07-13T00:00:00Z</updated>
 		<content>&lt;h3 id="intro"&gt;Intro&lt;/h3&gt;
 &lt;p&gt;Lately I participated in a job interview and was questioned about the C# 8 &amp;quot;using declaration&amp;quot;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-csharp"&gt;string lines=&amp;#64;&amp;quot;This is line one
