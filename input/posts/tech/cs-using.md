@@ -1,5 +1,5 @@
 Title: A functional approach to the using statement in C#
-Published: 7/13/2020
+Published: 7/15/2020
 Tags: [C#, fp]
 Lead: Using HOF's to encapsulate setup and teardown
 ---
