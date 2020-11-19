@@ -180,53 +180,7 @@
   .bold {
     font-weight: bold;
   }
-  /*================================================================
-    #HEADER - header-classic
-    ================================================================*/
-  .header-classic h1 {
-    font-size: 48px;
-    margin-top: 40px;
-  }
-  .header-classic h2 {
-    margin: 0;
-  }
-  .header-classic h1,
-  .header-classic h2 {
-    text-align: center;
-  }
-  @media (min-width: 992px) {
-    .header-classic h1,
-    .header-classic h2 {
-      text-align: left;
-    }
-  }
-  .header-classic .right {
-    text-align: center;
-    margin-top: 24px;
-  }
-  @media (min-width: 992px) {
-    .header-classic .right {
-      text-align: left;
-      margin-top: 0;
-    }
-  }
-  .header-classic .social-box {
-    margin: 0 auto;
-  }
-  @media (min-width: 992px) {
-    .header-classic .social-box {
-      margin: 0;
-    }
-  }
-  .header-classic .contact-info {
-    margin-top: 24px;
-  }
-  .header-classic .contact-info p {
-    font-size: 13px;
-    line-height: 22px;
-  }
-
-
+  
   /*================================================================
     #HEADER - header-minimal
     ================================================================*/
@@ -248,31 +202,13 @@
       margin: 0;
     }
   }
-
-  /*================================================================
-    #HEADER - header-intro
-    ================================================================*/
-  .header-intro h1 {
-    text-align: center;
-  }
-  .header-intro h2 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 24px;
-  }
-  @media (min-width: 992px) {
-    .header-intro h2 {
-      text-align: left;
+  @media print {
+    .hide-when-printing {
+      display: none;
     }
   }
-  .header-intro .right {
-    padding-left: 32px;
-  }
-  .header-intro p {
-    text-indent: 24px;
-    margin-bottom: 32px;
-  }
 
+ 
   /*================================================================
     #CONTENT
     ================================================================*/
@@ -473,10 +409,8 @@
 <body id="theme-blue-gray" class="fallofgiants">
 
 <div id="page" class="container">
-  <div id="header">
-
-
-    <!-- Minimal header with round medium sized image -->
+  
+  <div id="header" style="page-break-after:always">
     <div class="header-minimal cv-section">
       <div class="col-md-4">
         <div class="img-profile">
@@ -490,7 +424,7 @@
           Mail: <a href="mailto:renatoheeb@gmail.com">renatoheeb@gmail.com</a><br />
           Phone: <a href="tel:+41786571709">(+41) 078'657'17'09</a><br />
           Web: <a href="https://renatoheeb.com">renatoheeb.com</a><br />
-          Public Key: <a href="https://github.com/heebinho/heebinho.github.io/raw/master/pgp.asc">PGP</a>
+          <span class="hide-when-printing">Public Key: <a href="https://github.com/heebinho/heebinho.github.io/raw/master/pgp.asc">PGP</a></span>
         </p>
         <div class="social-box">
           <a href="https://twitter.com/heebinho" class="twitter-icon" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -499,11 +433,11 @@
         </div>
       </div>
     </div>
-
   </div>
  
   <div id="content">
-    <div class="content cv-section">
+
+    <div class="content cv-section" style="page-break-after:always">
       <div class="col-md-3">
         <h2>Profil</h2>
       </div>
@@ -543,7 +477,7 @@
         <br>
         Es folgte ein weiteres spannendes Projekt im Research der ZKB, mit der Idee, noch nicht migrierte Produkte 
         und Tools mittels Adapter an das neue "Financial Research Repository" anzubinden. Der Adapter wurde als PoC umgesetzt und 
-        funktionale, sowie qualitative Herausforderungen wurden herausgearbeitet bzw. aus dem Weg geräumt <i class="fa fa-smile-o" aria-hidden="true"></i>.
+        funktionale, sowie qualitative Herausforderungen wurden herausgearbeitet bzw. aus dem Weg geräumt.
         </p>
 
         <br><br>
@@ -578,7 +512,7 @@
           <p>Das berufsbegleitende Studium zum Wirtschaftsinformatiker konnte ich im August 2019 erfolgreich abschliessen. 
             In meiner Thesis befasste ich mich mit Herausforderungen der statischen Code Analyse im IT-Security Kontext (Insider threats). 
             Ein Exemplar der Arbeit stelle ich bei Interesse gerne zur Verfügung. <a href="https://github.com/heebinho/ca" target="_blank">(Abstract online)</a>
-             </p>
+          </p>
         </div>
         <div class="cv-item">
           <h3>Informatiker (2004)</h3>
@@ -591,7 +525,7 @@
       </div>
     </div>
 
-    <div class="content cv-section">
+    <div class="content cv-section" style="page-break-after:always">
       <div class="col-md-3">
         <h2>Berufserfahrung</h2>
       </div>
@@ -612,7 +546,7 @@
               <li>Typed Model (openapi / NSwag), Caching, Logging</li>
             </ul>
         </div>
-        <div class="cv-item">
+        <div class="cv-item" style="page-break-after:always">
           <h3>Leiter Process Engineering Research (Business Projektleiter)</h3>
           <h4>Zürcher Kantonalbank, Festanstellung, August 2015 - August 2019</h4>
           <br />
@@ -824,7 +758,7 @@
 
 
 
-  <div id="footer">
+  <div id="footer" class="hide-when-printing">
     <div class="copyright">
       <p>© <span class="year"><script>document.write(new Date().getFullYear())</script></span> Renato Heeb</p>
     </div>
@@ -835,7 +769,6 @@
 <div class="addon">
   <a class="to-top-btn addon-right waves-effect waves-block" title="Go to Top" href="javascript:;"><i class="fa fa-angle-up"></i></a>
   <a data-toggle="tooltip" data-placement="left" class="print-btn addon-right" title="Print" href="javascript:window.print()" class="print"><i class="fa fa-print"></i></a>
-  <a data-toggle="tooltip" data-placement="left" class="print-btn addon-right" title="Language" href="javascript:window.print()" class="print"><i class="fa fa-print"></i></a>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
