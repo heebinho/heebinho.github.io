@@ -3,3 +3,5 @@ config.wyam.*
 tools
 .*/
 web
+bin
+obj
