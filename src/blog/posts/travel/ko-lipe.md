@@ -1,0 +1,10 @@
+---
+layout: layouts/post.njk
+title: Ko Lipe
+date: 2019-11-02
+description: Ko Lipe - Thailand
+Tags: [Travel]
+---
+
+![Ko Lipe](https://lh3.googleusercontent.com/t6CxJV315iHuqGBKyfog9wMpzlz_7iMUKk7j7X7ZYmzegSXJpsq36zUyz9mTsfneVXy3HB7mOIKRRZimNnUkCeYkXOc6ZMkrqVqUCuHyCzOAUtvkSqULW2N2QT1WLvCSb69RJvsEUdpisGevMIP2D85lcR8mrjt0-MM-yOeqrhaBmkicxqjH3Ip5yCa8Ja_u63b9fQhWVSN2MrkLAV0UHtEe2pNu3Yk4xUmO0MOGlDGxg4CN-hgCwRzs6Lbg73vluht2wu7Fg1yhKsDVoG_PeRrOaitbMg2ZuXhfAQT1IyAZau6xQKZ8szA610uJKFaQ90dBIGoVUbWXbXn76ByPiMKVCcScoFwb1ga4QznM-mrZgxraPjoEiuwCLG8hRxIEocTCIDWFbhNjhxrv4tJg_s3MAvHuMv5vND7tyK4G8xmgcmfBz1SqHpm5THY8gE5TRIf4ZSDoV-Cpv6g_ZTUEc4NSnYqOcYEOECGAXlUoqk2uhnhvgxKKoissv8yeniP5jUaRR5iTDWWqJaEjSGb7w5AqlmIjk_Sknz1jY_JyQR_T91DWGXVch8eY-CKUWk7ZNoCbdjeKlDe3-AEX7JH831Fi4sEwN6Ky3XuHoVe3kZMO2r4nNpuGiZewI7kbrMvjlY9smGmEGumxt7DS0eyXTJHCSNAGp0qZh_XlhGY7Rly9ckY1d5KLcYI=s205-p-k-no)  
+<a href="https://photos.app.goo.gl/q6zEMCYgyoL63iKV6" target="_blank">--> Album Ko Lipe</a>

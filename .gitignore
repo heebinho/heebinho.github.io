@@ -6,3 +6,5 @@ web
 bin
 obj
 cache
+node_modules
+_site
