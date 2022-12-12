@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Blazor hosted on github-pages</title>
+     <link rel="stylesheet" type="text/css" href="/assets/main.css" />
+  </head>
+  <body>
+    <nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b">
+  <a href="/" class="font-semibold text-xl tracking-tight">H</a>
+
+  
+  <ul>
+    
+      <li class="inline">
+        <a
+         href="/blog/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         bg-black text-white">
+         Blog
+       </a>
+      </li>
+    
+      <li class="inline">
+        <a
+         href="/contact/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         text-gray-700 hover:text-gray-900">
+         Contact
+       </a>
+      </li>
+    
+ </ul>
+</nav>
+
+    <main class="p-12">
+      <h1 class="text-3xl mb-8">Blazor hosted on github-pages</h1>
+      
+<time>21-04-20</time>
+<article><h3>Intro</h3>
+<p>While deploying my first &quot;Blazor webassembly&quot; app to &quot;GitHub pages&quot; I ran into some minor troubles.
+The following notes may be helpful for someone else.</p>
+<h3>Blazor webassembly</h3>
+<p>Blazor is a web framework using C#, Razor and HTML that runs in the browser with WebAssembly.
+You can find more information on <a href="https://blazor.net/">https://blazor.net</a></p>
+<h3>GitHub Pages</h3>
+<p>GitHub Pages allows you to publish your website for free, hosted directly from your GitHub repository. Just edit, push, and your changes are live.
+You can find more information on <a href="https://pages.github.com/">https://pages.github.com</a></p>
+<h3>Bypassing Jekyll</h3>
+<p>GitHub Pages is using the static site generator <a href="https://jekyllrb.com/">Jekyll</a> to publish your site.
+When publishing your Blazor app you'll end up with a folder named _framework.
+The problem is that Jekyll won't process that _framework folder because it starts with an underscore:</p>
+<blockquote>
+<p>Every file or directory beginning with the following characters: ., _ , # or ~ in the source directory will not be included in the destination folder</p>
+</blockquote>
+<p>To circumvent that problem you can add a file with the name .nojekyll to the root directory of your repo. (<a href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/">Bypass Jekyll</a>)</p>
+<h3>Hosting on Subdirecotry and SPA Routing</h3>
+<p>I already use a static site generator and publish to the root directory of the master branch. So my Blazor experiment has to go into a subdirectory. To get your app up and running you'll have to set the base as follows:</p>
+<pre><code class="language-html">&lt;base href=&quot;/subdirectory/&quot; /&gt;
+</code></pre>
+<p>If you're lucky you can reach your Blazor app now. But you can't reach for example domain.com/subdirectory/counter because GitHub Pages doesn't natively support single page apps. You can use a straightforward solution from <a href="https://github.com/rafrex/spa-github-pages#readme">rafrex</a> to overcome this routing issue. Just add a custom <a href="https://github.com/rafrex/spa-github-pages/blob/gh-pages/404.html">404.html</a> to the root directory of your master branch.
+Dont't forget to adjust the segment count in the script:</p>
+<pre><code class="language-javascript">var segmentCount = 1;
+
+var l = window.location;
+l.replace(
+  l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+  l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+  l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&amp;/g, '~and~') +
+  (l.search ? '&amp;q=' + l.search.slice(1).replace(/&amp;/g, '~and~') : '') +
+  l.hash
+);
+</code></pre>
+<p>One last thing to do - add the following script to your index.html:</p>
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+  // Single Page Apps for GitHub Pages
+  // https://github.com/rafrex/spa-github-pages
+  // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+  // ----------------------------------------------------------------------
+  (function(l) {
+    if (l.search) {
+      var q = {};
+      l.search.slice(1).split('&amp;').forEach(function(v) {
+        var a = v.split('=');
+        q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&amp;');
+      });
+      if (q.p !== undefined) {
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + (q.p || '') +
+          (q.q ? ('?' + q.q) : '') +
+          l.hash
+        );
+      }
+    }
+  }(window.location))
+&lt;/script&gt;
+</code></pre>
+<h3>Failing integrity checks</h3>
+<p>I use Azure DevOps pipelines to publish my <a href="https://wyam.io">Wyam</a> site. When I integrated my Blazor app I ended up with failing integrity checks when trying to access it. Probably because I've used a Windows image where the git config option core.autocrlf option was set to true. You can find possible solutions and background informations here: <a href="https://github.com/dotnet/aspnetcore/issues/19796">https://github.com/dotnet/aspnetcore/issues/19796</a></p>
+</article>
+
+    </main>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Termux, a cli at your fingertips</title>
+     <link rel="stylesheet" type="text/css" href="/assets/main.css" />
+  </head>
+  <body>
+    <nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b">
+  <a href="/" class="font-semibold text-xl tracking-tight">H</a>
+
+  
+  <ul>
+    
+      <li class="inline">
+        <a
+         href="/blog/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         bg-black text-white">
+         Blog
+       </a>
+      </li>
+    
+      <li class="inline">
+        <a
+         href="/contact/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         text-gray-700 hover:text-gray-900">
+         Contact
+       </a>
+      </li>
+    
+ </ul>
+</nav>
+
+    <main class="p-12">
+      <h1 class="text-3xl mb-8">Termux, a cli at your fingertips</h1>
+      
+<time>19-06-20</time>
+<article><h3>Intro</h3>
+<p>While I was looking for an Android Git client and a Markdown editor I came across the  <a href="https://termux.com">Termux</a> project.</p>
+<blockquote>
+<p>Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required.<br>
+A minimal base system is installed automatically - additional packages are available using the APT package manager.</p>
+</blockquote>
+<p>Sounds amazing. To good to be true?</p>
+<h3>Setup</h3>
+<p>The setup was as easy as promised. Just install the Termux app from the play store and use the integrated package manager to install git and vim. Don't forget to setup your git config appropriately:</p>
+<pre><code>$ pkg install git
+$ pkg install vim
+$ git config --global user.name &quot;Renato&quot;
+$ git config --global user.email &quot;...&quot;
+
+</code></pre>
+<h3>Usage</h3>
+<p>Now you can use the cli, git and vim to create and edit your blog posts on the go without your notebook.</p>
+<ul>
+<li>Clone your repo.</li>
+<li>Create a new Markdown file from a template.</li>
+<li>Use vim to edit your blog post.</li>
+<li>...</li>
+</ul>
+<pre><code class="language-bash">$ git clone https://github.com/heebinho/heebinho.github.io.git
+$ cp input/posts/template.md input/posts/newblogpost.md
+$ vim input/posts/newblogpost.md
+$ git add input/posts/newblogpost.md
+$ git commit -m &quot;new blog post&quot;
+$ git push
+
+</code></pre>
+<p>If you've never used vim before, you should probably run the vimtutor first to get a basic understandig of how to navigate, save and most importantly exit vim:</p>
+<pre><code class="language-bash">$ vimtutor
+</code></pre>
+<h3>Conclusion</h3>
+<p>Amazing app. Probably I won't use it to often, but it's a great tool at your fingertips.</p>
+<p>Here you can see Termux in action:</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ML5adkmaXi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</article>
+
+    </main>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
