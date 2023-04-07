@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Php on Fedora wsl xdebug integration</title>
+     <link rel="stylesheet" type="text/css" href="/assets/main.css" />
+  </head>
+  <body>
+    <nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b">
+  <a href="/" class="font-semibold text-xl tracking-tight">H</a>
+
+  
+  <ul>
+    
+      <li class="inline">
+        <a
+         href="/blog/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         bg-black text-white">
+         Blog
+       </a>
+      </li>
+    
+      <li class="inline">
+        <a
+         href="/contact/"
+         class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+         text-gray-700 hover:text-gray-900">
+         Contact
+       </a>
+      </li>
+    
+ </ul>
+</nav>
+
+    <main class="p-12">
+      <h1 class="text-3xl mb-8 text-blue-800 ">Php on Fedora wsl xdebug integration</h1>
+      
+<time>12 Dec 2022</time>
+<article><p>sudo dnf install php-cli</p>
+<pre><code>========================================================================================================================
+ Package                      Architecture             Version                          Repository                 Size
+========================================================================================================================
+Installing:
+ php-cli                      x86_64                   8.1.13-1.fc37                    updates                   5.3 M
+Installing dependencies:
+ php-common                   x86_64                   8.1.13-1.fc37                    updates                   843 k
+
+Transaction Summary
+========================================================================================================================
+Install  2 Packages
+</code></pre>
+<p>sudo dnf install phpunit composer</p>
+<p>sudo dnf install php-xdebug</p>
+<p>vscode install PHP Debug (Remote extension)</p>
+<p>mkdir
+touch index.php
+phpinfo();</p>
+<p>start local development server
+sudo php --server localhost:8000 --docroot  .</p>
+<p>(used vscode to find rows)<br>
+sudo vim /etc/php.d/15-debug.ini<br>
+xdebug.mode = debug<br>
+xdebug.start_with_request = yes</p>
+</article>
+
+    </main>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
