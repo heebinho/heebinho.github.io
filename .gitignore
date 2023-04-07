@@ -2,6 +2,7 @@ output
 config.wyam.*
 tools
 .*/
+!.github
 web
 bin
 obj
