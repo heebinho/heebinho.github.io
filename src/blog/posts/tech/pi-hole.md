@@ -122,3 +122,27 @@ And finally you can delete the IPv6 ULA Prefix:
 uci -q delete network.globals.ula_prefix
 uci commit network
 /etc/init.d/network restart
+
+
+
+
+## Troubleshooting
+
+$ sudo apt update
+E: Splitting of clearsigned file /var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_InRelease failed as it doesn't contain all expected parts
+E: The package lists or status file could not be parsed or opened.
+
+sudo rm /var/lib/apt/lists/*
+sudo apt-get update
+sudo apt-get upgrade
+pihole -r (reconfigure)
+...Didn't work out
+rm /etc/pihole/ && reinstall
+
+### Disc 
+df -h --total
+ui - baobab (disk space analyzer)
+https://scotthelme.co.uk/the-first-ever-issue-with-my-pi-hole/
+
+
+

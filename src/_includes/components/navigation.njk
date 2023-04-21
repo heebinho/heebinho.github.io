@@ -1,8 +1,8 @@
-<nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b">
-  <a href="/" class="font-semibold text-xl tracking-tight">H</a>
+<nav class="flex items-center justify-between flex-wrap px-5 py-3 border-b rounded-3xl bg-blue-200 bg-opacity-20 ">
+  <a href="/" class="font-semibold text-xl tracking-tight">#</a>
 
   {% set navPages = collections.all | eleventyNavigation %}
-  <ul>
+  <ul class="">
     {% for entry in navPages %}
       <li class="inline">
         <a

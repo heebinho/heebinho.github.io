@@ -2,14 +2,15 @@
 <html lang="en">
   <head>
     <title>{{ title }}</title>
-     <link rel="stylesheet" type="text/css" href="/assets/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
   </head>
-  <body>
+  <body class="">
     {% include "../components/navigation.njk" %}
-    <main class="p-12">
-      <h1 class="text-3xl mb-8 text-blue-800 ">{{title}}</h1>
+    <main class="p-12 ">
+      <h1 class="text-3xl font-bold mb-8 ">{{title}}</h1>
       {{ content | safe }}
     </main>
+    {% include "../components/footer.njk" %}
     <script src="/assets/main.js"></script>
   </body>
 </html>
