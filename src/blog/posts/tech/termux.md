@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: Termux, a cli at your fingertips
 date: 2020-06-19
 description: Creating a blog post from your android mobile
+tags: ["tech"]
 ---
 
 ### Intro

@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: Blazor hosted on github-pages
 date: 2020-04-21
 description: Blazor Webassembly
+tags: ["tech"]
 ---
 
 ### Intro

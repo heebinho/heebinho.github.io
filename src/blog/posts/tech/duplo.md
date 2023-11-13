@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: Duplo
 date: 2020-04-26
 description: Eliminate duplicates in your google drive
+tags: ["tech"]
 ---
 
 ### Intro

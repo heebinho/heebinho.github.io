@@ -1,0 +1,19 @@
+# Run MSSQL Server on Docker
+
+!8 characters password policy.
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=PASSWORD" `
+   -p 1433:1433 --name sql19 --hostname sql19 `
+   -d `
+   mcr.microsoft.com/mssql/server:2019-latest
+
+
+select @@SERVERNAME
+>sql19  
+
+docker cp .\db.bak sql19:/var/opt/mssql/data
+>copying to container
+
+SSMS-Restore Database
+Source:Device ...
+Destination: PXSSPSWISS

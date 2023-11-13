@@ -9,8 +9,8 @@
     "serve:eleventy": "eleventy --serve",
     "serve": "npm-run-all clean --parallel serve:*",
     "build:webpack": "webpack --mode production",
-    "build:eleventy": "ELEVENTY_ENV=production eleventy",
-    "build": "NODE_ENV=production run-s clean build:*"
+    "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
+    "build": "cross-env NODE_ENV=production run-s clean build:*"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,9 @@
     "autoprefixer": "^10.4.8",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "eleventy-plugin-toc": "^1.1.5",
+    "markdown-it": "^13.0.2",
+    "markdown-it-anchor": "^8.6.7",
     "mini-css-extract-plugin": "^0.11.3",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
@@ -34,6 +37,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "daisyui": "^2.51.5"
+    "daisyui": "^2.51.5",
+    "highlight.js": "^11.9.0"
   }
 }

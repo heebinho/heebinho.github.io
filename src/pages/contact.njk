@@ -1,28 +1,36 @@
 ---
-title: Contact
+title: About
 layout: layouts/base.njk
 permalink: /contact/
 eleventyNavigation:
-  key: Contact
+  key: About
   order: 3
 ---
 
 <contact class="prose">
-<div class="">
-  <div class="w-96 mask mask-squircle">
-    <img src="/img/biking-1000.jpg" />
+  <div class="">
+    <p class="text-xl ">From time to time I'll share some impressions and other unpredictable gems 💎</p>
   </div>
-</div>
 
-<p class="mt-4">The easiest way to get in touch with me is by mail:</p>
-<ul>
-  <li><a href="mailto:renatoheeb+web@gmail.com">renatoheeb@gmail.com</a></li>
-</ul>
-<p class="mt-4">But you can also find me on some other platforms like:</p>
+  <div class="">
+    <div class="ml-0 w-60 ">
+      <img class="" src="/img/biking-1000.jpg"/>
+    </div>
+  </div>
 
-<ul>
-     {% for item in contact.items %}
-     <li><a rel="me" href="{{ item.link }}">{{ item.name }}</a></li>
-     {% endfor %}
-</ul>
+  <p class="mt-4">The easiest way to get in touch, is by mail:</p>
+  <ul>
+    <li>
+      <a href="mailto:renatoheeb+web@gmail.com">renatoheeb@gmail.com</a>
+    </li>
+  </ul>
+  <p class="mt-4">You can also find me on some other platforms:</p>
+
+  <ul>
+    {% for item in contact.items %}
+      <li>
+        <a rel="me" href="{{ item.link }}">{{ item.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </contact>

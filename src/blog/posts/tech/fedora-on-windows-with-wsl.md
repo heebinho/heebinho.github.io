@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: Fedora 37 on Windows with WSL
 date: 2022-12-12
 description: Fedora 37 on Windows with WSL and vscode
+tags: ["tech"]
 ---  
 # Intro   
 [Fedora Magazine](https://fedoramagazine.org/wsl-fedora-33/)  

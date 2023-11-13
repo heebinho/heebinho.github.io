@@ -1,27 +1,34 @@
 ---
-title: ciao
+title: What's on 🗞️
 layout: layouts/base.njk
 ---
 
+{% set postslist = collections.front | reverse %}
+
 <div class="space-y-8">
 
-  <div class="">
-    <p class="text-3xl ">Welcome to my personal site.</p>
-    <p class="text-xl m-6">From time to time I'll share some impressions and other unpredictable gems 💎✌️</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <div>
+        {% include "components/postslist.njk" %}
+      </div>
+      <h2 class="text-xl font-bold mb-8 mt-16 ">🛵 Classics</h2>
+      <div class="">
+        
+        {% set postslist = collections.classics | reverse %}
+        {% include "components/postslist.njk" %}
+      </div>
+    </div>
+    <div>
+      {# <iframe allowfullscreen="" sandbox="allow-top-navigation allow-scripts allow-popups allow-popups-to-escape-sandbox" width="400" height="600" src="https://www.mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Fmstdn.social%2Fusers%2Fheebelcraft&amp;theme=dark&amp;size=100&amp;header=false&amp;replies=false&amp;boosts=false"></iframe> #}
+    </div>
+    
+    <div>
+      
+    </div>
+    <div></div>
+
   </div>
-
-<iframe allowfullscreen="" 
-sandbox="allow-top-navigation allow-scripts allow-popups allow-popups-to-escape-sandbox" width="400" height="800" src="https://www.mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Fmstdn.social%2Fusers%2Fheebelcraft&amp;theme=light&amp;size=100&amp;header=false&amp;replies=false&amp;boosts=false">
-</iframe>
-
-
-
-
-<div class="avatar">
-  <div class="w-24 mask mask-squircle">
-    <img src="/img/light.jpg" />
-  </div>
-</div>
-
 
 </div>
