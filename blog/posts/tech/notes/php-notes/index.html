@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Go for 11ty</title>
+    <title>Php on Fedora wsl xdebug integration</title>
     <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
     
     
@@ -55,17 +55,39 @@
 
 
     <main class="p-12">
-      <h1 class="text-3xl font-bold mb-8 ">Go for 11ty</h1>
+      <h1 class="text-3xl font-bold mb-8 ">Php on Fedora wsl xdebug integration</h1>
       
 <time class="font-bold ">12 Dec 2022</time>
-<aside class="my-5"><nav class="toc" >
-        <ol><li><a href="#intro">Intro</a></li></ol>
-      </nav></aside>
-<article class="prose my-10"><h3 id="intro" tabindex="-1">Intro</h3>
-<p>coming soon (probably 😅)</p>
-<p><a href="https://highlightjs.org/download">Highlight.js</a><br>
-<a href="https://github.com/markdown-it/markdown-it#syntax-highlighting">Markdown-it</a><br>
-<a href="https://markdown-it.github.io/">Markdown cheatsheet</a></p>
+<aside class="my-5"></aside>
+<article class="prose my-10"><p>sudo dnf install php-cli</p>
+<pre><code>========================================================================================================================
+ Package                      Architecture             Version                          Repository                 Size
+========================================================================================================================
+Installing:
+ php-cli                      x86_64                   8.1.13-1.fc37                    updates                   5.3 M
+Installing dependencies:
+ php-common                   x86_64                   8.1.13-1.fc37                    updates                   843 k
+
+Transaction Summary
+========================================================================================================================
+Install  2 Packages
+</code></pre>
+<p>sudo dnf install phpunit composer</p>
+<p>sudo dnf install php-xdebug</p>
+<p>vscode install PHP Debug (Remote extension)</p>
+<p>mkdir
+touch index.php
+phpinfo();</p>
+<p>start local development server
+sudo php --server localhost:8000 --docroot  .</p>
+<p>(used vscode to find rows)<br>
+sudo vim /etc/php.d/15-debug.ini<br>
+xdebug.mode = debug<br>
+xdebug.start_with_request = yes</p>
+<p>implode() simple array to string
+json_encode() array to string</p>
+<p>twig</p>
+<p>{{ dump() }}</p>
 </article>
 
     </main>

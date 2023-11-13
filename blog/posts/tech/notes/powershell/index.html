@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Go for 11ty</title>
+    <title>Powershell cheatsheet</title>
     <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
     
     
@@ -55,17 +55,41 @@
 
 
     <main class="p-12">
-      <h1 class="text-3xl font-bold mb-8 ">Go for 11ty</h1>
+      <h1 class="text-3xl font-bold mb-8 ">Powershell cheatsheet</h1>
       
-<time class="font-bold ">12 Dec 2022</time>
+<time class="font-bold ">15 Apr 2023</time>
 <aside class="my-5"><nav class="toc" >
-        <ol><li><a href="#intro">Intro</a></li></ol>
+        <ol><li><a href="#install-%26-upgrade">Install &amp; Upgrade</a></li><li><a href="#execute">Execute</a></li><li><a href="#chrome-copy-as-ps">Chrome copy as ps</a></li></ol>
       </nav></aside>
-<article class="prose my-10"><h3 id="intro" tabindex="-1">Intro</h3>
-<p>coming soon (probably 😅)</p>
-<p><a href="https://highlightjs.org/download">Highlight.js</a><br>
-<a href="https://github.com/markdown-it/markdown-it#syntax-highlighting">Markdown-it</a><br>
-<a href="https://markdown-it.github.io/">Markdown cheatsheet</a></p>
+<article class="prose my-10"><p>Terminals are a fast and elegant way to manage your system.
+But who can remember all the commands and switches?
+These are notes to my future self.</p>
+<h2 id="install-%26-upgrade" tabindex="-1">Install &amp; Upgrade</h2>
+<p>winget install --id Microsoft.Powershell --source winget<br>
+<a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows">doc</a></p>
+<h2 id="execute" tabindex="-1">Execute</h2>
+<pre><code>string script = File.ReadAllText(fi.FullName);
+using var ps = PowerShell.Create();
+ps.AddScript(script).Invoke();
+</code></pre>
+<h2 id="chrome-copy-as-ps" tabindex="-1">Chrome copy as ps</h2>
+<pre><code>$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+$session.UserAgent = &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&quot;
+$session.Cookies.Add((New-Object System.Net.Cookie(&quot;Name&quot;, &quot;2023-04-16-08&quot;, &quot;/&quot;, &quot;.google.ch&quot;)))
+Invoke-WebRequest -UseBasicParsing -Uri &quot;https://www.google.ch/&quot; `
+-WebSession $session `
+-Headers @{
+&quot;authority&quot;=&quot;www.google.ch&quot;
+  &quot;method&quot;=&quot;GET&quot;
+  &quot;path&quot;=&quot;/&quot;
+  &quot;scheme&quot;=&quot;https&quot;
+  &quot;accept&quot;=&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&quot;
+  &quot;accept-encoding&quot;=&quot;gzip, deflate, br&quot;
+  &quot;accept-language&quot;=&quot;en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7&quot;
+  &quot;cache-control&quot;=&quot;no-cache&quot;
+  ...
+}
+</code></pre>
 </article>
 
     </main>

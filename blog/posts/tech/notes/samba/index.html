@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Go for 11ty</title>
+    <title>Samba</title>
     <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
     
     
@@ -55,17 +55,61 @@
 
 
     <main class="p-12">
-      <h1 class="text-3xl font-bold mb-8 ">Go for 11ty</h1>
+      <h1 class="text-3xl font-bold mb-8 ">Samba</h1>
       
-<time class="font-bold ">12 Dec 2022</time>
+<time class="font-bold ">17 May 2023</time>
 <aside class="my-5"><nav class="toc" >
-        <ol><li><a href="#intro">Intro</a></li></ol>
+        <ol><li><a href="#install-%26-dir-prep">Install &amp; dir prep</a></li><li><a href="#smb.conf">smb.conf</a></li><li><a href="#troubleshoot">Troubleshoot</a></li></ol>
       </nav></aside>
-<article class="prose my-10"><h3 id="intro" tabindex="-1">Intro</h3>
-<p>coming soon (probably 😅)</p>
-<p><a href="https://highlightjs.org/download">Highlight.js</a><br>
-<a href="https://github.com/markdown-it/markdown-it#syntax-highlighting">Markdown-it</a><br>
-<a href="https://markdown-it.github.io/">Markdown cheatsheet</a></p>
+<article class="prose my-10"><p>Samba</p>
+<p><a href="https://docs.fedoraproject.org/en-US/quick-docs/samba/">Samba Quick doc</a></p>
+<h2 id="install-%26-dir-prep" tabindex="-1">Install &amp; dir prep</h2>
+<pre><code>$ sudo dnf install samba
+$ sudo systemctl enable smb --now
+$ firewall-cmd --get-active-zones
+$ sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-service=samba
+$ sudo firewall-cmd --reload
+
+# Create samba user
+$ sudo smbpasswd -a heebinho
+
+# SELinux!
+$ sudo setsebool -P samba_domain_controller on
+$ sudo setsebool -P samba_enable_home_dirs on
+
+# Directories
+$ sudo semanage fcontext --add --type &quot;samba_share_t&quot; &quot;/mnt/backup(/.*)?&quot;
+$ sudo restorecon -R /mnt/backup
+
+# Mount disk on startup
+
+</code></pre>
+<h2 id="smb.conf" tabindex="-1">smb.conf</h2>
+<p>/etc/samba/smb.conf.example<br>
+/etc/samba/smb.conf</p>
+<pre><code>[global]
+  follow symlinks = yes
+  wide links = yes
+  unix extensions = no
+
+# Validate
+$ testparm smb.conf
+</code></pre>
+<h2 id="troubleshoot" tabindex="-1">Troubleshoot</h2>
+<pre><code>$ sudo systemctl restart smb
+
+$ smbstatus
+-&gt; Protocol: SMB3_11
+
+$ sudo tail -f /var/log/samba/log.smbd
+
+$ ls -dZ /mnt/backup
+-&gt; system_u:object_r:unlabeled_t:s0 /mnt/backup
+
+$ sudo semanage fcontext --add --type &quot;samba_share_t&quot; &quot;/mnt/backup(/.*)?&quot;
+$ sudo restorecon -R /mnt/backup
+-&gt; system_u:object_r:samba_share_t:s0 /mnt/backup
+</code></pre>
 </article>
 
     </main>
