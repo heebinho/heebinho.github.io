@@ -9,3 +9,5 @@ obj
 cache
 node_modules
 _site
+
+!/.well-known

@@ -50,6 +50,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('CNAME');
   eleventyConfig.addPassthroughCopy('src/styles');
+  eleventyConfig.addPassthroughCopy('.well-known');
 
 
   eleventyConfig.setLibrary("md", markdownit);

@@ -1,0 +1,1 @@
+ gpg --with-wkd-hash --fingerprint private@domain.com
