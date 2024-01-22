@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Mail e2e Encryption</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/styles/tokyo-night-dark.css"/>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body class="">
+    <nav class="grid grid-cols-2 px-5 py-5 border-b rounded-b-3xl bg-neutral text-neutral-content">
+  <div class="">
+    <a href="/" class="font-semibold text-xl tracking-tight">#</a>
+  </div>
+  <div class="">
+
+    
+    <ul class="text-right">
+      
+        <li class="inline">
+          <a
+          href="/blog/posts/travel/"
+          class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+          text-white hover:text-gray-900">
+          Travel Blog
+        </a>
+        </li>
+      
+        <li class="inline">
+          <a
+          href="/blog/posts/tech/"
+          class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+          bg-yellow-100 text-black">
+          Tech Blog
+        </a>
+        </li>
+      
+        <li class="inline">
+          <a
+          href="/contact/"
+          class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+          text-white hover:text-gray-900">
+          About
+        </a>
+        </li>
+      
+  </ul>
+
+  </div>
+</nav>
+
+
+
+    <main class="p-12">
+      <h1 class="text-3xl font-bold mb-8 ">Mail e2e Encryption</h1>
+      
+<time class="font-bold ">21 Jan 2024</time>
+<aside class="my-5"><nav class="toc" >
+        <ol><li><a href="#thunderbird-setup">Thunderbird Setup</a></li><li><a href="#mobile-setup-mit-k-9-mail-und-openkeychain">Mobile Setup mit K-9 Mail und OpenKeyChain</a></li><li><a href="#gpg">GPG</a></li><li><a href="#web-key-directory-(wkd)">Web Key Directory (WKD)</a></li><li><a href="#wkd-hash-(wkd)">WKD-HASH (WKD)</a></li><li><a href="#hosting">Hosting</a></li><li><a href="#test">Test</a></li><li><a href="#fazit">Fazit</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
+      </nav></aside>
+<article class="prose my-10"><p>Die Verschlüsselung von Mails war nie so einfach wie heute. Oder vielleicht besser ausgedrückt, komfortabel.
+Bis heute erhalte ich nahezu 100% meiner Mails unverschlüsselt. Ich vermute das kommt daher, dass das Verschlüsseln von Mails für viele mit Zusatzaufwand verbunden ist.
+Automatisierung schafft hier Abhilfe; einmal konfiguriert, erledigen Thunderbird und ein Web Key Directory den Task von Zauberhand.</p>
+<p>Verschlüsselung vereinfachen, als Ziel des Bundesamt für Sicherheit in Deutschland-&gt; <a href="https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Freie-Software/E-Mail-Verschluesselung/EasyGPG/easygpg.html">BSI Easy GPG</a></p>
+<h2 id="thunderbird-setup" tabindex="-1">Thunderbird Setup</h2>
+<p>In Thunderbird ist die Konfiguration von OpenPGP problemlos über die Einstellungen möglich.
+Ein Schlüsselpaar kann importiert oder gleich generiert werden.
+Zusätzlich kann der öffentliche Schlüssel auch gleich auf den Keyserver &quot;keys.openpgp.org&quot; gestellt werden.
+Alternativ kann man seinen Schlüssel in einem eigenen Web Key Directory publizieren.</p>
+<p>Einmal publiziert, kann der Schlüssel von verschiedenen Mail-Clients automatisiert bezogen werden und schon ist das Verschlüsseln von Mails ein Kinderspiel, denn es passiert (je nach Konfiguration/Wunsch) von selbst.</p>
+<p><a href="https://support.mozilla.org/en-US/kb/introduction-to-e2e-encryption">Thunderbird e2e Introduction</a><br>
+<a href="https://support.mozilla.org/en-US/kb/openpgp-thunderbird-howto-and-faq">Thunderbird OpenPGP HowTo and FAQ</a></p>
+<h2 id="mobile-setup-mit-k-9-mail-und-openkeychain" tabindex="-1">Mobile Setup mit K-9 Mail und OpenKeyChain</h2>
+<p>Sind die Nachrichten einmal verschlüsselt, kann man sie im Webmail nicht mehr lesen.
+Ein Mobile Setup empfiehlt sich, um unterwegs weiterhin Zugriff auf seine Nachrichten zu haben.
+Thunderbird für Android ist noch in der Mache, aber bis dahin kann man auf den K-9 Client von Mozilla zurückgreifen. In Kombination mit der OpenKeyChainApp können die verschlüsselten Nachrichten nun auch auf dem Mobile unterwegs gelesen werden.</p>
+<h2 id="gpg" tabindex="-1">GPG</h2>
+<p>Wenn man über OpenPGP spricht, kommt man nicht am GNU Privacy Guard vorbei:
+<a href="https://www.gnupg.org/index.html">GNU Privacy Guard</a> (GPG)</p>
+<p>Ein wichtiges Tool, dass für die gängigen Betriebssysteme entwickelt wurde und frei verfügbar ist.
+Den einen oder anderen Anwendungsfall sehen wir beim Einrichten des Web Key Directory.</p>
+<h2 id="web-key-directory-(wkd)" tabindex="-1">Web Key Directory (WKD)</h2>
+<p>Das Verschlüsseln von Mails funktioniert so einfach, weil ein öffentlicher Schlüssel eines Kommunikationspartners &quot;automatisiert&quot; bezogen werden kann.</p>
+<p>Aus den Thunderbird FAQ:</p>
+<blockquote>
+<p>You may try to discover keys online by email address, by clicking on an email address in an email message you are reading, and using the command &quot;discover key&quot; shown in the popup menu. Currently, it will search for published keys using the WKD protocol, and it will search for keys in the keys.openpgp.org keyserver.</p>
+</blockquote>
+<p>Jeder der eine Domain besitzt, kann also kurzerhand sein Web Key Directory anlegen.
+Grundsätzlich wird dabei nur der öffentliche Schlüssel in einem Verzeichnis auf dem Server abgelegt.
+An einem Beispiel lässt sich das am einfachsten erklären:</p>
+<p>Mein Schlüssel kann von einem Client über die folgende URI bezogen werden:</p>
+<pre><code>https://renatoheeb.com/.well-known/openpgpkey/hu/nmn1op6i4fdopb4x9jjon7snd7gkyt67
+</code></pre>
+<p>Die URI für die &quot;Direct Method&quot; setzt sich wie folgt zusammen:</p>
+<pre><code>Domain      -&gt; https://renatoheeb.com/
+Ordner      -&gt; .well-known/openpgpkey/hu/
+Key-File    -&gt; nmn1op6i4fdopb4x9jjon7snd7gkyt67
+</code></pre>
+<p>Den Namen/Identifier des Schlüssels bekommt man mit gpg (--with-wkd-hash)</p>
+<blockquote>
+<p>Print a Web Key Directory identifier along with each user ID in key listings.</p>
+</blockquote>
+<pre><code class="language-console">gpg --import private.key
+
+gpg --with-wkd-hash --fingerprint example@renatoheeb.com
+pub   rsa4096 2024-01-19 [SC] [expires: 2029-01-17]
+      5928 9D69 489E 3B36 9C9C  64F2 6F33 0321 3995 8F8C
+uid           [ultimate] Renato Heeb &lt;example@renatoheeb.com&gt;
+              nmn1op6i4fdopb4x9jjon7snd7gkyt67@renatoheeb.com
+sub   rsa4096 2024-01-19 [E] [expires: 2029-01-17]
+
+gpg --no-armor --export example@renatoheeb.com &gt; nmn1op6i4fdopb4x9jjon7snd7gkyt67
+
+</code></pre>
+<p>Das File muss nun nur noch in das Verzeichnis gelegt und veröffentlicht werden.</p>
+<h2 id="wkd-hash-(wkd)" tabindex="-1">WKD-HASH (WKD)</h2>
+<!-- <script src="https://gist.github.com/heebinho/1810066a83688e6cf21d2aa5cd3d16fc.js"></script> -->
+<p>Eine Variante an den WKD-Identifier zu kommen, ist wie bereits gesehen, GPG.
+Aber was steckt dahinter? Aus der IETF Spezifikation von Robert Koch:</p>
+<blockquote>
+<p>The so mapped local-part is hashed using the SHA-1 algorithm.  The
+resulting 160 bit digest is encoded using the Z-Base-32 method as
+described in [RFC6189], section 5.1.6.  The resulting string has a
+fixed length of 32 octets.</p>
+</blockquote>
+<p>Folgend mein LinqPad Script in C#, als alternative Variante zum Generieren des Identifiers.
+(ZBase32 Implementierung von <a href="https://www.fabriziotarizzo.org/">Fabrizio Tarizzo</a>)</p>
+<pre><code class="language-csharp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span> {
+    EncodeWkdHash(<span class="hljs-string">&quot;renato&quot;</span>).Dump();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-built_in">string</span> <span class="hljs-title">EncodeWkdHash</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> localPart</span>)</span> {
+    <span class="hljs-keyword">var</span> bytes = Encoding.UTF8.GetBytes(localPart.ToLowerInvariant());
+    <span class="hljs-keyword">var</span> hash = System.Security.Cryptography.SHA1.HashData(bytes);
+    <span class="hljs-keyword">return</span> ZBase32.Encode(hash);
+}
+
+
+<span class="hljs-comment">/*
+ *   This file is part of OpenPgpWebKeyDirectory.NET
+ *   
+ *   Copyright (c) 2022 Fabrizio Tarizzo &lt;fabrizio@fabriziotarizzo.org&gt;
+ *   
+ *   Licensed under MIT License (see LICENSE)
+ */</span>
+<span class="hljs-keyword">internal</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ZBase32</span> {
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">const</span> <span class="hljs-built_in">byte</span> SHIFT = <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">const</span> <span class="hljs-built_in">byte</span> MASK = <span class="hljs-number">0x1F</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> ALPHABET = <span class="hljs-string">&quot;ybndrfg8ejkmcpqxot1uwisza345h769&quot;</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">internal</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">string</span> <span class="hljs-title">Encode</span>(<span class="hljs-params"><span class="hljs-built_in">byte</span>[] data</span>)</span> {
+        <span class="hljs-keyword">if</span> (data.Length == <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">return</span> String.Empty;
+
+        <span class="hljs-built_in">ushort</span> buffer = data[<span class="hljs-number">0</span>];
+        <span class="hljs-built_in">int</span> index = <span class="hljs-number">1</span>;
+        <span class="hljs-built_in">short</span> bitsLeft = <span class="hljs-number">8</span>;
+        StringBuilder stringBuilder = <span class="hljs-keyword">new</span>((data.Length / <span class="hljs-number">5</span> * <span class="hljs-number">8</span>) + <span class="hljs-number">1</span>);
+
+        <span class="hljs-keyword">while</span> (bitsLeft &gt; <span class="hljs-number">0</span> || index &lt; data.Length) {
+            <span class="hljs-keyword">if</span> (bitsLeft &lt; SHIFT) {
+                <span class="hljs-keyword">if</span> (index &lt; data.Length) {
+                    buffer &lt;&lt;= <span class="hljs-number">8</span>;
+                    buffer |= (<span class="hljs-built_in">ushort</span>)(data[index++] &amp; <span class="hljs-number">0x00FF</span>);
+                    bitsLeft += <span class="hljs-number">8</span>;
+                }
+                <span class="hljs-keyword">else</span> {
+                    <span class="hljs-built_in">short</span> pad = (<span class="hljs-built_in">short</span>)(SHIFT - bitsLeft);
+                    buffer &lt;&lt;= pad;
+                    bitsLeft += pad;
+                }
+            }
+            bitsLeft -= SHIFT;
+            stringBuilder.Append(ALPHABET[MASK &amp; (buffer &gt;&gt; bitsLeft)]);
+        }
+
+        <span class="hljs-keyword">return</span> stringBuilder.ToString();
+    }
+}
+
+</code></pre>
+<h2 id="hosting" tabindex="-1">Hosting</h2>
+<p>Wenn man im Besitz einer eigenen Domain ist, aber keinen Server hat, kann man eine Website auf <a href="https://pages.github.com/">GitHub Pages</a> betreiben.
+GitHub Pages lässt sich gut mit einem Static Site Generator wie <a href="https://www.11ty.dev/">11ty</a> kombinieren.</p>
+<p>Beim Generieren der Seite sollen die Schlüssel im Verzeichnis .well-known nun auch berücksichtig werden:</p>
+<pre><code class="language-js">eleventyConfig.<span class="hljs-title function_">addPassthroughCopy</span>(<span class="hljs-string">&#x27;.well-known&#x27;</span>);
+</code></pre>
+<h2 id="test" tabindex="-1">Test</h2>
+<p>Die folgende Seite bietet einen Test an, um zu prüfen, ob das Web Key Directory richtig aufgesetzt wurde:
+<a href="https://metacode.biz/openpgp/web-key-directory">Mail Test</a></p>
+<h2 id="fazit" tabindex="-1">Fazit</h2>
+<p>Einmal eingerichtet, versendet man Mails verschlüsselt im Handumdrehen.</p>
+<p>Happy Mailing.</p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Freie-Software/E-Mail-Verschluesselung/EasyGPG/easygpg.html">BSI Easy GPG</a><br>
+<a href="https://support.mozilla.org/en-US/kb/introduction-to-e2e-encryption">Thunderbird e2e Introduction</a><br>
+<a href="https://support.mozilla.org/en-US/kb/openpgp-thunderbird-howto-and-faq">Thunderbird OpenPGP HowTo and FAQ</a><br>
+<a href="https://www.gnupg.org/index.html">GNU Privacy Guard</a><br>
+<a href="https://gnupg.org/faq/gnupg-faq.html">GPG FAQ</a><br>
+<a href="https://pages.github.com/">GitHub Pages</a><br>
+<a href="https://www.11ty.dev/">11ty</a><br>
+<a href="https://metacode.biz/openpgp/web-key-directory">Mail Test</a><br>
+<a href="https://datatracker.ietf.org/doc/draft-koch-openpgp-webkey-service/">IETF Specification</a><br>
+<a href="https://github.com/roughconsensusandrunningcode/wkd-dotnet">OpenPgpWebKeyDirectory for .NET</a><br>
+<a href="https://www.fabriziotarizzo.org/">Fabrizio Tarizzo</a></p>
+</article>
+
+    </main>
+  
+</article>
+    <footer class="footer items-center p-4 bg-neutral text-neutral-content">
+  <div class="items-center grid-flow-col">
+    <svg width="36px" height="36px" viewBox="-3 0 150 150" xmlns="http://www.w3.org/2000/svg">
+      <path d="M132 59.35V131.25H120V100L114 87.5V103.125C114 103.638 113.94 104.15 113.82 104.65L107.382 131.25H95.004L101.664 103.744L91.698 81.25H78V131.25H66V81.25H59.208L54.63 90.7812L65.478 116.206L54.516 121.288L41.364 90.4625L52.326 67.6313C40.326 64.3438 32.19 53.3 30.438 37.65L12 31.25V18.75H48V31.25C48 36.8875 49.17 50 60 50L75.186 29.05L75.252 29.0375C78.966 22.875 85.5 18.75 93 18.75C98.214 18.75 102.924 20.8 106.59 24.075L128.484 49.4C130.65 52.1125 132 55.55 132 59.35Z" fill="#8D6E63"/>
+      <path opacity="0.3" d="M54.63 90.7812L65.478 116.206L54.516 121.288L41.364 90.4625L45.792 81.25H59.208L54.63 90.7812ZM111 81.25H91.698L101.664 103.744L95.004 131.25H107.382L113.82 104.65C113.94 104.15 114 103.638 114 103.125V87.5L111 81.25Z" fill="#000000"/>
+    </svg> 
+    <p>Copyright © 1984-2023 All rights reserved</p>
+  </div>
+
+  <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+    <a target="_blank" href="https://github.com/heebinho">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" class="fill-current"><path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"/></svg>
+    </a>
+
+  </div>
+</footer>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
