@@ -2,8 +2,8 @@
 layout: layouts/post.njk
 title: Mail e2e Encryption
 date: 2024-01-21
-description: Mit Thunderbird und Web Key Directory
-tags: ["tech"]
+description: Web Key Directory rocks.
+tags: ["front","tech"]
 ---  
 
 Die Verschlüsselung von Mails war nie so einfach wie heute. Oder vielleicht besser ausgedrückt, komfortabel.
