@@ -1,0 +1,36 @@
+{
+    "name": "renatoheeb.com",
+    "description": "From time to time I'll share some impressions and other unpredictable gems 💎",
+    "url": "https://renatoheeb.com",
+    "author": {
+      "name": "Renato Heeb",
+      "email": "renato@renatoheeb.com"
+    },
+    "headerLinks": [
+      {
+        "text": "Blog",
+        "url": "/blog",
+        "external": false
+      },
+      {
+        "text": "About",
+        "url": "/about",
+        "external": false
+      }
+    ],
+    "socialLinks": [
+      {
+        "text": "GitHub",
+        "url": "https://github.com/heebinho",
+        "external": true
+      }
+    ],
+    "footerLinks": [
+      {
+        "text": "RSS",
+        "url": "/feed.xml",
+        "external": true
+      }
+    ]
+  }
+  
