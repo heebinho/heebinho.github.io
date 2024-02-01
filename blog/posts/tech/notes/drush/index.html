@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>drush</title>
+    <title>Drush</title>
     <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
     
     
@@ -55,42 +55,38 @@
 
 
     <main class="p-12">
-      <h1 class="text-3xl font-bold mb-8 ">drush</h1>
+      <h1 class="text-3xl font-bold mb-8 ">Drush</h1>
       
 <time class="font-bold ">12 Dec 2022</time>
 <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#drush">Drush</a></li></ol>
+        <ol><li><a href="#ssh">SSH</a></li><li><a href="#drush">Drush</a></li><li><a href="#php-cli">PHP CLI</a></li></ol>
       </nav></aside>
-<article class="prose lg:prose-xl my-10"><h2 id="drush" tabindex="-1">Drush</h2>
+<article class="prose lg:prose-xl my-10"><h2 id="ssh" tabindex="-1">SSH</h2>
+<pre><code>ssh user@domain.com -i .ssh/id_rsa
+</code></pre>
+<h2 id="drush" tabindex="-1">Drush</h2>
 <pre><code>$ drush status
+</code></pre>
+<h2 id="php-cli" tabindex="-1">PHP CLI</h2>
+<pre><code>$ drush php:cli
 
+&gt;$storage = \Drupal::entityTypeManager()-&gt;getStorage('commerce_payment');
 
-Admin theme      : gin
-PHP binary       : /usr/local/php81/bin/php
-PHP config       : /usr/local/php81/etc/php.ini
-PHP OS           : FreeBSD
-PHP version      : 8.1.17
-Drush script     : /home/sportsp/www/ride.ch/dev.sportsp.myhostpoint.ch/vendor/drush/drush/drush
-Drush version    : 11.5.1
-Drush temp       : /tmp
-Drush configs    : /home/sportsp/www/ride.ch/dev.sportsp.myhostpoint.ch/vendor/drush/drush/drush.yml
-                   /home/sportsp/www/ride.ch/dev.sportsp.myhostpoint.ch/drush/drush.yml
-Install profile  : minimal
-Drupal root      : /home/sportsp/www/ride.ch/dev.sportsp.myhostpoint.ch/webroot
-Site path        : sites/default
-Files, Public    : sites/default/files
-Files, Private   : ../private
-Files, Temp      : ../tmp
-bash: Drupal: command not found
-[sportsp@p9:~/www/ … ostpoint.ch/webroot] 127 $ Site URI         : https://www.new.ride.ch
-bash: Site: command not found
-[sportsp@p9:~/www/ … ostpoint.ch/webroot] 127 $ DB driver        : mysql
-bash: DB: command not found
-[sportsp@p9:~/www/ … ostpoint.ch/webroot] 127 $ DB hostname      : sportsp.mysql.db.internal
-bash: DB: command not found
-[sportsp@p9:~/www/ … ostpoint.ch/webroot] 127 $ DB port          : 3306
-bash: DB: command not found
-[sportsp@p9:
+&gt;$payment = $storage-&gt;create([
+    'type' =&gt; 'payment_default',
+    'payment_gateway' =&gt; 'wallee_master_visa_domain_com',
+    'order_id' =&gt; 33333,
+    'remote_id' =&gt; '183333333',
+ ]);
+
+&gt;$payment-&gt;set('state', 'completed');
+
+&gt;$payment-&gt;set('remote_state', 'completed');
+
+&gt;$payment-&gt;set('amount', new \Drupal\commerce_price\Price('77.77', 'CHF'));
+
+&gt; $payment-&gt;save();
+= 1
 
 </code></pre>
 </article>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Fedora 39</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/styles/tokyo-night-dark.css"/>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body class="">
+    <nav class="grid grid-cols-2 px-5 py-5 border-b rounded-b-3xl bg-neutral text-neutral-content">
+  <div class="">
+    <a href="/" class="font-semibold text-xl tracking-tight">#</a>
+  </div>
+  <div class="">
+
+    
+    <ul class="text-right">
+      
+        <li class="inline">
+          <a
+          href="/blog/posts/travel/"
+          class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+          text-white hover:text-gray-900">
+          Travel Blog
+        </a>
+        </li>
+      
+        <li class="inline">
+          <a
+          href="/blog/posts/tech/"
+          class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+          bg-yellow-100 text-black">
+          Tech Blog
+        </a>
+        </li>
+      
+        <li class="inline">
+          <a
+          href="/contact/"
+          class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+          text-white hover:text-gray-900">
+          About
+        </a>
+        </li>
+      
+  </ul>
+
+  </div>
+</nav>
+
+
+
+    <main class="p-12">
+      <h1 class="text-3xl font-bold mb-8 ">Fedora 39</h1>
+      
+<time class="font-bold ">25 Jan 2024</time>
+<aside class="prose lg:prose-xl my-5"><nav class="toc" >
+        <ol><li><a href="#get-fedora">Get Fedora</a></li><li><a href="#run-fedora">Run Fedora</a></li><li><a href="#setup-fedora-basics">Setup Fedora basics</a></li><li><a href="#windows-registry-%26-terminal-profile">Windows Registry &amp; Terminal profile</a></li><li><a href="#wsl-utilities-(wslu)">WSL utilities (wslu)</a></li><li><a href="#setup-fedora-further">Setup Fedora further</a></li></ol>
+      </nav></aside>
+<article class="prose lg:prose-xl my-10"><h1 id="intro" tabindex="-1">Intro</h1>
+<p>Article@Fedora Mag: <a href="https://fedoramagazine.org/wsl-fedora-33/">Fedora Magazine</a><br>
+A collection of utilities for WSL: <a href="https://github.com/wslutilities/wslu">https://github.com/wslutilities/wslu</a><br>
+Copr: <a href="https://copr.fedorainfracloud.org/coprs/wslutilities/wslu/">wslutilities/wslu</a><br>
+Brew: <a href="https://fedoramagazine.org/using-homebrew-package-manager-on-fedora-linux/">Brew</a></p>
+<h2 id="get-fedora" tabindex="-1">Get Fedora</h2>
+<p><a href="https://github.com/fedora-cloud/docker-brew-fedora/tree/39/x86_64">Fedora 39</a></p>
+<h2 id="run-fedora" tabindex="-1">Run Fedora</h2>
+<ul>
+<li>Extract</li>
+<li>Imports the specified tar file as a new distribution.</li>
+<li>Launch Fedora’s wsl instance as the root user.</li>
+</ul>
+<pre><code>cd c:\distros
+mkdir fedora39
+.&quot;C:\Program Files\7-Zip\7z.exe&quot; e fedora-39-x86_64.tar.xz
+wsl --import fedora39 c:\distros\fedora39 .\fedora-39-x86_64.tar
+rm .\fedora-39-x86_64.tar*
+
+wsl -d fedora39
+</code></pre>
+<h2 id="setup-fedora-basics" tabindex="-1">Setup Fedora basics</h2>
+<ul>
+<li>Update</li>
+<li>Install packages &amp; dependencies</li>
+<li>Add user</li>
+</ul>
+<pre><code>dnf update
+dnf install wget curl sudo ncurses dnf-plugins-core dnf-utils passwd findutils
+useradd -G wheel heebinho
+passwd heebinho
+</code></pre>
+<h2 id="windows-registry-%26-terminal-profile" tabindex="-1">Windows Registry &amp; Terminal profile</h2>
+<ul>
+<li>Set default uid with ps (id -u)</li>
+<li>Terminal profile</li>
+</ul>
+<pre><code>wsl -l -v
+Get-ItemProperty Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*\ DistributionName | Where-Object -Property DistributionName -eq fedora39  | Set-ItemProperty -Name DefaultUid -Value 1000
+</code></pre>
+<p>Copy ubuntu profile and adjust parameters in windows terminal</p>
+<h2 id="wsl-utilities-(wslu)" tabindex="-1">WSL utilities (wslu)</h2>
+<p>Install <a href="https://wslutiliti.es/wslu/">wslu</a></p>
+<p>The utilities are available from a copr repository (copr -&gt; community project).<br>
+Either:</p>
+<ul>
+<li>wslutilities/wslu</li>
+<li>wslutilities/wslu-canary</li>
+</ul>
+<p>The canary repo worked this time on the contrary to the &quot;stable&quot; release.
+By the way the origin of the word canary according to
+<a href="https://www.techtarget.com/whatis/definition/canary-canary-testing">TechTarget</a></p>
+<blockquote>
+<p>The word canary describes the rollout of software code to a subset of real end users. The term originated from coal mining and the phrase &quot;canary in the coal mine.&quot; Canary birds have a lower tolerance to toxic gases than humans, so they were used to alert miners when these gases reached dangerous levels inside the mine.</p>
+</blockquote>
+<pre><code class="language-bash">$ sudo dnf copr <span class="hljs-built_in">enable</span> wslutilities/wslu
+$ sudo dnf install wslu
+
+$ sudo dnf copr <span class="hljs-built_in">enable</span> wslutilities/wslu-canary
+$ sudo dnf install wslu
+
+$ wslsys
+
+</code></pre>
+<p><a href="https://wslutiliti.es/">wslu</a><br>
+<a href="https://blog.wslutiliti.es/">wslu blog</a><br>
+<a href="https://blog.wslutiliti.es/2022/03/21/">wslu canary announcement</a></p>
+<h2 id="setup-fedora-further" tabindex="-1">Setup Fedora further</h2>
+<pre><code class="language-bash">$ sudo dnf install git nano vim 
+$ sudo dnf groupinstall <span class="hljs-string">&quot;Development Tools&quot;</span>  
+
+</code></pre>
+</article>
+
+    </main>
+  
+</article>
+    <footer class="footer items-center p-4 bg-neutral text-neutral-content">
+  <div class="items-center grid-flow-col">
+    <svg width="36px" height="36px" viewBox="-3 0 150 150" xmlns="http://www.w3.org/2000/svg">
+      <path d="M132 59.35V131.25H120V100L114 87.5V103.125C114 103.638 113.94 104.15 113.82 104.65L107.382 131.25H95.004L101.664 103.744L91.698 81.25H78V131.25H66V81.25H59.208L54.63 90.7812L65.478 116.206L54.516 121.288L41.364 90.4625L52.326 67.6313C40.326 64.3438 32.19 53.3 30.438 37.65L12 31.25V18.75H48V31.25C48 36.8875 49.17 50 60 50L75.186 29.05L75.252 29.0375C78.966 22.875 85.5 18.75 93 18.75C98.214 18.75 102.924 20.8 106.59 24.075L128.484 49.4C130.65 52.1125 132 55.55 132 59.35Z" fill="#8D6E63"/>
+      <path opacity="0.3" d="M54.63 90.7812L65.478 116.206L54.516 121.288L41.364 90.4625L45.792 81.25H59.208L54.63 90.7812ZM111 81.25H91.698L101.664 103.744L95.004 131.25H107.382L113.82 104.65C113.94 104.15 114 103.638 114 103.125V87.5L111 81.25Z" fill="#000000"/>
+    </svg> 
+    <p>Copyright © 1984-2023 All rights reserved</p>
+  </div>
+
+  <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+    <a target="_blank" href="https://github.com/heebinho">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" class="fill-current"><path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"/></svg>
+    </a>
+
+  </div>
+</footer>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
