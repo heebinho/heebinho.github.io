@@ -1,46 +1,47 @@
 ---
 layout: layouts/post.njk
-title: drush
+title: Drush
 date: 2022-12-12
-description: drush (drupal shell)
-tags: ["code","php"]
-eleventyExcludeFromCollections: true
+description: Drupal shell & PHP CLI
+tags: ["tech"]
+eleventyExcludeFromCollections: false
 ---  
 
+## SSH
+
+```
+ssh user@domain.com -i .ssh/id_rsa
+```
 
 
 ## Drush
 
 ```
 $ drush status
+```
 
+## PHP CLI
 
-Admin theme      : gin
-PHP binary       : /usr/local/php81/bin/php
-PHP config       : /usr/local/php81/etc/php.ini
-PHP OS           : FreeBSD
-PHP version      : 8.1.17
-Drush script     : /home/sportsp/www/ride.ch/dev.sportsp.myhostpoint.ch/vendor/drush/drush/drush
-Drush version    : 11.5.1
-Drush temp       : /tmp
-Drush configs    : /home/sportsp/www/ride.ch/dev.sportsp.myhostpoint.ch/vendor/drush/drush/drush.yml
-                   /home/sportsp/www/ride.ch/dev.sportsp.myhostpoint.ch/drush/drush.yml
-Install profile  : minimal
-Drupal root      : /home/sportsp/www/ride.ch/dev.sportsp.myhostpoint.ch/webroot
-Site path        : sites/default
-Files, Public    : sites/default/files
-Files, Private   : ../private
-Files, Temp      : ../tmp
-bash: Drupal: command not found
-[sportsp@p9:~/www/ … ostpoint.ch/webroot] 127 $ Site URI         : https://www.new.ride.ch
-bash: Site: command not found
-[sportsp@p9:~/www/ … ostpoint.ch/webroot] 127 $ DB driver        : mysql
-bash: DB: command not found
-[sportsp@p9:~/www/ … ostpoint.ch/webroot] 127 $ DB hostname      : sportsp.mysql.db.internal
-bash: DB: command not found
-[sportsp@p9:~/www/ … ostpoint.ch/webroot] 127 $ DB port          : 3306
-bash: DB: command not found
-[sportsp@p9:
+```
+$ drush php:cli
+
+>$storage = \Drupal::entityTypeManager()->getStorage('commerce_payment');
+
+>$payment = $storage->create([
+    'type' => 'payment_default',
+    'payment_gateway' => 'wallee_master_visa_domain_com',
+    'order_id' => 33333,
+    'remote_id' => '183333333',
+ ]);
+
+>$payment->set('state', 'completed');
+
+>$payment->set('remote_state', 'completed');
+
+>$payment->set('amount', new \Drupal\commerce_price\Price('77.77', 'CHF'));
+
+> $payment->save();
+= 1
 
 ```
 
