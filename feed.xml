@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>renatoheeb.com</title>
   <subtitle>From time to time I&#39;ll share some impressions and other unpredictable gems 💎</subtitle>
-  <link href="https://renatoheeb.com//feed.xml" rel="self"/>
-  <link href="https://renatoheeb.com//"/>
+  <link href="https://renatoheeb.com/feed.xml" rel="self"/>
+  <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-02-01T09:30:29Z</updated>
+    <updated>2024-02-01T09:45:57Z</updated>
   
-  <id>https://renatoheeb.com/</id>
+  <id>https://renatoheeb.com</id>
   <author>
     <name>Renato Heeb</name>
     <email>renato@renatoheeb.com</email>
@@ -16,9 +16,9 @@
     
     <entry>
       <title>Fedora 39</title>
-      <link href="https://renatoheeb.com//blog/posts/tech/fedora39/"/>
+      <link href="https://renatoheeb.com/blog/posts/tech/fedora39/"/>
       <updated>2024-01-25T00:00:00Z</updated>
-      <id>https://renatoheeb.com//blog/posts/tech/fedora39/</id>
+      <id>https://renatoheeb.com/blog/posts/tech/fedora39/</id>
       <content type="html">
         <![CDATA[
       <h1 id="intro" tabindex="-1">Intro</h1>
