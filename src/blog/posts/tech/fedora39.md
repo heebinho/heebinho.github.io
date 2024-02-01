@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: Fedora 39
 date: 2024-01-25
 description: Fedora 39 on Windows with WSL
-tags: ["tech"]
+tags: ["tech","rss"]
 ---  
 # Intro   
 Article@Fedora Mag: [Fedora Magazine](https://fedoramagazine.org/wsl-fedora-33/)  
