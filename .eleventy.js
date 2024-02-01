@@ -1,4 +1,5 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 const tocPlugin = require("eleventy-plugin-toc");
 const anchor = require("markdown-it-anchor");
 var hljs = require('highlight.js'); // https://highlightjs.org
@@ -46,6 +47,7 @@ const markdownit = require('markdown-it')({
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(tocPlugin, { tags: ["h2", "h3"] });
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('CNAME');
