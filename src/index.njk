@@ -3,7 +3,21 @@ title: What's on 🗞️
 layout: layouts/base.njk
 ---
 
-{% set postslist = collections.front | reverse %}
+
+<section class="post-list__wrapper">
+  <h2 class="post-list__heading">Spotlight</h2>
+
+  {% set postslist = collections.front | reverse %}
+  
+  {% include "components/posts-list.njk" %}
+
+</section>
+
+
+
+
+
+{# {% set postslist = collections.front | reverse %}
 
 <div class="space-y-8">
 
@@ -31,4 +45,4 @@ layout: layouts/base.njk
 
   </div>
 
-</div>
+</div> #}

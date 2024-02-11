@@ -1,4 +1,49 @@
-<footer class="footer items-center p-4 bg-neutral text-neutral-content">
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            {% if contact.socialLinks %}
+              {% for item in contact.socialLinks %}
+                {% set externalAttribute = '' %}
+
+                {% if item.external %}
+                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+                {% endif %}
+
+                <li>
+                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.name }}</a>
+                </li>
+              {% endfor %}
+            {% endif %}
+
+            {% if site.footerLinks %}
+
+              {% for item in site.footerLinks %}
+                {% set externalAttribute = '' %}
+
+                {% if item.external %}
+                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+                {% endif %}
+
+                <li>
+                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.text }}</a>
+                </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+
+          
+          <p class="footer__attribution">Copyright © 1984-2023 Renato Heeb. All rights reserved.</a></p>
+          
+
+        </div>
+
+      </footer>
+
+
+
+
+{# <footer class="footer items-center p-4 bg-neutral text-neutral-content">
   <div class="items-center grid-flow-col">
     <svg width="36px" height="36px" viewBox="-3 0 150 150" xmlns="http://www.w3.org/2000/svg">
       <path d="M132 59.35V131.25H120V100L114 87.5V103.125C114 103.638 113.94 104.15 113.82 104.65L107.382 131.25H95.004L101.664 103.744L91.698 81.25H78V131.25H66V81.25H59.208L54.63 90.7812L65.478 116.206L54.516 121.288L41.364 90.4625L52.326 67.6313C40.326 64.3438 32.19 53.3 30.438 37.65L12 31.25V18.75H48V31.25C48 36.8875 49.17 50 60 50L75.186 29.05L75.252 29.0375C78.966 22.875 85.5 18.75 93 18.75C98.214 18.75 102.924 20.8 106.59 24.075L128.484 49.4C130.65 52.1125 132 55.55 132 59.35Z" fill="#8D6E63"/>
@@ -13,4 +58,5 @@
     </a>
 
   </div>
-</footer>
+</footer> #}
+

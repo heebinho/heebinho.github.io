@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
     {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> #}
@@ -11,15 +13,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
   </head>
-  <body class="">
-    {% include "../components/navigation.njk" %}
-    <main class="p-12">
-      <h1 class="text-3xl font-bold mb-8 ">{{title}}</h1>
-      {{ content | safe }}
-    </main>
+  <body>
+    {# {% include "../components/navigation.njk" %} #}
+    {% include "../components/header.njk" %}
+
+      <main class="main">
+        {{ content | safe }}
+      </main>
   
-</article>
     {% include "../components/footer.njk" %}
+    
+
     <script src="/assets/main.js"></script>
   </body>
 </html>

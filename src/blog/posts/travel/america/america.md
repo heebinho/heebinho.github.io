@@ -9,7 +9,7 @@ tags: ["travel", "classics"]
 Töff-Tour durch Canada und die USA 2014
 
 
-<img style="height: 400px;" src="https://i.ibb.co/4pW7ZxM/redwood-tree-bike.jpg" alt="redwood-tree-bike" border="0">
+<img src="https://i.ibb.co/cQJ1cdt/redwood-tree-bike.jpg" style="max-width: 50%" alt="redwood-tree-bike" border="0">
 
 ## Alben
 

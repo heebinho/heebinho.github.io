@@ -18,17 +18,15 @@ eleventyNavigation:
     </div>
   </div>
 
-  <p class="mt-4">The easiest way to get in touch, is by <button class="" onclick="alert('renato' + '@' + document.domain);">mail</button> </p>
+  <p class="mt-4">The easiest way to get in touch, is by <button class="" onclick="alert('renato' + '@' + document.domain);"><span class="text-cyan-700 underline">mail.</span></button> </p>
   
   
-  <p class="mt-4">You can also find me on some other platforms:</p>
-
-  <ul>
+  {# <ul>
     {% for item in contact.items %}
       <li>
-        <a rel="me" href="{{ item.link }}">{{ item.name }}</a>
+        <a rel="me" href="{{ item.url }}">{{ item.name }}</a>
       </li>
     {% endfor %}
-  </ul>
+  </ul> #}
 </contact>
 

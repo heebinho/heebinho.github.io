@@ -1,16 +1,24 @@
 {
-    "items": [
+    "socialLinks": [
         {
             "name": "Mastodon",
-            "link": "https://mstdn.social/@heebelcraft"
+            "url": "https://mstdn.social/@heebelcraft",
+            "external": true
         },
         {
             "name": "GitHub",
-            "link": "https://github.com/heebinho"
+            "url": "https://github.com/heebinho",
+            "external": true
         },
         {
             "name": "goodreads",
-            "link": "https://www.goodreads.com/user/show/106866638-renato"
+            "url": "https://www.goodreads.com/heebinho",
+            "external": true
+        },
+        {
+            "name": "strava",
+            "url": "https://www.strava.com/athletes/heebinho",
+            "external": true
         }
     ]
 }

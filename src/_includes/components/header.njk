@@ -1,0 +1,34 @@
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title-lowercase">
+            <a href={{ "/" | url }}>
+              {{site.name }}
+            </a>
+          </h1>
+
+          {% set navPages = collections.all | eleventyNavigation %}
+            <nav class="nav">
+              <ul class="nav__list">
+                {% for item in navPages %}
+                  {% set currentAttribute = '' %}
+                  {% set externalAttribute = '' %}
+
+                  {% if item.external %}
+                    {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+                  {% endif %}
+
+                  {% if page.url == item.url %}
+                    {% set currentAttribute = 'aria-current="page"' %}
+                  {% endif %}
+
+                  <li class="nav-item">
+                    <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
