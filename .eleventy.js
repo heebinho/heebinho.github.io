@@ -74,6 +74,11 @@ module.exports = function(eleventyConfig) {
     }).toFormat("d MMM yyyy");
     });
 
+    eleventyConfig.addGlobalData("year", () => {
+      return new Date().getFullYear();
+    });
+
+
     eleventyConfig.addFilter('excerpt', (post) => {
       const content = post.replace(/(<([^>]+)>)/gi, '');
       return content.substr(0, content.lastIndexOf(' ', 200)) + '...';
