@@ -5,13 +5,61 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-02-11T09:36:03Z</updated>
+    <updated>2024-02-11T09:54:08Z</updated>
   
   <id>https://renatoheeb.com</id>
   <author>
     <name>Renato Heeb</name>
     <email>renato@renatoheeb.com</email>
   </author>
+  
+    
+    <entry>
+      <title>Japan</title>
+      <link href="https://renatoheeb.com/blog/posts/travel/japan/"/>
+      <updated>2023-11-02T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/travel/japan/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Ein paar Dinge über Japan:</p>
+<ul>
+<li>Shinkansen fahren beängstigend schnell.</li>
+<li>Japan ist während meines Besuchs <a href="https://www.japantimes.co.jp/news/2023/11/07/japan/science-health/iwo-jima-volcano-new-isle/">gewachsen.</a></li>
+<li>Viele Dinge bezahlt man Cash und meist an Automaten.</li>
+<li>Apropos Automaten, die stehen in allen Formen, Farben und Varianten in der Gegend rum.</li>
+<li>Englisch wird überraschenderweise noch eher &quot;selten&quot; gesprochen.</li>
+<li>Toiletten sind oft mit einer Sitzheizung ausgestattet.</li>
+</ul>
+<h2 id="t%C5%8Dky%C5%8D-(%E6%9D%B1%E4%BA%AC)" tabindex="-1">Tōkyō (東京)</h2>
+<p>40 Millionen Einwohner in und rund um Tokyo. Die Stadt ist riesig und in ein paar Tagen nicht zu fassen. Das Wetter meinte es gut mit mir, 27.5 Grad im November ist <a href="https://www.japantimes.co.jp/news/2023/11/07/japan/science-health/japan-november-warm-weather/">aussergewöhnlich!</a></p>
+<p><a href="https://photos.app.goo.gl/1J2EpqPKCc9PTEB46"><img src="https://i.ibb.co/W2vgbfZ/tokyo-tower-view.jpg" alt="Tokyo" border="0"></a></p>
+<h2 id="osaka" tabindex="-1">Osaka</h2>
+<p>Wenn du dachtest, dass Zürich einen unterirdischen Bahnhof hat 😅.
+Die Osaka Tigers gewannen bei meiner Ankunft die Baseball-Meisterschaft zum ersten mal seit <a href="https://www.japantimes.co.jp/news/2023/11/06/japan/tigers-fans-osaka-celebrate/">38 Jahren.</a></p>
+<p><a href="https://photos.app.goo.gl/LuYG5fpzf5FcCMzv9" target="_blank"><img src="https://i.ibb.co/WDdCR4J/osaka.jpg" alt="Osaka" border="0"></a></p>
+<h2 id="ky%C5%8Dto-(%E4%BA%AC%E9%83%BD)" tabindex="-1">Kyōto (京都)</h2>
+<p>Tourismus Destination neu definiert:</p>
+<p><a href="https://photos.app.goo.gl/HUQ7QiuZjqxfTEAo7" target="_blank"><img src="https://i.ibb.co/NVM7GgL/kyoto.jpg" alt="Kyoto" border="0"></a></p>
+<h2 id="nara" tabindex="-1">Nara</h2>
+<p>Leider keine Bilder vom grossen Buddha Daibutsu, da fotografieren nicht erlaubt war.
+Man findet aber reichlich Bilder im Internet, da sich niemand an das Verbot hält.
+<a href="https://en.wikipedia.org/wiki/T%C5%8Ddai-ji">Tōdai-ji
+</a></p>
+<p><a href="https://photos.app.goo.gl/PDbDFu3GuJD2xBJH9" target="_blank"><img src="https://i.ibb.co/D5fBzGc/nara.jpg" alt="Nara" border="0"></a></p>
+<h2 id="hiroshima" tabindex="-1">Hiroshima</h2>
+<p>Eindrücklich.
+Miyajima ist ein schönes Kontrastprogramm, mit einem Trail auf den Mount Misen.</p>
+<p><a href="https://photos.app.goo.gl/EQULEG5d7kYkDfKP8" target="_blank"><img src="https://i.ibb.co/X5zxbTy/hiroschima.jpg" alt="Hiroshima" border="0"></a></p>
+<h2 id="himeji" tabindex="-1">Himeji</h2>
+<p>Kurzer Zwischenstopp auf dem Weg von Hiroshima nach Kobe, um das berühmte Himeji Castle zu besichtigen.</p>
+<p><a href="https://photos.app.goo.gl/K2hwQhmjxJcDZMXg8" target="_blank"><img src="https://i.ibb.co/9p7NtD4/himeji.jpg" alt="Himeji" border="0"></a></p>
+<h2 id="kobe" tabindex="-1">Kobe</h2>
+<p>Kobe scheint sich nach dem grossen Hanshin Erdbeben 1995 gut erholt zu haben. Die erste Stadt in Japan, bei der man Leute auch bei rot über den Fussgängerstreifen gehen sieht 🚦⛔.</p>
+<p><a href="https://photos.app.goo.gl/6Bcbwkf17LVk7XRPA" target="_blank"><img src="https://i.ibb.co/dfm3Pg6/kobe.jpg" alt="Kobe" border="0"></a></p>
+
+    ]]>
+      </content>
+    </entry>
   
     
     <entry>
@@ -93,6 +141,50 @@ $ wslsys
 $ sudo dnf groupinstall <span class="hljs-string">&quot;Development Tools&quot;</span>  
 
 </code></pre>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Thunderbird Source View</title>
+      <link href="https://renatoheeb.com/blog/posts/tech/notes/quoted-printable/"/>
+      <updated>2024-02-11T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/tech/notes/quoted-printable/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
+ist das Anzeigen der Source des Mails. (Ctrl+U).<br>
+Was Thunderbird hier leider noch nicht zur Verfügung stellt, ist ein Decoder. Beispielsweise wenn ein Mail in
+quoted-printable übermittelt wurde:</p>
+<pre><code>Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+</code></pre>
+<h2 id="decode-quoted-printable" tabindex="-1">Decode quoted-printable</h2>
+<p>Das &quot;Decodieren&quot; ist mit den richtigen Instrumenten schnell und einfach.<br>
+Dazu kommt <a href="https://github.com/jstedfast/MimeKit">MimeKit</a> von Jeffrey Stedfast zum Einsatz:</p>
+<pre><code>void Main() {
+    string file = @&quot;C:\mail.source&quot;;
+    DecodeQuotedPrintable(File.ReadAllText(file), &quot;UTF-8&quot;).Dump();
+}
+
+static string DecodeQuotedPrintable(string input, string charset) {
+    var decoder = new QuotedPrintableDecoder();
+    var buffer = Encoding.ASCII.GetBytes(input);
+    int len = decoder.EstimateOutputLength(buffer.Length);
+    var output = new byte[len];
+    int used = decoder.Decode(buffer, 0, buffer.Length, output);
+    var encoding = Encoding.GetEncoding(charset);
+    return encoding.GetString(output, 0, used);
+}
+</code></pre>
+<p>Alternativ kann ein Online Decoder eingesetzt werden, falls die Mail keine Schützenswerten Daten enthält. 🚦</p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://www.rfc-editor.org/rfc/rfc2045#section-6.7">RFC 2045 Internet Message Bodies</a><br>
+<a href="https://github.com/jstedfast/MimeKit">MimeKit</a><br>
+<a href="https://www.webatic.com/quoted-printable-convertor">Webatic Decoder</a><br>
+<a href="https://dencode.com/string/quoted-printable">DenCode Decoder</a></p>
 
     ]]>
       </content>
