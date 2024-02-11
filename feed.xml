@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-02-11T13:21:28Z</updated>
+    <updated>2024-02-11T18:22:56Z</updated>
   
   <id>https://renatoheeb.com</id>
   <author>
@@ -141,6 +141,61 @@ $ wslsys
 $ sudo dnf groupinstall <span class="hljs-string">&quot;Development Tools&quot;</span>  
 
 </code></pre>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>PHP on Fedora</title>
+      <link href="https://renatoheeb.com/blog/posts/tech/notes/php-fedora-wsl/"/>
+      <updated>2024-02-10T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/tech/notes/php-fedora-wsl/</id>
+      <content type="html">
+        <![CDATA[
+      <h2 id="php-installation" tabindex="-1">PHP Installation</h2>
+<pre><code>$ sudo dnf install php-cli  
+$ sudo dnf install phpunit composer  
+$ php -i
+$ php --help
+</code></pre>
+<h2 id="xdebug-installation" tabindex="-1">xDebug Installation</h2>
+<pre><code>$ sudo dnf install php-xdebug
+</code></pre>
+<h2 id="vscode" tabindex="-1">vscode</h2>
+<p>Connect to WSL using Distro... (see <a href="../../fedora39">fedora39</a>)<br>
+Extension: PHP Debug (Remote extension)</p>
+<h2 id="php-interactive-shell" tabindex="-1">PHP interactive shell</h2>
+<pre><code>$ php -a
+php &gt; $test = &quot;Interactive shell&quot;;
+php &gt; print($test);
+php &gt; phpinfo();
+php &gt; exit
+</code></pre>
+<h2 id="php-dev-server" tabindex="-1">PHP Dev Server</h2>
+<pre><code>$ touch index.php
+&lt;?php
+phpinfo();
+?&gt;
+$ sudo php --server localhost:8080 --docroot  .
+
+</code></pre>
+<h2 id="xdebug-configuration" tabindex="-1">xDebug Configuration</h2>
+<p>vscode | vim</p>
+<pre><code>$ sudo chown heebinho /etc/php.d/15-xdebug.ini
+$ code /etc/php.d/15-xdebug.ini
+
+xdebug.mode = debug  
+xdebug.start_with_request = yes  
+
+$ sudo chown root /etc/php.d/15-xdebug.ini 
+$ sudo vim /etc/php.d/15-debug.ini  
+
+</code></pre>
+<h2 id="links" tabindex="-1">Links</h2>
+<p><a href="https://developer.fedoraproject.org/tech/languages/php/php-installation.html">Fedora PHP</a><br>
+<a href="https://xdebug.org/docs/step_debug">xDebug</a></p>
 
     ]]>
       </content>
