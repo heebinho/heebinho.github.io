@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: Japan
 date: 2023-11-02
 description: Welcome to Japan
-tags: ["front", "travel", "country"]
+tags: ["front", "rss", "travel", "country"]
 ---
 
 

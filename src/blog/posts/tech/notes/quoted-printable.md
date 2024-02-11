@@ -3,7 +3,7 @@ layout: layouts/post.njk
 title: Thunderbird Source View
 date: 2024-02-11
 description: Decode quoted-printable
-tags: ["front", "tech", "note"]
+tags: ["front", "rss", "tech", "note"]
 ---  
 
 Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
