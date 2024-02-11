@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunderbird Source View</title>
+    <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/styles/tokyo-night-dark.css"/>
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Feed">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    
+          <header class="header">
+        <div class="header__content">
+          <h1 class="site-title-lowercase">
+            <a href=/>
+              renatoheeb.com
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog/posts/travel/"  >Travel Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog/posts/tech/"  >Tech Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/contact/"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        
+<time class="font-bold ">11 Feb 2024</time>
+<aside class="prose lg:prose-xl my-5"><nav class="toc" >
+        <ol><li><a href="#decode-quoted-printable">Decode quoted-printable</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
+      </nav></aside>
+<article class="prose lg:prose-xl my-10"><p>Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
+ist das Anzeigen der Source des Mails. (Ctrl+U).<br>
+Was Thunderbird hier leider noch nicht zur Verfügung stellt, ist ein Decoder. Beispielsweise wenn ein Mail in
+quoted-printable übermittelt wurde:</p>
+<pre><code>Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+</code></pre>
+<h2 id="decode-quoted-printable" tabindex="-1">Decode quoted-printable</h2>
+<p>Das &quot;Decodieren&quot; ist mit den richtigen Instrumenten schnell und einfach.<br>
+Dazu kommt <a href="https://github.com/jstedfast/MimeKit">MimeKit</a> von Jeffrey Stedfast zum Einsatz:</p>
+<pre><code>void Main() {
+    string file = @&quot;C:\mail.source&quot;;
+    DecodeQuotedPrintable(File.ReadAllText(file), &quot;UTF-8&quot;).Dump();
+}
+
+static string DecodeQuotedPrintable(string input, string charset) {
+    var decoder = new QuotedPrintableDecoder();
+    var buffer = Encoding.ASCII.GetBytes(input);
+    int len = decoder.EstimateOutputLength(buffer.Length);
+    var output = new byte[len];
+    int used = decoder.Decode(buffer, 0, buffer.Length, output);
+    var encoding = Encoding.GetEncoding(charset);
+    return encoding.GetString(output, 0, used);
+}
+</code></pre>
+<p>Alternativ kann ein Online Decoder eingesetzt werden, falls die Mail keine Schützenswerten Daten enthält. 🚦</p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://www.rfc-editor.org/rfc/rfc2045#section-6.7">RFC 2045 Internet Message Bodies</a><br>
+<a href="https://github.com/jstedfast/MimeKit">MimeKit</a><br>
+<a href="https://www.webatic.com/quoted-printable-convertor">Webatic Decoder</a><br>
+<a href="https://dencode.com/string/quoted-printable">DenCode Decoder</a></p>
+</article>
+
+      </main>
+  
+          <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://mstdn.social/@heebelcraft" target="_blank" rel="noopener noreferrer" >Mastodon</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://github.com/heebinho" target="_blank" rel="noopener noreferrer" >GitHub</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://www.goodreads.com/heebinho" target="_blank" rel="noopener noreferrer" >goodreads</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://www.strava.com/athletes/heebinho" target="_blank" rel="noopener noreferrer" >strava</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+          <p class="footer__attribution">Copyright © 1984-2023 Renato Heeb. All rights reserved.</a></p>
+          
+
+        </div>
+
+      </footer>
+
+
+
+
+
+
+
+    
+
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
