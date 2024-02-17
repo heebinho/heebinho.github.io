@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Gletschermühlen
 date: 2020-06-14
 description: Bike & Hike Gletschermühlen

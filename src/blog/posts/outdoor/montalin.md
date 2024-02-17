@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Montalin
 date: 2020-04-24
 description: Fürhörnli, Montalin

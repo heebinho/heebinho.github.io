@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Kuala Lumpur, Penang
 date: 2019-10-22
 description: KL, Penang

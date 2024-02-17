@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Falknis
 date: 2020-06-21
 description: Chur - Falknis Bike & Hike

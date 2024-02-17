@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Japan
 date: 2023-11-02
 description: Welcome to Japan

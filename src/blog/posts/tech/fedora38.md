@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Fedora 38
 date: 2023-05-14
 description: Fedora 38 on Windows with WSL and vscode

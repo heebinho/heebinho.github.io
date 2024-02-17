@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Bangkok II
 date: 2019-11-17
 description: Big City Life - Part II.

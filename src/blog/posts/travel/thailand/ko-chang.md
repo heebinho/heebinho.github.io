@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Ko Chang
 date: 2019-11-11
 description: Ko Chang Island, Thailand

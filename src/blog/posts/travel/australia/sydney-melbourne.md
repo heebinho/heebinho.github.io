@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Sydney to Melbourne
 date: 2020-04-01
 description: Sydney, Grand Pacific Drive, Canberra, Great Alpine Road, Melbourne

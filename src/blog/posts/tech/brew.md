@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Homebrew 🍺
 date: 2024-01-26
 description: Package Manager for Linux

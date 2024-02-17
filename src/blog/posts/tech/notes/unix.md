@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Unix commands
 date: 2024-02-12
 description: Cheat sheet

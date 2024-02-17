@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Drush
 date: 2022-12-12
 description: Drupal shell & PHP CLI

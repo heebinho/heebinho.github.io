@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Powershell cheatsheet
 date: 2023-04-15
 description: Powershell notes

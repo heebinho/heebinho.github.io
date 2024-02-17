@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Fedora 39
 date: 2024-01-25
 description: Fedora 39 on Windows with WSL

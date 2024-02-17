@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Australia
 date: 2020-01-03
 description: Mit dem Auto durch Australien

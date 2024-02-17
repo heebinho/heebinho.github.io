@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Melbourne to Adelaide
 date: 2020-01-21
 description: Melbourne, Great Ocean Road, Mount Gambier, Adelaide

@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Pizol
 date: 2020-07-24
 description: Chur - Pizol Bike & Hike

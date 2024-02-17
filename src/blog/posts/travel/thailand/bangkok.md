@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Bangkok
 date: 2019-11-10
 description: Big City Life.

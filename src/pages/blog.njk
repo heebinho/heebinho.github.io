@@ -1,6 +1,6 @@
 ---
 title: Tech Blog
-layout: layouts/base.njk
+layout: base.njk
 permalink: /blog/posts/tech/
 eleventyNavigation:
   key: Tech Blog
@@ -9,4 +9,4 @@ eleventyImport:
   collections: ["tech"]
 ---
 {% set postslist = collections.tech | reverse %}
-{% include "components/postslist.njk" %}
+{% include "postslist.njk" %}

@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Adelaide to Perth and back to Sydney
 date: 2020-03-03
 description: Adelaide, Nullarbor, Esperance, Albany, Denmark, Margaret River, Perth, Sydney

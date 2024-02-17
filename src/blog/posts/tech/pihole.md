@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Pi-hole
 date: 2023-02-05
 description: Pi-hole setup

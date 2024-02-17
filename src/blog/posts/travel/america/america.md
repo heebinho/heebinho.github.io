@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: North America
 date: 2014-04-04
 description: Canada/USA Trip

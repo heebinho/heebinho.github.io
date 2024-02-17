@@ -1,6 +1,6 @@
 ---
 title: What's on 🗞️
-layout: layouts/base.njk
+layout: base.njk
 ---
 
 
@@ -9,7 +9,7 @@ layout: layouts/base.njk
 
   {% set postslist = collections.front | reverse %}
   
-  {% include "components/posts-list.njk" %}
+  {% include "posts-list.njk" %}
 
 </section>
 
@@ -25,13 +25,13 @@ layout: layouts/base.njk
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div>
       <div>
-        {% include "components/postslist.njk" %}
+        {% include "postslist.njk" %}
       </div>
       <h2 class="text-xl font-bold mb-8 mt-16 ">🛵 Classics</h2>
       <div class="">
         
         {% set postslist = collections.classics | reverse %}
-        {% include "components/postslist.njk" %}
+        {% include "postslist.njk" %}
       </div>
     </div>
     <div>

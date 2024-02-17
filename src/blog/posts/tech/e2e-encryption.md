@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Mail e2e Encryption
 date: 2024-01-21
 description: Web Key Directory rocks.

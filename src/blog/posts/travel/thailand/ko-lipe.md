@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Ko Lipe
 date: 2019-11-02
 description: Ko Lipe - Thailand

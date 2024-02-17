@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: New Zealand
 date: 2020-04-04
 description: Töff-Tour durch Neuseeland

@@ -1,6 +1,6 @@
 ---
 title: Travel Blog
-layout: layouts/base.njk
+layout: base.njk
 permalink: /blog/posts/travel/
 eleventyNavigation:
   key: Travel Blog
@@ -8,4 +8,4 @@ eleventyNavigation:
 ---
 {% set postslist = collections.travel | reverse  %}
 
-{% include "components/postslist.njk" %}
+{% include "postslist.njk" %}

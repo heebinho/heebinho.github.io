@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Blazor hosted on github-pages
 date: 2020-04-21
 description: Blazor Webassembly

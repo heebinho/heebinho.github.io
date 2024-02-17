@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: A functional approach to the using statement in C#
 date: 2020-07-15
 description: Using HOF's to encapsulate setup and teardown

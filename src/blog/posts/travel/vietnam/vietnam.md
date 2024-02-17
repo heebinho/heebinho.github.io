@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Vietnam
 date: 2019-12-15
 description: Phu Quoc, Can Tho, Saigon, Nha Trang, Da Nang, Hanoi

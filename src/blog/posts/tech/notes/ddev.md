@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: ddev
 date: 2022-12-12
 description: ddev

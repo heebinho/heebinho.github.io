@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Maria DB
 date: 2023-06-10
 description: Just some notes ...

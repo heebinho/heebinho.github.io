@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Fedora 37 on Windows with WSL
 date: 2022-12-12
 description: Fedora 37 on Windows with WSL and vscode

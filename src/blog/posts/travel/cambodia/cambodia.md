@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Cambodia
 date: 2019-11-21
 description: Angkor Wat, Siem Reap, Phnom Penh, Kep

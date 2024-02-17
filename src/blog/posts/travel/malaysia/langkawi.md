@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: Langkawi
 date: 2019-10-29
 description: Langkawi - Malaysia

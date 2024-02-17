@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: PHP on Fedora
 date: 2024-02-10
 description: xDebug setup
