@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-02-11T18:22:56Z</updated>
+    <updated>2024-02-17T10:40:54Z</updated>
   
   <id>https://renatoheeb.com</id>
   <author>
@@ -195,7 +195,8 @@ $ sudo vim /etc/php.d/15-debug.ini
 </code></pre>
 <h2 id="links" tabindex="-1">Links</h2>
 <p><a href="https://developer.fedoraproject.org/tech/languages/php/php-installation.html">Fedora PHP</a><br>
-<a href="https://xdebug.org/docs/step_debug">xDebug</a></p>
+<a href="https://xdebug.org/docs/step_debug">xDebug</a><br>
+<a href="https://xdebug.org/wizard">xDebug Wizard</a></p>
 
     ]]>
       </content>
