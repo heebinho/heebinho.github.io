@@ -53,6 +53,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/favicon");
   eleventyConfig.addPassthroughCopy("src/assets/css/*");
   eleventyConfig.addPassthroughCopy("src/assets/highlight");
+  eleventyConfig.addPassthroughCopy("src/assets/fontawesome");
   eleventyConfig.addPassthroughCopy('CNAME');
   eleventyConfig.addPassthroughCopy('.well-known');
 
