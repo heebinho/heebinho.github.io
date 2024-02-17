@@ -50,6 +50,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(tocPlugin, { tags: ["h2", "h3"] });
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "/img" });
+  eleventyConfig.addPassthroughCopy("src/assets/favicon");
+  eleventyConfig.addPassthroughCopy("src/assets/css/*");
   eleventyConfig.addPassthroughCopy('CNAME');
   eleventyConfig.addPassthroughCopy('.well-known');
 
