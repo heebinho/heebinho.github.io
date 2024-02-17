@@ -49,11 +49,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(tocPlugin, { tags: ["h2", "h3"] });
-  eleventyConfig.addPassthroughCopy('src/img');
+  eleventyConfig.addPassthroughCopy({ "src/assets/img": "/img" });
   eleventyConfig.addPassthroughCopy('CNAME');
-  eleventyConfig.addPassthroughCopy('src/styles');
   eleventyConfig.addPassthroughCopy('.well-known');
-
 
   eleventyConfig.setLibrary("md", markdownit);
 

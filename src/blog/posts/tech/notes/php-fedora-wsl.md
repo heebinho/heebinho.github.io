@@ -71,7 +71,9 @@ $ sudo vim /etc/php.d/15-debug.ini
 
 ## Links
 [Fedora PHP]  
-[xDebug]
+[xDebug]  
+[xDebug Wizard]
 
 [Fedora PHP]: https://developer.fedoraproject.org/tech/languages/php/php-installation.html  
-[xDebug]: https://xdebug.org/docs/step_debug
+[xDebug]: https://xdebug.org/docs/step_debug  
+[xDebug Wizard]: https://xdebug.org/wizard  
