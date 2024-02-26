@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-02-17T18:04:35Z</updated>
+    <updated>2024-02-26T09:16:59Z</updated>
   
   <id>https://renatoheeb.com</id>
   <author>
@@ -149,9 +149,9 @@ $ sudo dnf groupinstall <span class="hljs-string">&quot;Development Tools&quot;<
     
     <entry>
       <title>PHP on Fedora</title>
-      <link href="https://renatoheeb.com/blog/posts/tech/notes/php-fedora-wsl/"/>
+      <link href="https://renatoheeb.com/blog/posts/tech/php-fedora-wsl/"/>
       <updated>2024-02-10T00:00:00Z</updated>
-      <id>https://renatoheeb.com/blog/posts/tech/notes/php-fedora-wsl/</id>
+      <id>https://renatoheeb.com/blog/posts/tech/php-fedora-wsl/</id>
       <content type="html">
         <![CDATA[
       <h2 id="php-installation" tabindex="-1">PHP Installation</h2>
@@ -205,9 +205,9 @@ $ sudo vim /etc/php.d/15-debug.ini
     
     <entry>
       <title>Thunderbird Source View</title>
-      <link href="https://renatoheeb.com/blog/posts/tech/notes/quoted-printable/"/>
+      <link href="https://renatoheeb.com/blog/posts/tech/quoted-printable/"/>
       <updated>2024-02-11T00:00:00Z</updated>
-      <id>https://renatoheeb.com/blog/posts/tech/notes/quoted-printable/</id>
+      <id>https://renatoheeb.com/blog/posts/tech/quoted-printable/</id>
       <content type="html">
         <![CDATA[
       <p>Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
