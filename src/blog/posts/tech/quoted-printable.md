@@ -6,6 +6,7 @@ description: Decode quoted-printable
 tags: ["front", "rss", "tech", "note"]
 ---  
 
+## Intro
 Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
 ist das Anzeigen der Source des Mails. (Ctrl+U).  
 Was Thunderbird hier leider noch nicht zur Verfügung stellt, ist ein Decoder. Beispielsweise wenn ein Mail in 

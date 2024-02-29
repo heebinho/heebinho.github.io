@@ -82,7 +82,8 @@ module.exports = function(eleventyConfig) {
 
 
     eleventyConfig.addFilter('excerpt', (post) => {
-      const content = post.replace(/(<([^>]+)>)/gi, '');
+      let content = post.replace(/(<([^>]+)>)/gi, '');
+      content = post.replace('Intro', '');
       return content.substr(0, content.lastIndexOf(' ', 200)) + '...';
     });
 

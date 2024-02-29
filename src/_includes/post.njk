@@ -3,5 +3,8 @@ layout: base.njk
 ---
 
 <time class="font-bold ">{{ date | readableDate }}</time>
-<aside class="prose lg:prose-xl my-5">{{ content | toc | safe }}</aside>
-<article class="prose lg:prose-xl my-10">{{ content | safe }}</article>
+<article class="prose lg:prose-xl my-10">
+    <h1>{{ title | safe }}</h1>
+    <aside class="prose lg:prose-xl my-5">{{ content | toc | safe }}</aside>
+    {{ content | safe }}
+</article>
