@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samba</title>
+    <title>PHPUnit 🟢🔴</title>
     <link rel="icon" href="/assets/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -75,61 +75,48 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">17 May 2023</time>
+<time class="font-bold ">26 Feb 2024</time>
 <article class="prose lg:prose-xl my-10">
-    <h1>Samba</h1>
+    <h1>PHPUnit 🟢🔴</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#install-%26-dir-prep">Install &amp; dir prep</a></li><li><a href="#smb.conf">smb.conf</a></li><li><a href="#troubleshoot">Troubleshoot</a></li></ol>
+        <ol><li><a href="#installation">Installation</a></li><li><a href="#usage">Usage</a></li><li><a href="#phpstorm">PHPStorm</a></li><li><a href="#links-%26-notes">Links &amp; Notes</a></li></ol>
       </nav></aside>
-    <p>Samba</p>
-<p><a href="https://docs.fedoraproject.org/en-US/quick-docs/samba/">Samba Quick doc</a></p>
-<h2 id="install-%26-dir-prep" tabindex="-1">Install &amp; dir prep</h2>
-<pre><code>$ sudo dnf install samba
-$ sudo systemctl enable smb --now
-$ firewall-cmd --get-active-zones
-$ sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-service=samba
-$ sudo firewall-cmd --reload
-
-# Create samba user
-$ sudo smbpasswd -a heebinho
-
-# SELinux!
-$ sudo setsebool -P samba_domain_controller on
-$ sudo setsebool -P samba_enable_home_dirs on
-
-# Directories
-$ sudo semanage fcontext --add --type &quot;samba_share_t&quot; &quot;/mnt/backup(/.*)?&quot;
-$ sudo restorecon -R /mnt/backup
-
-# Mount disk on startup
+    <h2 id="installation" tabindex="-1">Installation</h2>
+<pre><code>&gt; composer require --dev phpunit/phpunit ^11
+&gt; .\vendor\bin\phpunit --version 
+</code></pre>
+<p>Powershell on Windows:</p>
+<pre><code>&gt; composer require --dev phpunit/phpunit  ^^^^11  
 
 </code></pre>
-<h2 id="smb.conf" tabindex="-1">smb.conf</h2>
-<p>/etc/samba/smb.conf.example<br>
-/etc/samba/smb.conf</p>
-<pre><code>[global]
-  follow symlinks = yes
-  wide links = yes
-  unix extensions = no
+<h2 id="usage" tabindex="-1">Usage</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">declare</span>(strict_types=<span class="hljs-number">1</span>);
 
-# Validate
-$ testparm smb.conf
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">PharIo</span>\<span class="hljs-title">Manifest</span>\<span class="hljs-title">Email</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">PHPUnit</span>\<span class="hljs-title">Framework</span>\<span class="hljs-title">TestCase</span>;
+
+<span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EmailTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">TestCase</span> </span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testCanBeCreatedFromValidEmail</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span> </span>{
+    <span class="hljs-variable">$string</span> = <span class="hljs-string">&#x27;test@mail.com&#x27;</span>;
+    <span class="hljs-variable">$email</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Email</span>(<span class="hljs-string">&#x27;test@mail.com&#x27;</span>);
+    <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">assertSame</span>(<span class="hljs-variable">$string</span>, <span class="hljs-variable">$email</span>-&gt;<span class="hljs-title function_ invoke__">asString</span>());
+  }
+
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testCannotBeCreatedFromInvalidEmail</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span> </span>{
+    <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">expectException</span>(<span class="hljs-title class_">InvalidArgumentException</span>::<span class="hljs-variable language_">class</span>);
+    <span class="hljs-keyword">new</span> <span class="hljs-title class_">Email</span>(<span class="hljs-string">&#x27;invalid&#x27;</span>);
+  }
+}
+
 </code></pre>
-<h2 id="troubleshoot" tabindex="-1">Troubleshoot</h2>
-<pre><code>$ sudo systemctl restart smb
-
-$ smbstatus
--&gt; Protocol: SMB3_11
-
-$ sudo tail -f /var/log/samba/log.smbd
-
-$ ls -dZ /mnt/backup
--&gt; system_u:object_r:unlabeled_t:s0 /mnt/backup
-
-$ sudo semanage fcontext --add --type &quot;samba_share_t&quot; &quot;/mnt/backup(/.*)?&quot;
-$ sudo restorecon -R /mnt/backup
--&gt; system_u:object_r:samba_share_t:s0 /mnt/backup
+<h2 id="phpstorm" tabindex="-1">PHPStorm</h2>
+<pre><code>$ composer dump-autoload
 </code></pre>
+<img class="" src="/img/phpstorm-test_frameworks-settings.png"/>
+<p><a href="https://www.jetbrains.com/help/phpstorm/2024.1/php-test-frameworks.html?utm_source=product&amp;utm_medium=link&amp;utm_campaign=PS&amp;utm_content=2024.1#PHP_test_frameworks_PHPUnit">Test Frameworks</a></p>
+<h2 id="links-%26-notes" tabindex="-1">Links &amp; Notes</h2>
+<p><a href="https://docs.phpunit.de/en/11.0/">Doc</a></p>
 
 </article>
 

@@ -76,10 +76,12 @@
       <main class="main">
         
 <time class="font-bold ">21 Apr 2020</time>
-<aside class="prose lg:prose-xl my-5"><nav class="toc" >
+<article class="prose lg:prose-xl my-10">
+    <h1>Blazor hosted on github-pages</h1>
+    <aside class="prose lg:prose-xl my-5"><nav class="toc" >
         <ol><li><a href="#intro">Intro</a></li><li><a href="#blazor-webassembly">Blazor webassembly</a></li><li><a href="#github-pages">GitHub Pages</a></li><li><a href="#bypassing-jekyll">Bypassing Jekyll</a></li><li><a href="#hosting-on-subdirecotry-and-spa-routing">Hosting on Subdirecotry and SPA Routing</a></li><li><a href="#failing-integrity-checks">Failing integrity checks</a></li></ol>
       </nav></aside>
-<article class="prose lg:prose-xl my-10"><h3 id="intro" tabindex="-1">Intro</h3>
+    <h3 id="intro" tabindex="-1">Intro</h3>
 <p>While deploying my first &quot;Blazor webassembly&quot; app to &quot;GitHub pages&quot; I ran into some minor troubles.
 The following notes may be helpful for someone else.</p>
 <h3 id="blazor-webassembly" tabindex="-1">Blazor webassembly</h3>
@@ -139,6 +141,7 @@ l.<span class="hljs-title function_">replace</span>(
 </code></pre>
 <h3 id="failing-integrity-checks" tabindex="-1">Failing integrity checks</h3>
 <p>I use Azure DevOps pipelines to publish my <a href="https://wyam.io">Wyam</a> site. When I integrated my Blazor app I ended up with failing integrity checks when trying to access it. Probably because I've used a Windows image where the git config option core.autocrlf option was set to true. You can find possible solutions and background informations here: <a href="https://github.com/dotnet/aspnetcore/issues/19796">https://github.com/dotnet/aspnetcore/issues/19796</a></p>
+
 </article>
 
       </main>

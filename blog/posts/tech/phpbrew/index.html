@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samba</title>
+    <title>PHPBrew</title>
     <link rel="icon" href="/assets/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -75,61 +75,117 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">17 May 2023</time>
+<time class="font-bold ">28 Feb 2024</time>
 <article class="prose lg:prose-xl my-10">
-    <h1>Samba</h1>
+    <h1>PHPBrew</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#install-%26-dir-prep">Install &amp; dir prep</a></li><li><a href="#smb.conf">smb.conf</a></li><li><a href="#troubleshoot">Troubleshoot</a></li></ol>
+        <ol><li><a href="#requirements">Requirements</a></li><li><a href="#installation">Installation</a></li><li><a href="#setup">Setup</a></li><li><a href="#usage">Usage</a></li><li><a href="#xdebug">xDebug</a></li><li><a href="#files-%26-paths">Files &amp; Paths</a></li><li><a href="#links-%26-notes">Links &amp; Notes</a></li></ol>
       </nav></aside>
-    <p>Samba</p>
-<p><a href="https://docs.fedoraproject.org/en-US/quick-docs/samba/">Samba Quick doc</a></p>
-<h2 id="install-%26-dir-prep" tabindex="-1">Install &amp; dir prep</h2>
-<pre><code>$ sudo dnf install samba
-$ sudo systemctl enable smb --now
-$ firewall-cmd --get-active-zones
-$ sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-service=samba
-$ sudo firewall-cmd --reload
+    <h2 id="requirements" tabindex="-1">Requirements</h2>
+<p><a href="https://github.com/phpbrew/phpbrew/wiki/Requirement">Requirements</a> (Ubuntu 22.04)</p>
+<pre><code>$ sudo apt-get install \
+  build-essential \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libcurl4-gnutls-dev \
+  libzip-dev \
+  libssl-dev \
+  libxml2-dev \
+  libxslt-dev \
+  php8.1-cli \
+  php8.1-bz2 \
+  php8.1-xml \
+  pkg-config
+</code></pre>
+<p>Package requirements (oniguruma) were not met: No package 'oniguruma' found</p>
+<pre><code>$ sudo apt-get install libonig-dev
+$ apt list libonig*
+</code></pre>
+<p>Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable. Then, rerun this script.</p>
+<pre><code>$ sudo apt-get install autoconf
+</code></pre>
+<h2 id="installation" tabindex="-1">Installation</h2>
+<pre><code>$ curl -L -O https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
+$ chmod +x phpbrew.phar
+$ sudo mv phpbrew.phar /usr/local/bin/phpbrew
+$ phpbrew -v
 
-# Create samba user
-$ sudo smbpasswd -a heebinho
+  ______ _   _ ____________
+  | ___ \ | | || ___ \ ___ \
+  | |_/ / |_| || |_/ / |_/ /_ __ _____      __
+  |  __/|  _  ||  __/| ___ \ '__/ _ \ \ /\ / /
+  | |   | | | || |   | |_/ / | |  __/\ V  V /
+  \_|   \_| |_/\_|   \____/|_|  \___| \_/\_/
 
-# SELinux!
-$ sudo setsebool -P samba_domain_controller on
-$ sudo setsebool -P samba_enable_home_dirs on
-
-# Directories
-$ sudo semanage fcontext --add --type &quot;samba_share_t&quot; &quot;/mnt/backup(/.*)?&quot;
-$ sudo restorecon -R /mnt/backup
-
-# Mount disk on startup
+Brew your latest php!
 
 </code></pre>
-<h2 id="smb.conf" tabindex="-1">smb.conf</h2>
-<p>/etc/samba/smb.conf.example<br>
-/etc/samba/smb.conf</p>
-<pre><code>[global]
-  follow symlinks = yes
-  wide links = yes
-  unix extensions = no
+<h2 id="setup" tabindex="-1">Setup</h2>
+<p>Initialize phpbrew config file.</p>
+<pre><code>$ phpbrew init
 
-# Validate
-$ testparm smb.conf
+Initialization successfully finished!
+&lt;=====================================================&gt;
+Phpbrew environment is initialized, required directories are created under
+
+    /home/heebinho/.phpbrew
+
+Paste the following line(s) to the end of your ~/.bashrc and start a
+new shell, phpbrew should be up and fully functional from there:
+
+    source /home/heebinho/.phpbrew/bashrc
+
+To enable PHP version info in your shell prompt, please set PHPBREW_SET_PROMPT=1
+in your `~/.bashrc` before you source `~/.phpbrew/bashrc`
+
+    export PHPBREW_SET_PROMPT=1
+
+To enable .phpbrewrc file searching, please export the following variable:
+
+    export PHPBREW_RC_ENABLE=1
+
+
+For further instructions, simply run `phpbrew` to see the help message.
+
+Enjoy phpbrew at $HOME!!
+
+&lt;=====================================================&gt;
+
 </code></pre>
-<h2 id="troubleshoot" tabindex="-1">Troubleshoot</h2>
-<pre><code>$ sudo systemctl restart smb
+<h2 id="usage" tabindex="-1">Usage</h2>
+<pre><code>$ phpbrew update
+$ phpbrew known
+$ phpbrew known --more
+$ phpbrew install 8.3 +default
+$ phpbrew install 8.3 +default +debug
+$ phpbrew list
+$ phpbrew variants
+$ phpbrew use php-8.3.3
 
-$ smbstatus
--&gt; Protocol: SMB3_11
-
-$ sudo tail -f /var/log/samba/log.smbd
-
-$ ls -dZ /mnt/backup
--&gt; system_u:object_r:unlabeled_t:s0 /mnt/backup
-
-$ sudo semanage fcontext --add --type &quot;samba_share_t&quot; &quot;/mnt/backup(/.*)?&quot;
-$ sudo restorecon -R /mnt/backup
--&gt; system_u:object_r:samba_share_t:s0 /mnt/backup
+Switch default:
+$ phpbrew switch php-8.3.3
 </code></pre>
+<h2 id="xdebug" tabindex="-1">xDebug</h2>
+<pre><code>$ phpbrew --debug ext install xdebug
+
+===&gt; Creating config file 
+~/.phpbrew/php/php-8.3.3/var/db/xdebug.ini
+
+===&gt; Enabling extension xdebug
+[*] xdebug extension is enabled for SAPI cli.
+
+</code></pre>
+<h2 id="files-%26-paths" tabindex="-1">Files &amp; Paths</h2>
+<p>The installed phps are located in ~/.phpbrew/php, for example, php 8.3.3 is located at:</p>
+<pre><code>~/.phpbrew/php/php-8.3.3/bin/php
+~/.phpbrew/php/php-8.3.3/etc/php.ini
+~/.phpbrew/php/php-8.3.3/var/db/xdebug.ini
+</code></pre>
+<h2 id="links-%26-notes" tabindex="-1">Links &amp; Notes</h2>
+<p><a href="https://phpbrew.github.io/phpbrew/">phpbrew.github.io</a><br>
+<a href="https://github.com/phpbrew/phpbrew">phpbrew repo</a><br>
+<a href="https://pkgs.org/">pkgs</a></p>
 
 </article>
 

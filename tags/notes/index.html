@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samba</title>
+    <title>Notes</title>
     <link rel="icon" href="/assets/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -74,65 +74,120 @@
         </div>
       </header>
       <main class="main">
-        
-<time class="font-bold ">17 May 2023</time>
-<article class="prose lg:prose-xl my-10">
-    <h1>Samba</h1>
-    <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#install-%26-dir-prep">Install &amp; dir prep</a></li><li><a href="#smb.conf">smb.conf</a></li><li><a href="#troubleshoot">Troubleshoot</a></li></ol>
-      </nav></aside>
-    <p>Samba</p>
-<p><a href="https://docs.fedoraproject.org/en-US/quick-docs/samba/">Samba Quick doc</a></p>
-<h2 id="install-%26-dir-prep" tabindex="-1">Install &amp; dir prep</h2>
-<pre><code>$ sudo dnf install samba
-$ sudo systemctl enable smb --now
-$ firewall-cmd --get-active-zones
-$ sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-service=samba
-$ sudo firewall-cmd --reload
+        <h1 class="mb-10">Notes</h1>
 
-# Create samba user
-$ sudo smbpasswd -a heebinho
 
-# SELinux!
-$ sudo setsebool -P samba_domain_controller on
-$ sudo setsebool -P samba_enable_home_dirs on
+<ul class="post-list">
+  
+    <li class="post-list__item">
+      <div>
+        <div class="post-list__meta">
+          <time datetime="2024-02-26">
+            26 Feb 2024
+          </time>
+        </div>
 
-# Directories
-$ sudo semanage fcontext --add --type &quot;samba_share_t&quot; &quot;/mnt/backup(/.*)?&quot;
-$ sudo restorecon -R /mnt/backup
+        <div class="post-list__tags">
+          
+              <a href="/tags/tech/">#tech</a>
+              <a href="/tags/notes/">#notes</a>
+        </div>
+      </div>
 
-# Mount disk on startup
+      <h3 class="post-list__title">
+        <a  href="/blog/posts/tech/composer/">Composer 🎺</a>
+      </h3>
 
+      <p class="post-list__excerpt"><h2 id="installation" tabindex="-1">Installation</h2>
+<p><a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">getcomposer.org</a></p>
+<h2 id="installation-windows"...</p>
+
+      <a class="post-list__read-more" href="/blog/posts/tech/composer/">read article</a>
+    </li>
+  
+    <li class="post-list__item">
+      <div>
+        <div class="post-list__meta">
+          <time datetime="2024-02-26">
+            26 Feb 2024
+          </time>
+        </div>
+
+        <div class="post-list__tags">
+          
+              <a href="/tags/tech/">#tech</a>
+              <a href="/tags/notes/">#notes</a>
+        </div>
+      </div>
+
+      <h3 class="post-list__title">
+        <a  href="/blog/posts/tech/phpunit/">PHPUnit 🟢🔴</a>
+      </h3>
+
+      <p class="post-list__excerpt"><h2 id="installation" tabindex="-1">Installation</h2>
+<pre><code>&gt; composer require --dev phpunit/phpunit ^11
+&gt; .\vendor\bin\phpunit --version 
 </code></pre>
-<h2 id="smb.conf" tabindex="-1">smb.conf</h2>
-<p>/etc/samba/smb.conf.example<br>
-/etc/samba/smb.conf</p>
-<pre><code>[global]
-  follow symlinks = yes
-  wide links = yes
-  unix extensions = no
+<p>Powershell on...</p>
 
-# Validate
-$ testparm smb.conf
-</code></pre>
-<h2 id="troubleshoot" tabindex="-1">Troubleshoot</h2>
-<pre><code>$ sudo systemctl restart smb
+      <a class="post-list__read-more" href="/blog/posts/tech/phpunit/">read article</a>
+    </li>
+  
+    <li class="post-list__item">
+      <div>
+        <div class="post-list__meta">
+          <time datetime="2024-02-26">
+            26 Feb 2024
+          </time>
+        </div>
 
-$ smbstatus
--&gt; Protocol: SMB3_11
+        <div class="post-list__tags">
+          
+              <a href="/tags/tech/">#tech</a>
+              <a href="/tags/notes/">#notes</a>
+        </div>
+      </div>
 
-$ sudo tail -f /var/log/samba/log.smbd
+      <h3 class="post-list__title">
+        <a  href="/blog/posts/tech/wsl/">WSL</a>
+      </h3>
 
-$ ls -dZ /mnt/backup
--&gt; system_u:object_r:unlabeled_t:s0 /mnt/backup
+      <p class="post-list__excerpt"><h2 id="installation" tabindex="-1">Installation</h2>
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Install</a></p>
+<h2 id="usage" tabindex="-1">Usage</h2>
+<pre><code>&gt; wsl...</p>
 
-$ sudo semanage fcontext --add --type &quot;samba_share_t&quot; &quot;/mnt/backup(/.*)?&quot;
-$ sudo restorecon -R /mnt/backup
--&gt; system_u:object_r:samba_share_t:s0 /mnt/backup
-</code></pre>
+      <a class="post-list__read-more" href="/blog/posts/tech/wsl/">read article</a>
+    </li>
+  
+    <li class="post-list__item">
+      <div>
+        <div class="post-list__meta">
+          <time datetime="2024-02-28">
+            28 Feb 2024
+          </time>
+        </div>
 
-</article>
+        <div class="post-list__tags">
+          
+              <a href="/tags/tech/">#tech</a>
+              <a href="/tags/notes/">#notes</a>
+        </div>
+      </div>
 
+      <h3 class="post-list__title">
+        <a  href="/blog/posts/tech/phpbrew/">PHPBrew</a>
+      </h3>
+
+      <p class="post-list__excerpt"><h2 id="requirements" tabindex="-1">Requirements</h2>
+<p><a href="https://github.com/phpbrew/phpbrew/wiki/Requirement">Requirements</a> (Ubuntu 22.04)</p>
+<pre><code>$ sudo apt-get install \
+ ...</p>
+
+      <a class="post-list__read-more" href="/blog/posts/tech/phpbrew/">read article</a>
+    </li>
+  
+</ul>
       </main>
           <footer class="footer">
         <div class="footer__content">

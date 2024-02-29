@@ -76,10 +76,13 @@
       <main class="main">
         
 <time class="font-bold ">11 Feb 2024</time>
-<aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#decode-quoted-printable">Decode quoted-printable</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
+<article class="prose lg:prose-xl my-10">
+    <h1>Thunderbird Source View</h1>
+    <aside class="prose lg:prose-xl my-5"><nav class="toc" >
+        <ol><li><a href="#intro">Intro</a></li><li><a href="#decode-quoted-printable">Decode quoted-printable</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
       </nav></aside>
-<article class="prose lg:prose-xl my-10"><p>Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
+    <h2 id="intro" tabindex="-1">Intro</h2>
+<p>Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
 ist das Anzeigen der Source des Mails. (Ctrl+U).<br>
 Was Thunderbird hier leider noch nicht zur Verfügung stellt, ist ein Decoder. Beispielsweise wenn ein Mail in
 quoted-printable übermittelt wurde:</p>
@@ -110,6 +113,7 @@ static string DecodeQuotedPrintable(string input, string charset) {
 <a href="https://github.com/jstedfast/MimeKit">MimeKit</a><br>
 <a href="https://www.webatic.com/quoted-printable-convertor">Webatic Decoder</a><br>
 <a href="https://dencode.com/string/quoted-printable">DenCode Decoder</a></p>
+
 </article>
 
       </main>

@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-02-26T09:16:59Z</updated>
+    <updated>2024-02-29T20:37:04Z</updated>
   
   <id>https://renatoheeb.com</id>
   <author>
@@ -210,7 +210,8 @@ $ sudo vim /etc/php.d/15-debug.ini
       <id>https://renatoheeb.com/blog/posts/tech/quoted-printable/</id>
       <content type="html">
         <![CDATA[
-      <p>Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
+      <h2 id="intro" tabindex="-1">Intro</h2>
+<p>Vor nicht allzu langer Zeit bin ich zurück zu Thunderbird gewechselt. Eine Funktion die ich gelegentlich brauche,
 ist das Anzeigen der Source des Mails. (Ctrl+U).<br>
 Was Thunderbird hier leider noch nicht zur Verfügung stellt, ist ein Decoder. Beispielsweise wenn ein Mail in
 quoted-printable übermittelt wurde:</p>
