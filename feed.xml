@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-03-07T19:57:28Z</updated>
+    <updated>2024-03-07T20:19:46Z</updated>
   
   <id>https://renatoheeb.com</id>
   <author>
@@ -256,7 +256,7 @@ static string DecodeQuotedPrintable(string input, string charset) {
       <content type="html">
         <![CDATA[
       <p>Mein ThinkPad X1 Extreme Gen 3 zeigte in der letzten Zeit Überhitzungserscheinungen.
-Auseinandergebaut, Lüfter gereinigt, neue Wärmeleitpaste aufgetragen und ein <a href="https://uk.hama.com/00053065/hama-black-notebook-cooler">Hama Notebook Cooler</a> unterlegt.</p>
+Auseinandergebaut, Lüfter gereinigt, neue Wärmeleitpaste aufgetragen und ein Hama Notebook Cooler unterlegt.</p>
 <p>Bei geringer Auslastung nun Temperaturen um die 40 Grad und angenehme Ruhe.</p>
 <p>Mal schauen, wie sich das entwickelt. 😅</p>
 <h2 id="cleaning" tabindex="-1">Cleaning</h2>
