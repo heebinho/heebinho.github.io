@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-03-04T20:47:28Z</updated>
+    <updated>2024-03-07T19:57:28Z</updated>
   
   <id>https://renatoheeb.com</id>
   <author>
@@ -242,6 +242,46 @@ static string DecodeQuotedPrintable(string input, string charset) {
 <a href="https://github.com/jstedfast/MimeKit">MimeKit</a><br>
 <a href="https://www.webatic.com/quoted-printable-convertor">Webatic Decoder</a><br>
 <a href="https://dencode.com/string/quoted-printable">DenCode Decoder</a></p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>ThinkPad X1 Extreme Gen 3</title>
+      <link href="https://renatoheeb.com/blog/posts/tech/x1x3/"/>
+      <updated>2024-02-11T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/tech/x1x3/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Mein ThinkPad X1 Extreme Gen 3 zeigte in der letzten Zeit Überhitzungserscheinungen.
+Auseinandergebaut, Lüfter gereinigt, neue Wärmeleitpaste aufgetragen und ein <a href="https://uk.hama.com/00053065/hama-black-notebook-cooler">Hama Notebook Cooler</a> unterlegt.</p>
+<p>Bei geringer Auslastung nun Temperaturen um die 40 Grad und angenehme Ruhe.</p>
+<p>Mal schauen, wie sich das entwickelt. 😅</p>
+<h2 id="cleaning" tabindex="-1">Cleaning</h2>
+<p>Disconnect:
+<img class="" src="/img/x1x-c-disconnect.png"/></p>
+<p>Remove:
+<img class="" src="/img/x1x-c-cooler.png"/></p>
+<p>Clean:
+<img class="" src="/img/x1x-c-dirty.png"/>
+<img class="" src="/img/x1x-c-c.png"/></p>
+<img src="https://i.ibb.co/PgQ28kM/PXL-20240305-172316210.jpg" alt="PXL-20240305-172316210" border="0">
+<img src="https://i.ibb.co/P4Qtkq8/PXL-20240305-172714852.jpg" alt="PXL-20240305-172714852" border="0">
+<!-- <img src="https://i.ibb.co/JyvFTfH/PXL-20240305-172722810.jpg" alt="PXL-20240305-172722810" border="0">
+<img src="https://i.ibb.co/2sy4wcm/PXL-20240305-173445946.jpg" alt="PXL-20240305-173445946" border="0">
+<img src="https://i.ibb.co/Jq7GPQ4/PXL-20240305-173455638-MP.jpg" alt="PXL-20240305-173455638-MP" border="0">
+<img src="https://i.ibb.co/TRrSk5S/PXL-20240305-175243558-MP.jpg" alt="PXL-20240305-175243558-MP" border="0"> -->
+<h2 id="cinebench-2024" tabindex="-1">Cinebench 2024</h2>
+<p>Die Temperaturentwicklung scheint nun auch unter Belastung wieder in einem vernüftigen Rahmen zu sein. (THM0 Max. 94°).</p>
+<p>Die Benchmark ist nicht schmeichelhaft, aber für ein Notebook aus dem Jahr 2020 ...</p>
+<img class="" src="/img/x1x-cinebench24-single.png"/>
+<img class="" src="/img/x1x-cinebench24-multi.png"/>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://psref.lenovo.com/Product/ThinkPad/ThinkPad_X1_Extreme_Gen_3?ch=20TKCTO1WW&amp;country=">Thinkpad x1x3</a><br>
+<a href="https://www.arctic.de/mx2">Arctic MX-2</a><br>
+<a href="https://uk.hama.com/00053065/hama-black-notebook-cooler">Hama Notebook Cooler</a></p>
 
     ]]>
       </content>
