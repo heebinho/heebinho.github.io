@@ -79,17 +79,46 @@
 <article class="prose lg:prose-xl my-10">
     <h1>Maria DB</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#restore-backup">Restore Backup</a></li></ol>
+        <ol><li><a href="#restore-backup">Restore Backup</a></li><li><a href="#backup">Backup</a></li><li><a href="#mysqldump">mysqldump</a></li><li><a href="#functional">Functional</a><ol><li><a href="#date-%26-time">Date &amp; Time</a></li></ol></li><li><a href="#links-%26-notes">Links &amp; Notes</a></li></ol>
       </nav></aside>
     <h2 id="restore-backup" tabindex="-1">Restore Backup</h2>
 <pre><code>$ cd C:\Program Files\MySQL\MySQL Workbench 8.0 CE
 $ mysql -u root -p
 
+mysql&gt; show databases;
 mysql&gt; create database x;
-mysql&gt; use database x;
+mysql&gt; use x;
+mysql&gt; show tables;
 mysql&gt; source dump.sql;
 
 </code></pre>
+<h2 id="backup" tabindex="-1">Backup</h2>
+<pre><code>mysql -f -v -h account.mysql.db.internal -u dbusername -p
+
+
+</code></pre>
+<h2 id="mysqldump" tabindex="-1">mysqldump</h2>
+<pre><code>$ mysqldump --help
+Usage: mysqldump [OPTIONS] database [tables]
+
+-h, --host=name (-h host.mysql.db.internal)
+-u, --user=name (-u database_user)
+--ignore-table=name (--ignore-table=x.watchdog)
+--ignore-table-data=name (--ignore-table-data=x.watchdog)
+
+
+# drupal example, see mysqldump.readme (drive/db)
+# clear cache upfront
+
+mysqldump -h account.mysql.db.internal -u account_name -p --ignore-table-data=db.watchdog --ignore-table-data=db.maillog db &gt; dump.sql
+
+</code></pre>
+<h2 id="functional" tabindex="-1">Functional</h2>
+<h3 id="date-%26-time" tabindex="-1">Date &amp; Time</h3>
+<pre><code>select *, FROM_UNIXTIME(nfd.created)  from node_field_data nfd where nfd.nid = 40601
+</code></pre>
+<h2 id="links-%26-notes" tabindex="-1">Links &amp; Notes</h2>
+<p><a href="https://mysqldump.guru/what-is-mysqldump.html">mysqldump.guru</a></p>
 
 </article>
 
