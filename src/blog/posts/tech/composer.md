@@ -30,6 +30,7 @@ C:\Users\renato\AppData\Roaming\Composer\vendor\bin;
 > composer install
 > composer update
 > composer update monolog/monolog
+> composer show
 > composer show --platform
 
 > composer dump-autoload
