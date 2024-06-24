@@ -79,7 +79,7 @@
 <article class="prose lg:prose-xl my-10">
     <h1>PHPBrew</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#requirements">Requirements</a></li><li><a href="#installation">Installation</a></li><li><a href="#setup">Setup</a></li><li><a href="#usage">Usage</a></li><li><a href="#xdebug">xDebug</a></li><li><a href="#files-%26-paths">Files &amp; Paths</a></li><li><a href="#links-%26-notes">Links &amp; Notes</a></li></ol>
+        <ol><li><a href="#requirements">Requirements</a></li><li><a href="#installation">Installation</a></li><li><a href="#setup">Setup</a></li><li><a href="#usage">Usage</a><ol><li><a href="#extension">Extension</a></li></ol></li><li><a href="#xdebug">xDebug</a></li><li><a href="#files-%26-paths">Files &amp; Paths</a></li><li><a href="#links-%26-notes">Links &amp; Notes</a></li></ol>
       </nav></aside>
     <h2 id="requirements" tabindex="-1">Requirements</h2>
 <p><a href="https://github.com/phpbrew/phpbrew/wiki/Requirement">Requirements</a> (Ubuntu 22.04)</p>
@@ -154,20 +154,27 @@ Enjoy phpbrew at $HOME!!
 
 </code></pre>
 <h2 id="usage" tabindex="-1">Usage</h2>
-<pre><code>$ phpbrew update
-$ phpbrew known
-$ phpbrew known --more
-$ phpbrew install 8.3 +default
-$ phpbrew install 8.3 +default +debug
-$ phpbrew list
-$ phpbrew variants
-$ phpbrew use php-8.3.3
+<pre><code>phpbrew update
+phpbrew known
+phpbrew known --more
+phpbrew install 8.3 +default
+phpbrew install 8.3 +default +debug
+phpbrew list
+phpbrew variants
+phpbrew use php-8.3.3
 
 Switch default:
-$ phpbrew switch php-8.3.3
+phpbrew switch php-8.3.3
+</code></pre>
+<h3 id="extension" tabindex="-1">Extension</h3>
+<pre><code># Check extensions
+phpbrew ext
+
+# Install extensions
+phpbrew ext install gd
 </code></pre>
 <h2 id="xdebug" tabindex="-1">xDebug</h2>
-<pre><code>$ phpbrew --debug ext install xdebug
+<pre><code>phpbrew --debug ext install xdebug
 
 ===&gt; Creating config file 
 ~/.phpbrew/php/php-8.3.3/var/db/xdebug.ini

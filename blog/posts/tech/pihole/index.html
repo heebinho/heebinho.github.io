@@ -75,32 +75,31 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">5 Feb 2023</time>
+<time class="font-bold ">10 Mar 2024</time>
 <article class="prose lg:prose-xl my-10">
     <h1>Pi-hole</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#status">Status</a></li><li><a href="#troubleshooting">Troubleshooting</a><ol><li><a href="#disc">Disc</a></li></ol></li><li><a href="#web-interface">Web Interface</a></li><li><a href="#list">List</a></li><li><a href="#tools">Tools</a></li><li><a href="#management">Management</a></li><li><a href="#installation">Installation</a></li></ol>
+        <ol><li><a href="#pi-hole">Pi-hole</a><ol><li><a href="#web-interface">Web Interface</a></li><li><a href="#ssh">ssh</a></li><li><a href="#list-of-adlists">List of adlists</a></li><li><a href="#tools">Tools</a></li><li><a href="#management">Management</a></li><li><a href="#installation">Installation</a></li></ol></li><li><a href="#netzwerk-kofiguration">Netzwerk Kofiguration</a></li><li><a href="#troubleshooting">Troubleshooting</a><ol><li><a href="#disc">Disc</a></li></ol></li><li><a href="#links-und-referenzen">Links und Referenzen</a></li></ol>
       </nav></aside>
-    <h1 id="intro" tabindex="-1">Intro</h1>
-<h3 id="status" tabindex="-1">Status</h3>
-<pre><code>$ pihole status
-  [✓] FTL is listening on port 53
-     [✓] UDP (IPv4)
-     [✓] TCP (IPv4)
-     [✓] UDP (IPv6)
-     [✓] TCP (IPv6)
-
-  [✓] Pi-hole blocking is enabled
-
-</code></pre>
+    <p>In den letzten Jahren wurde das Internet mit Werbung und anderen unerwünschten Inhalten überschwemmt.</p>
+<p>Selbstschutz ist daher angebracht. Unerwünschte Inhalte können gefiltert werden; ein Schutz auf mehreren Ebenen bietet sich an. Ein Addin wie <a href="https://ublockorigin.com/">uBock Origin</a> ist schnell im jeweiligen Browser installiert und bietet einen ersten Abwehrlayer.
+Zusätzlich kann ein Filter auf Netzwerkebene (DNS) hilfreich und effektiv sein, um alle Geräte im eigenen Netzwerk zu schützen.</p>
+<p>Hier kommt das Pi-hole ins Spiel - ein schwarzes Loch für unerwünschte DNS-Anfragen.</p>
+<h2 id="pi-hole" tabindex="-1">Pi-hole</h2>
+<p><a href="https://pi-hole.net/">Pi-hole</a> ist ein DNS sinkhole für unerwünschte Anfragen.</p>
 <h3 id="web-interface" tabindex="-1">Web Interface</h3>
 <p>https://x.x.x.x/admin</p>
-<h3 id="list" tabindex="-1">List</h3>
-<p><a href="https://oisd.nl/">oisd blocklist</a>
-<a href="https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt">youtube</a>
-https://firebog.net/</p>
+<h3 id="ssh" tabindex="-1">ssh</h3>
+<pre><code>$ pihole status
+</code></pre>
+<h3 id="list-of-adlists" tabindex="-1">List of adlists</h3>
+<p><a href="https://oisd.nl/">oisd blocklist</a><br>
+<a href="https://firebog.net/">Firebog</a><br>
+<a href="https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt">youtube</a></p>
+<pre><code>pihole -g
+</code></pre>
 <h3 id="tools" tabindex="-1">Tools</h3>
-<p>https://d3ward.github.io/toolz/adblock.html
+<p>https://d3ward.github.io/toolz/adblock.html<br>
 https://adblock-tester.com/</p>
 <h3 id="management" tabindex="-1">Management</h3>
 <p>sudo curl -sSL https://install.pi-hole.net | bash<br>
@@ -152,10 +151,15 @@ And finally you can delete the IPv6 ULA Prefix:</p>
 <p>uci -q delete network.globals.ula_prefix
 uci commit network
 /etc/init.d/network restart</p>
+<h2 id="netzwerk-kofiguration" tabindex="-1">Netzwerk Kofiguration</h2>
 <h2 id="troubleshooting" tabindex="-1">Troubleshooting</h2>
-<p>$ sudo apt update
-E: Splitting of clearsigned file /var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_InRelease failed as it doesn't contain all expected parts
-E: The package lists or status file could not be parsed or opened.</p>
+<p>IP configuration</p>
+<pre><code>ifconfig
+ip -6 addr
+
+</code></pre>
+<pre><code>ipconfig /renew
+</code></pre>
 <p>sudo rm /var/lib/apt/lists/*
 sudo apt-get update
 sudo apt-get upgrade
@@ -166,6 +170,8 @@ rm /etc/pihole/ &amp;&amp; reinstall</p>
 <p>df -h --total
 ui - baobab (disk space analyzer)
 https://scotthelme.co.uk/the-first-ever-issue-with-my-pi-hole/</p>
+<h2 id="links-und-referenzen" tabindex="-1">Links und Referenzen</h2>
+<p><a href="https://pi-hole.net/">Pi-hole</a></p>
 
 </article>
 

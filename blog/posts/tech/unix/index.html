@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unix commands</title>
+    <title>GNU / Linux / Unix</title>
     <link rel="icon" href="/assets/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -77,20 +77,80 @@
         
 <time class="font-bold ">12 Feb 2024</time>
 <article class="prose lg:prose-xl my-10">
-    <h1>Unix commands</h1>
+    <h1>GNU / Linux / Unix</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#commands">Commands</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
+        <ol><li><a href="#environment">Environment</a><ol><li><a href="#profile">Profile</a></li></ol></li><li><a href="#system-maintenance-%26-package-manager">System maintenance &amp; Package manager</a></li><li><a href="#shell">Shell</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
       </nav></aside>
-    <h2 id="commands" tabindex="-1">Commands</h2>
-<pre><code>$ cat /etc/os-release
-$ uname --help
+    <h2 id="environment" tabindex="-1">Environment</h2>
+<pre><code>whoami 
+cat /etc/os-release
+uname --help
 </code></pre>
+<h3 id="profile" tabindex="-1">Profile</h3>
+<blockquote>
+<p>the original rc affix and extension both meant <strong>run commands</strong>.</p>
+</blockquote>
+<p><a href="https://www.baeldung.com/linux/rc-files">source</a></p>
+<p>evolved into:</p>
+<ul>
+<li>run control</li>
+<li>run configuration</li>
+<li>runtime configuration</li>
+</ul>
+<pre><code># In intelliJ/phpstorm change shell path to interactive
+/bin/bash -i  # interactive shell (-i)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>about</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/etc/profile</td>
+<td>system-wide startup file for bourne compatible shells</td>
+</tr>
+<tr>
+<td>~./profile</td>
+<td></td>
+</tr>
+<tr>
+<td>~./bash_profile</td>
+<td></td>
+</tr>
+<tr>
+<td>~./bash_login</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>-&gt;
+personal init files:</p>
+</li>
+<li>
+<p>.bashrc</p>
+</li>
+<li>
+<p>.profile</p>
+</li>
+</ul>
+<p>Mnemonic: A Pro-File is used sparingly to modify your environment and start your ignition switch, Bashrc is a splash some people spray all over your dash.</p>
+<h2 id="system-maintenance-%26-package-manager" tabindex="-1">System maintenance &amp; Package manager</h2>
 <pre><code>sudo apt update &amp;&amp; sudo apt full-upgrade
 $ sudo do-release-upgrade
 
 </code></pre>
+<h2 id="shell" tabindex="-1">Shell</h2>
+<pre><code>man bash
+shopt login_shell #login_shell off
+</code></pre>
+<p><a href="https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html">Shell optional behavior</a></p>
 <h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
-<p><a href="https://www.webatic.com/quoted-printable-convertor">Webatic Decoder</a></p>
+<p><a href="https://www.gnu.org/software/bash/manual/html_node/">gnu Bash manual</a></p>
 
 </article>
 

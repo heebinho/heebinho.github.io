@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drush</title>
+    <title>nvm</title>
     <link rel="icon" href="/assets/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -75,110 +75,40 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">12 Dec 2022</time>
+<time class="font-bold ">22 Apr 2024</time>
 <article class="prose lg:prose-xl my-10">
-    <h1>Drush</h1>
+    <h1>nvm</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#ssh">SSH</a></li><li><a href="#drush-functional">Drush functional</a><ol><li><a href="#modules">Modules</a></li><li><a href="#routes">Routes</a></li><li><a href="#config">Config</a></li><li><a href="#php-cli">PHP CLI</a></li><li><a href="#delete-locked-field">Delete locked field</a></li><li><a href="#scripts">Scripts</a></li></ol></li><li><a href="#links-und-referenzen">Links und Referenzen</a></li></ol>
+        <ol><li><a href="#installation">Installation</a></li><li><a href="#magic">Magic</a></li></ol>
       </nav></aside>
-    <h2 id="ssh" tabindex="-1">SSH</h2>
-<pre><code>ssh user@domain.com -i .ssh/id_rsa
+    <h2 id="installation" tabindex="-1">Installation</h2>
+<pre><code>brew install nvm 
+mkdir ~/.nvm  
 </code></pre>
-<h2 id="drush-functional" tabindex="-1">Drush functional</h2>
-<pre><code>$ drush status
+<p>Add the following to your desired shell configuration file.<br>
+E.g. to ~/.bashrc (sourced in interactive non login shells)</p>
+<pre><code>
+  export NVM_DIR=&quot;$HOME/.nvm&quot;
+  [ -s &quot;/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh&quot;  # This loads nvm
+  [ -s &quot;/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm&quot; ] &amp;&amp; \. &quot;/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm&quot;  # This loads nvm bash_completion
 </code></pre>
-<h3 id="modules" tabindex="-1">Modules</h3>
-<pre><code>$ drush pm:list
-$ drush pm:list --filter &quot;Date&quot;
+<p>Also check configuraton of ide's; configure to start shell interactive (-i)</p>
+<h2 id="magic" tabindex="-1">Magic</h2>
+<pre><code>nvm ls-remote  
+nvm install Gallium  
+nvm ls
+
+node -v
+npm -v
+
+nvm alias default node
+-&gt;default -&gt; node (-&gt; v16.19.0)
 
 
-# uninstall module
-$ drush pmu drupalauth4ssp
-$ COMPOSER_MEMORY_LIMIT=-1 drush pmu drupalauth4ssp
+$ nvm use default
 
-</code></pre>
-<h3 id="routes" tabindex="-1">Routes</h3>
-<pre><code>$ drush core:route | grep mail
-$ drush core:route | grep manage/{taxonomy_vocabulary}/overview
-
-return Url::fromRoute('entity.taxonomy_vocabulary.overview_form')
-    -&gt;setRouteParameter('taxonomy_vocabulary', $taxonomy)
-    -&gt;toString();
-
-$ drush route --path=https://www.ride-mtb.com/de/admin/structure/webform/manage/buchung_huettentour/submission/1445
-
-</code></pre>
-<h3 id="config" tabindex="-1">Config</h3>
-<pre><code>$ drush config:get user.role.api
-</code></pre>
-<p>Config edit</p>
-<pre><code>$ drush config:edit user.role.api
-:wq
-</code></pre>
-<p>Delete config key</p>
-<pre><code>$ drush config:delete core.extension module.clever_reach
-$ drush config:delete clever_reach.settings
-</code></pre>
-<h3 id="php-cli" tabindex="-1">PHP CLI</h3>
-<pre><code>$ drush php:cli
-
-&gt;$storage = \Drupal::entityTypeManager()-&gt;getStorage('commerce_payment');
-
-&gt;$payment = $storage-&gt;create([
-    'type' =&gt; 'payment_default',
-    'payment_gateway' =&gt; 'wallee_master_visa_domain_com',
-    'order_id' =&gt; 33333,
-    'remote_id' =&gt; '183333333',
- ]);
-
-&gt;$payment-&gt;set('state', 'completed');
-
-&gt;$payment-&gt;set('remote_state', 'completed');
-
-&gt;$payment-&gt;set('amount', new \Drupal\commerce_price\Price('77.77', 'CHF'));
-
-&gt; $payment-&gt;save();
-= 1
 
 </code></pre>
-<h3 id="delete-locked-field" tabindex="-1">Delete locked field</h3>
-<pre><code>$ drush php:cli
-
-$field = \Drupal::entityTypeManager()-&gt;getStorage('field_config')-&gt;load('user.user.field_cleverreach_subscribed');
-&gt; $field-&gt;delete();
-</code></pre>
-<h3 id="scripts" tabindex="-1">Scripts</h3>
-<pre><code>&lt;?php
-/**
- * @file
- * Script to help cleanup the not existing permissions from your roles.
- *
- * @code
- * drush scr clean_permissions.php
- * drush -y cex
- * @endcode
- *
- * @see https://www.drupal.org/node/3193348
- */
-$entity_type_manager = \Drupal::entityTypeManager();
-$permissions = array_keys(\Drupal::service('user.permissions')-&gt;getPermissions());
-/** @var \Drupal\user\RoleInterface[] $roles */
-$roles = $entity_type_manager-&gt;getStorage('user_role')-&gt;loadMultiple();
-foreach ($roles as $role) {
-  $role_permissions = $role-&gt;getPermissions();
-  $differences = array_diff($role_permissions, $permissions);
-  if ($differences) {
-    foreach ($differences as $permission) {
-      $role-&gt;revokePermission($permission);
-    }
-    $role-&gt;save();
-  }
-}
-
-$ drush scr clean_permissions.php
-</code></pre>
-<h2 id="links-und-referenzen" tabindex="-1">Links und Referenzen</h2>
-<p><a href="https://www.drush.org/12.x/commands/all/">Drush commands</a></p>
 
 </article>
 

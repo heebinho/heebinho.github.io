@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drush</title>
+    <title>Mautic</title>
     <link rel="icon" href="/assets/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -75,110 +75,110 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">12 Dec 2022</time>
+<time class="font-bold ">19 Apr 2024</time>
 <article class="prose lg:prose-xl my-10">
-    <h1>Drush</h1>
+    <h1>Mautic</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#ssh">SSH</a></li><li><a href="#drush-functional">Drush functional</a><ol><li><a href="#modules">Modules</a></li><li><a href="#routes">Routes</a></li><li><a href="#config">Config</a></li><li><a href="#php-cli">PHP CLI</a></li><li><a href="#delete-locked-field">Delete locked field</a></li><li><a href="#scripts">Scripts</a></li></ol></li><li><a href="#links-und-referenzen">Links und Referenzen</a></li></ol>
+        <ol><li><a href="#installation">Installation</a><ol><li><a href="#system-ubuntu-22.04">System Ubuntu 22.04</a></li><li><a href="#imap">imap</a></li><li><a href="#compile-php">Compile php</a></li><li><a href="#pear">Pear</a></li><li><a href="#nvm">nvm</a></li></ol></li><li><a href="#mariadb">Mariadb</a></li><li><a href="#mautic">Mautic</a></li><li><a href="#troubleshooting">Troubleshooting</a><ol><li><a href="#memory-limit">Memory limit</a></li><li><a href="#php-extensions">Php extensions</a></li><li><a href="#php">PHP</a></li></ol></li><li><a href="#cron">Cron</a></li><li><a href="#settings">Settings</a></li><li><a href="#links-und-referenzen">Links und Referenzen</a></li></ol>
       </nav></aside>
-    <h2 id="ssh" tabindex="-1">SSH</h2>
-<pre><code>ssh user@domain.com -i .ssh/id_rsa
+    <h2 id="installation" tabindex="-1">Installation</h2>
+<h3 id="system-ubuntu-22.04" tabindex="-1">System Ubuntu 22.04</h3>
+<pre><code>sudo apt-get install php-zip
+sudo apt-get install php-imap
+sudo apt-get install php-bcmath
+sudo apt-get install php-gd
+sudo apt-get install php-curl
 </code></pre>
-<h2 id="drush-functional" tabindex="-1">Drush functional</h2>
-<pre><code>$ drush status
+<h3 id="imap" tabindex="-1">imap</h3>
+<pre><code># to compile php with the imap extensions:
+sudo apt-get install libkrb5-dev
+sudo apt-get install libpng-dev
+sudo apt-get install libc-client-dev
+sudo ln -s /usr/lib/libc-client.a /usr/lib/x86_64-linux-gnu/libc-client.a
 </code></pre>
-<h3 id="modules" tabindex="-1">Modules</h3>
-<pre><code>$ drush pm:list
-$ drush pm:list --filter &quot;Date&quot;
+<h3 id="compile-php" tabindex="-1">Compile php</h3>
+<pre><code>tail -F '~/.phpbrew/build/php-8.3.3/build.log'
 
+phpbrew install 8.3 +default +imap +gd +pdo +mysql +debug
 
-# uninstall module
-$ drush pmu drupalauth4ssp
-$ COMPOSER_MEMORY_LIMIT=-1 drush pmu drupalauth4ssp
-
-</code></pre>
-<h3 id="routes" tabindex="-1">Routes</h3>
-<pre><code>$ drush core:route | grep mail
-$ drush core:route | grep manage/{taxonomy_vocabulary}/overview
-
-return Url::fromRoute('entity.taxonomy_vocabulary.overview_form')
-    -&gt;setRouteParameter('taxonomy_vocabulary', $taxonomy)
-    -&gt;toString();
-
-$ drush route --path=https://www.ride-mtb.com/de/admin/structure/webform/manage/buchung_huettentour/submission/1445
+phpbrew ext install gd
+phpbrew ext install iconv
+phpbrew ext install pdo_mysql
 
 </code></pre>
-<h3 id="config" tabindex="-1">Config</h3>
-<pre><code>$ drush config:get user.role.api
+<h3 id="pear" tabindex="-1">Pear</h3>
+<pre><code>Wrote PEAR system config file at: ~/.phpbrew/php/php-8.3.3/etc/pear.conf
+
+# Add to php.in include_path
+include_path = &quot;.:~/.phpbrew/php/php-8.3.3/lib/php/pear&quot;
 </code></pre>
-<p>Config edit</p>
-<pre><code>$ drush config:edit user.role.api
-:wq
+<h3 id="nvm" tabindex="-1">nvm</h3>
+<pre><code>sudo apt-get install npm
+brew install node
+brew install nvm
+# see nvm notes
+sudo vim ~/.profile #mod&amp;:wq
+source ~/.profile
+$ node -v #v18.20
+nvm ls-remote
+nvm install Hydrogen
 </code></pre>
-<p>Delete config key</p>
-<pre><code>$ drush config:delete core.extension module.clever_reach
-$ drush config:delete clever_reach.settings
+<h2 id="mariadb" tabindex="-1">Mariadb</h2>
+<pre><code>sudo apt-get install mariadb-server
+sudo systemctl stop mariadb.service
+sudo systemctl start mariadb.service
+sudo mysql
+CREATE DATABASE mauticdb;
+CREATE USER 'mauticuser'@'localhost' IDENTIFIED BY 'YOURPASS';
+GRANT ALL ON mauticdb.* TO 'mauticuser'@'localhost' IDENTIFIED BY 'YOURPASS' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 </code></pre>
-<h3 id="php-cli" tabindex="-1">PHP CLI</h3>
-<pre><code>$ drush php:cli
+<h2 id="mautic" tabindex="-1">Mautic</h2>
+<pre><code>composer create-project mautic/recommended-project:^5 mautic --no-interaction
 
-&gt;$storage = \Drupal::entityTypeManager()-&gt;getStorage('commerce_payment');
-
-&gt;$payment = $storage-&gt;create([
-    'type' =&gt; 'payment_default',
-    'payment_gateway' =&gt; 'wallee_master_visa_domain_com',
-    'order_id' =&gt; 33333,
-    'remote_id' =&gt; '183333333',
- ]);
-
-&gt;$payment-&gt;set('state', 'completed');
-
-&gt;$payment-&gt;set('remote_state', 'completed');
-
-&gt;$payment-&gt;set('amount', new \Drupal\commerce_price\Price('77.77', 'CHF'));
-
-&gt; $payment-&gt;save();
-= 1
+composer install
+npx update-browserslist-db@latest
 
 </code></pre>
-<h3 id="delete-locked-field" tabindex="-1">Delete locked field</h3>
-<pre><code>$ drush php:cli
+<h2 id="troubleshooting" tabindex="-1">Troubleshooting</h2>
+<h3 id="memory-limit" tabindex="-1">Memory limit</h3>
+<pre><code># Show php.ini files
+php --ini
 
-$field = \Drupal::entityTypeManager()-&gt;getStorage('field_config')-&gt;load('user.user.field_cleverreach_subscribed');
-&gt; $field-&gt;delete();
+# Change limit in ~/.phpbrew/php/php-8.3.3/etc/cli/php.ini
 </code></pre>
-<h3 id="scripts" tabindex="-1">Scripts</h3>
-<pre><code>&lt;?php
-/**
- * @file
- * Script to help cleanup the not existing permissions from your roles.
- *
- * @code
- * drush scr clean_permissions.php
- * drush -y cex
- * @endcode
- *
- * @see https://www.drupal.org/node/3193348
- */
-$entity_type_manager = \Drupal::entityTypeManager();
-$permissions = array_keys(\Drupal::service('user.permissions')-&gt;getPermissions());
-/** @var \Drupal\user\RoleInterface[] $roles */
-$roles = $entity_type_manager-&gt;getStorage('user_role')-&gt;loadMultiple();
-foreach ($roles as $role) {
-  $role_permissions = $role-&gt;getPermissions();
-  $differences = array_diff($role_permissions, $permissions);
-  if ($differences) {
-    foreach ($differences as $permission) {
-      $role-&gt;revokePermission($permission);
-    }
-    $role-&gt;save();
-  }
-}
+<h3 id="php-extensions" tabindex="-1">Php extensions</h3>
+<pre><code># Check extensions
+phpbrew ext
 
-$ drush scr clean_permissions.php
+[*] pdo          8.3.3
+[*] pdo_mysql    8.3.3
+</code></pre>
+<h3 id="php" tabindex="-1">PHP</h3>
+<pre><code># Show php modules
+php -m
+
+# Show include_path
+php -a
+echo get_include_path();
+
+# Sho ini files
+php --ini
+</code></pre>
+<h2 id="cron" tabindex="-1">Cron</h2>
+<p>/usr/bin/php /home/sportsp/www/mautic/bin/console mautic:segments:update</p>
+<p>/usr/bin/php /home/sportsp/www/mautic/bin/console mautic:campaigns:update</p>
+<p>/usr/bin/php /home/sportsp/www/mautic/bin/console mautic:campaigns:trigger</p>
+<p>/usr/bin/php /home/sportsp/www/mautic/bin/console mautic:custom-field:create-column</p>
+<p>/usr/bin/php /home/sportsp/www/mautic/bin/console mautic:iplookup:download</p>
+<h2 id="settings" tabindex="-1">Settings</h2>
+<pre><code>www/mautic/config] $ cat local.php | grep debug
+'debug' =&gt; false,
 </code></pre>
 <h2 id="links-und-referenzen" tabindex="-1">Links und Referenzen</h2>
-<p><a href="https://www.drush.org/12.x/commands/all/">Drush commands</a></p>
+<p><a href="https://phpbrew.github.io/phpbrew/">phpbrew</a><br>
+<a href="https://ma.ttias.be/compile-php-source-error-utf8_mime2text-new-signature/">compile-php-source-error-utf8_mime2text-new-signature</a></p>
+<p>[]: https://github.com/phpbrew/phpbrew/issues/1176</p>
 
 </article>
 

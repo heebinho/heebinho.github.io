@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git</title>
+    <link rel="icon" href="/assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Feed">
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/fontawesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/brands.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/solid.min.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="/assets/highlight/styles/ascetic.css"/>
+    <script src="/assets/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    
+          <header class="header">
+        <div class="header__content">
+          <h1 class="site-title-lowercase">
+            <a href=/>
+              renatoheeb.com
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog/posts/travel/"  >Travel Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog/posts/tech/"  >Tech Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about/"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+      <main class="main">
+        
+<time class="font-bold ">9 Nov 2019</time>
+<article class="prose lg:prose-xl my-10">
+    <h1>Git</h1>
+    <aside class="prose lg:prose-xl my-5"><nav class="toc" >
+        <ol><li><a href="#resetting-a-fork">Resetting a fork</a></li><li><a href="#undo-a-commit--no-trace">Undo a commit -no trace</a></li><li><a href="#embed-gist">Embed gist</a></li><li><a href="#configuring-a-remote-for-a-fork">Configuring a remote for a fork</a></li><li><a href="#syncing-a-fork">Syncing a fork</a></li><li><a href="#fork-mismatched-to-upstream-master">Fork mismatched to upstream master</a></li><li><a href="#merge-to-rebase">Merge to Rebase</a></li><li><a href="#branch">Branch</a></li><li><a href="#tags">Tags</a></li><li><a href="#stash">Stash</a></li><li><a href="#merge">Merge</a></li><li><a href="#git-layers">Git Layers</a><ol><li><a href="#git-as-a-%22persistant-map%22">Git as a &quot;Persistant Map&quot;</a></li></ol></li><li><a href="#git's-straightforward-object-model">Git's straightforward object model</a><ol><li><a href="#as-a-revision-control-system">As a revision control system</a></li></ol></li></ol>
+      </nav></aside>
+    <h2 id="resetting-a-fork" tabindex="-1">Resetting a fork</h2>
+<pre><code class="language-bash">$ <span class="hljs-built_in">cd</span> &lt;your <span class="hljs-built_in">local</span> repo&gt;
+git remote add upstream /url/to/original/repo.git
+git fetch upstream
+git checkout master
+git reset --hard upstream/master  
+git push origin master --force
+</code></pre>
+<h2 id="undo-a-commit--no-trace" tabindex="-1">Undo a commit -no trace</h2>
+<pre><code class="language-bash">git reset sha1
+git push -f &lt;remote-name&gt; &lt;branch-name&gt;
+</code></pre>
+<h2 id="embed-gist" tabindex="-1">Embed gist</h2>
+<p>add .pibb to a gist to get the html version: https://gist.github.com/heebinho/a1d5655901902db3c5399ecf38c9681c.pibb</p>
+<blockquote>
+<p>&lt;?# Gist a1d5655901902db3c5399ecf38c9681c /?&gt;</p>
+</blockquote>
+<?# Gist a1d5655901902db3c5399ecf38c9681c /?>
+<h2 id="configuring-a-remote-for-a-fork" tabindex="-1">Configuring a remote for a fork</h2>
+<pre><code class="language-bash">$ git remote -v
+&gt;origin  https://github.com/heebinho/functional-csharp-code.git (fetch)
+&gt;origin  https://github.com/heebinho/functional-csharp-code.git (push)
+$ git remote add upstream https://github.com/la-yumba/functional-csharp-code.git
+</code></pre>
+<h2 id="syncing-a-fork" tabindex="-1">Syncing a fork</h2>
+<pre><code class="language-bash">$ git fetch upstream
+$ git checkout master
+$ git merge upstream/master
+</code></pre>
+<h2 id="fork-mismatched-to-upstream-master" tabindex="-1">Fork mismatched to upstream master</h2>
+<pre><code>git branch ssp
+git reset --hard HEAD~2 # Go back 2 commits
+git checkout ssp
+git push --set-upstream origin ssp 
+git checkout master
+git remote add upstream https://github.com/drupalauth/simplesamlphp-module-drupalauth.git
+git fetch upstream
+git checkout main
+
+git merge upstream/main
+git branch -d master
+
+</code></pre>
+<h2 id="merge-to-rebase" tabindex="-1">Merge to Rebase</h2>
+<pre><code>git reset --hard 71cb64209353c1e3ce7a4ed72c14d111707725cd
+git branch test
+git rebase upstream/main
+git cherry-pick a82f65a19c8cd46b5f9df685eb0d65c99f15587e --no-commit
+git commit -m &quot;x&quot;
+git push --set-upstream origin ssp
+</code></pre>
+<h2 id="branch" tabindex="-1">Branch</h2>
+<pre><code>git branch --help
+git branch -d test #delete branch
+git branch -m name new_name #rename branch
+
+</code></pre>
+<h2 id="tags" tabindex="-1">Tags</h2>
+<pre><code>git tag --help
+git fetch --all --tags
+git checkout tags/v2.2.1 -b live
+
+</code></pre>
+<h2 id="stash" tabindex="-1">Stash</h2>
+<pre><code>git stash --help
+git stash save
+git stash pop
+
+</code></pre>
+<h2 id="merge" tabindex="-1">Merge</h2>
+<pre><code>git merge --help
+
+
+</code></pre>
+<h2 id="git-layers" tabindex="-1">Git Layers</h2>
+<ul>
+<li>Persistant Map</li>
+<li>Content Tracker</li>
+<li>Revision Control System</li>
+<li>Distribution</li>
+</ul>
+<h3 id="git-as-a-%22persistant-map%22" tabindex="-1">Git as a &quot;Persistant Map&quot;</h3>
+<p>Key;Value
+SHA1(20Bytes);Bytes</p>
+<pre><code class="language-bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Hello World&quot;</span> | git hash-object --stdin
+//persist (w-&gt;write)
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Hello World&quot;</span> | git hash-object --stdin -w
+$ <span class="hljs-built_in">ls</span> -a
+$ <span class="hljs-built_in">cd</span> .git/objects/f5
+//type of an object -&gt; -t
+$ git cat-file f5b49699a4524b0a56f1b19a648725971eeb9e6b -t
+//pretty <span class="hljs-built_in">print</span> an object -&gt; -p
+$ git cat-file f5b49699a4524b0a56f1b19a648725971eeb9e6b -p
+$ git count-objects
+</code></pre>
+<h2 id="git's-straightforward-object-model" tabindex="-1">Git's straightforward object model</h2>
+<ul>
+<li>Blob</li>
+<li>Tree</li>
+<li>Commit</li>
+<li>Annotated Tag</li>
+</ul>
+<pre><code class="language-bash">$ git tag -a V1 -m <span class="hljs-string">&quot;Version 1&quot;</span>
+$ git tag
+$ git cat-file V1 -p
+</code></pre>
+<h3 id="as-a-revision-control-system" tabindex="-1">As a revision control system</h3>
+<pre><code class="language-bash">$ git <span class="hljs-built_in">log</span>
+$ git branch
+$ git .git/refs/heads
+$ <span class="hljs-built_in">cat</span> master
+-&gt; 77bd4774aea4f36a962847e5d789a3702f6b4f8b
+$ git cat-file 77bd4774a -t
+-&gt; commit
+$ git cat-file 77bd4774a -p
+$ git branch 
+$ git branch oki
+$ <span class="hljs-built_in">cat</span> .git/HEAD
+-&gt; ref: refs/heads/master
+$ vim recipes/apple-pie.txt
+$ git commit -m <span class="hljs-string">&quot;apple pie Ingredients&quot;</span>
+$ git checkout oki
+
+//Merge
+$ git merge oki
+--&gt;
+On branch master
+You have unmerged paths.
+  (fix conflicts and run <span class="hljs-string">&quot;git commit&quot;</span>)
+  (use <span class="hljs-string">&quot;git merge --abort&quot;</span> to abort the merge)
+
+Unmerged paths:
+  (use <span class="hljs-string">&quot;git add &lt;file&gt;...&quot;</span> to mark resolution)
+
+        both modified:   recipes/applie-pie.txt
+
+no changes added to commit (use <span class="hljs-string">&quot;git add&quot;</span> and/or <span class="hljs-string">&quot;git commit -a&quot;</span>)
+</code></pre>
+<p>So a branch is just a reference to a commit.<br>
+And HEAD is just a reference to a branch. (a pointer to a pointer)<br>
+A checkout moves the HEAD and updates the working area</p>
+
+</article>
+
+      </main>
+          <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://mstdn.social/@heebelcraft" target="_blank" rel="noopener noreferrer" >Mastodon</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://github.com/heebinho" target="_blank" rel="noopener noreferrer" >GitHub</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://www.goodreads.com/heebinho" target="_blank" rel="noopener noreferrer" >goodreads</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://www.strava.com/athletes/heebinho" target="_blank" rel="noopener noreferrer" >strava</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+          <p class="footer__attribution">Copyright © 1984-2024 Renato Heeb. All rights reserved.</a></p>
+          
+          
+
+
+        </div>
+
+      </footer>
+
+
+
+
+
+
+
+    
+
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
