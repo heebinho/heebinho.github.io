@@ -1,16 +1,22 @@
 ---
 layout: post.njk
-title: Powershell cheatsheet
+title: Powershell
 date: 2023-04-15
-description: Powershell notes
----
+description: Notes
+tags: ["tech", "notes"]
+eleventyExcludeFromCollections: false
+---  
+
 
 Terminals are a fast and elegant way to manage your system.
 But who can remember all the commands and switches?
 These are notes to my future self.
 
 ## Install & Upgrade
-winget install --id Microsoft.Powershell --source winget  
+```
+winget install --id Microsoft.Powershell --source winget
+```
+  
 [doc](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows)
 
 ## Execute

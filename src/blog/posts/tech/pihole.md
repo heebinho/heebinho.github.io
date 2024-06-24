@@ -1,44 +1,48 @@
 ---
 layout: post.njk
 title: Pi-hole
-date: 2023-02-05
-description: Pi-hole setup
-tags: ["tech"]
-eleventyExcludeFromCollections: true
+date: 2024-03-10
+description: Ad Blocking
+tags: ["tech", "note"]
+eleventyExcludeFromCollections: false
 ---  
-# Intro   
+
+In den letzten Jahren wurde das Internet mit Werbung und anderen unerwünschten Inhalten überschwemmt.
+
+Selbstschutz ist daher angebracht. Unerwünschte Inhalte können gefiltert werden; ein Schutz auf mehreren Ebenen bietet sich an. Ein Addin wie [uBock Origin](https://ublockorigin.com/) ist schnell im jeweiligen Browser installiert und bietet einen ersten Abwehrlayer.
+Zusätzlich kann ein Filter auf Netzwerkebene (DNS) hilfreich und effektiv sein, um alle Geräte im eigenen Netzwerk zu schützen. 
+
+Hier kommt das Pi-hole ins Spiel - ein schwarzes Loch für unerwünschte DNS-Anfragen.
+
+## Pi-hole
+
+[Pi-hole] ist ein DNS sinkhole für unerwünschte Anfragen. 
 
 
-
-
-
-### Status
-
-```
-$ pihole status
-  [✓] FTL is listening on port 53
-     [✓] UDP (IPv4)
-     [✓] TCP (IPv4)
-     [✓] UDP (IPv6)
-     [✓] TCP (IPv6)
-
-  [✓] Pi-hole blocking is enabled
-
-```
 
 
 ### Web Interface
 https://x.x.x.x/admin
 
+### ssh
 
-### List
-[oisd blocklist](https://oisd.nl/)
-[youtube](https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt)
-https://firebog.net/
+```
+$ pihole status
+```
+
+### List of adlists
+[oisd blocklist](https://oisd.nl/)  
+[Firebog](https://firebog.net/)  
+[youtube](https://raw.githubusercontent.com/kboghdady/youTube_ads_4_pi-hole/master/youtubelist.txt)    
+
+
+```
+pihole -g
+```
 
 ### Tools
-https://d3ward.github.io/toolz/adblock.html
-https://adblock-tester.com/
+https://d3ward.github.io/toolz/adblock.html  
+https://adblock-tester.com/  
 
 
 ### Management
@@ -119,13 +123,24 @@ uci commit network
 /etc/init.d/network restart
 
 
+## Netzwerk Kofiguration
+
 
 
 ## Troubleshooting
 
-$ sudo apt update
-E: Splitting of clearsigned file /var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_InRelease failed as it doesn't contain all expected parts
-E: The package lists or status file could not be parsed or opened.
+IP configuration
+```
+ifconfig
+ip -6 addr
+
+```
+
+```
+ipconfig /renew
+```
+
+
 
 sudo rm /var/lib/apt/lists/*
 sudo apt-get update
@@ -141,3 +156,7 @@ https://scotthelme.co.uk/the-first-ever-issue-with-my-pi-hole/
 
 
 
+## Links und Referenzen
+[Pi-hole]  
+
+[pi-hole]: https://pi-hole.net/

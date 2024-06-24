@@ -20,6 +20,11 @@ eleventyExcludeFromCollections: false
 
 ```
 
+## Windows mount
+```
+/mnt/c/Users/[Username]
+```
+
 ## Troubleshoot
 Error code: Wsl/InstallDistro/0x80070422  
 Fix Microsoft Account Sign-in Assistant Service ([Source](https://revertservice.com/8/wlidsvc/))

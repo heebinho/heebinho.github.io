@@ -1,18 +1,59 @@
 ---
 layout: post.njk
-title: Unix commands
+title: GNU / Linux / Unix
 date: 2024-02-12
 description: Cheat sheet
 tags: ["tech", "note"]
-eleventyExcludeFromCollections: true
+eleventyExcludeFromCollections: false
 ---  
 
-## Commands
+## Environment
 
 ```
-$ cat /etc/os-release
-$ uname --help
+whoami 
+cat /etc/os-release
+uname --help
 ```
+
+### Profile
+
+> the original rc affix and extension both meant **run commands**.   
+
+[source](https://www.baeldung.com/linux/rc-files)
+
+evolved into:
+- run control
+- run configuration
+- runtime configuration
+
+
+```
+# In intelliJ/phpstorm change shell path to interactive
+/bin/bash -i  # interactive shell (-i)
+```
+
+
+ 
+
+| file  | about  |
+|---|---|
+| /etc/profile  | system-wide startup file for bourne compatible shells  |
+| ~./profile  |   |
+| ~./bash_profile  |   |
+| ~./bash_login  |   |
+
+-  -> 
+personal init files:
+
+
+- .bashrc
+- .profile
+
+Mnemonic: A Pro-File is used sparingly to modify your environment and start your ignition switch, Bashrc is a splash some people spray all over your dash. 
+
+
+
+## System maintenance & Package manager
 
 ```
 sudo apt update && sudo apt full-upgrade
@@ -20,14 +61,21 @@ $ sudo do-release-upgrade
 
 ```
 
+## Shell
+```
+man bash
+shopt login_shell #login_shell off
+```
+[Shell optional behavior](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)
+
 ## Links & Referenzen  
-[Webatic Decoder]  
+[gnu Bash manual]  
  
 
 
 
 
-[Webatic Decoder]: https://www.webatic.com/quoted-printable-convertor  
+[gnu Bash manual]: https://www.gnu.org/software/bash/manual/html_node/  
   
 
 

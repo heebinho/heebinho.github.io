@@ -3,7 +3,7 @@ layout: post.njk
 title: Drush
 date: 2022-12-12
 description: Drupal shell
-tags: ["tech"]
+tags: ["tech","notes"]
 eleventyExcludeFromCollections: false
 ---  
 
@@ -41,6 +41,8 @@ $ drush core:route | grep manage/{taxonomy_vocabulary}/overview
 return Url::fromRoute('entity.taxonomy_vocabulary.overview_form')
     ->setRouteParameter('taxonomy_vocabulary', $taxonomy)
     ->toString();
+
+$ drush route --path=https://www.ride-mtb.com/de/admin/structure/webform/manage/buchung_huettentour/submission/1445
 
 ```
 

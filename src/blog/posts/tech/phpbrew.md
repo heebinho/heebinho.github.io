@@ -93,28 +93,36 @@ Enjoy phpbrew at $HOME!!
 
 ## Usage
 ```
-$ phpbrew update
-$ phpbrew known
-$ phpbrew known --more
-$ phpbrew install 8.3 +default
-$ phpbrew install 8.3 +default +debug
-$ phpbrew list
-$ phpbrew variants
-$ phpbrew use php-8.3.3
+phpbrew update
+phpbrew known
+phpbrew known --more
+phpbrew install 8.3 +default
+phpbrew install 8.3 +default +debug
+phpbrew list
+phpbrew variants
+phpbrew use php-8.3.3
 
 Switch default:
-$ phpbrew switch php-8.3.3
+phpbrew switch php-8.3.3
 ```
 
 
+### Extension
 
+```
+# Check extensions
+phpbrew ext
+
+# Install extensions
+phpbrew ext install gd
+```
 
 
 
 
 ## xDebug
 ```
-$ phpbrew --debug ext install xdebug
+phpbrew --debug ext install xdebug
 
 ===> Creating config file 
 ~/.phpbrew/php/php-8.3.3/var/db/xdebug.ini

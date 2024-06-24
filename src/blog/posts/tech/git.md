@@ -1,10 +1,15 @@
-Title: Git
-Published: 9/11/2019
-Tags: Git
-Lead: Git cheat sheet
 ---
+layout: post.njk
+title: Git
+date: 2019-11-09
+description: Git cheat sheet
+tags: ["tech", "note"]
+eleventyExcludeFromCollections: false
+---  
+
 
 ## Resetting a fork
+
 
 ```bash
 $ cd <your local repo>
@@ -46,6 +51,68 @@ $ git remote add upstream https://github.com/la-yumba/functional-csharp-code.git
 $ git fetch upstream
 $ git checkout master
 $ git merge upstream/master
+```
+
+## Fork mismatched to upstream master
+
+```
+git branch ssp
+git reset --hard HEAD~2 # Go back 2 commits
+git checkout ssp
+git push --set-upstream origin ssp 
+git checkout master
+git remote add upstream https://github.com/drupalauth/simplesamlphp-module-drupalauth.git
+git fetch upstream
+git checkout main
+
+git merge upstream/main
+git branch -d master
+
+```
+
+## Merge to Rebase
+
+```
+git reset --hard 71cb64209353c1e3ce7a4ed72c14d111707725cd
+git branch test
+git rebase upstream/main
+git cherry-pick a82f65a19c8cd46b5f9df685eb0d65c99f15587e --no-commit
+git commit -m "x"
+git push --set-upstream origin ssp
+```
+
+## Branch
+
+```
+git branch --help
+git branch -d test #delete branch
+git branch -m name new_name #rename branch
+
+```
+## Tags
+
+```
+git tag --help
+git fetch --all --tags
+git checkout tags/v2.2.1 -b live
+
+```
+
+## Stash
+
+```
+git stash --help
+git stash save
+git stash pop
+
+```
+
+## Merge
+
+```
+git merge --help
+
+
 ```
 
 ## Git Layers
