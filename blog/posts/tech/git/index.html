@@ -79,9 +79,14 @@
 <article class="prose lg:prose-xl my-10">
     <h1>Git</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#resetting-a-fork">Resetting a fork</a></li><li><a href="#undo-a-commit--no-trace">Undo a commit -no trace</a></li><li><a href="#embed-gist">Embed gist</a></li><li><a href="#configuring-a-remote-for-a-fork">Configuring a remote for a fork</a></li><li><a href="#syncing-a-fork">Syncing a fork</a></li><li><a href="#fork-mismatched-to-upstream-master">Fork mismatched to upstream master</a></li><li><a href="#merge-to-rebase">Merge to Rebase</a></li><li><a href="#branch">Branch</a></li><li><a href="#tags">Tags</a></li><li><a href="#stash">Stash</a></li><li><a href="#merge">Merge</a></li><li><a href="#git-layers">Git Layers</a><ol><li><a href="#git-as-a-%22persistant-map%22">Git as a &quot;Persistant Map&quot;</a></li></ol></li><li><a href="#git's-straightforward-object-model">Git's straightforward object model</a><ol><li><a href="#as-a-revision-control-system">As a revision control system</a></li></ol></li></ol>
+        <ol><li><a href="#commit">Commit</a><ol><li><a href="#amend">Amend</a></li></ol></li><li><a href="#resetting-a-fork">Resetting a fork</a></li><li><a href="#undo-a-commit--no-trace">Undo a commit -no trace</a></li><li><a href="#embed-gist">Embed gist</a></li><li><a href="#configuring-a-remote-for-a-fork">Configuring a remote for a fork</a></li><li><a href="#syncing-a-fork">Syncing a fork</a></li><li><a href="#fork-mismatched-to-upstream-master">Fork mismatched to upstream master</a></li><li><a href="#merge-to-rebase">Merge to Rebase</a></li><li><a href="#branch">Branch</a></li><li><a href="#tags">Tags</a></li><li><a href="#stash">Stash</a></li><li><a href="#merge">Merge</a></li><li><a href="#git-layers">Git Layers</a><ol><li><a href="#git-as-a-%22persistant-map%22">Git as a &quot;Persistant Map&quot;</a></li></ol></li><li><a href="#git's-straightforward-object-model">Git's straightforward object model</a><ol><li><a href="#as-a-revision-control-system">As a revision control system</a></li></ol></li></ol>
       </nav></aside>
-    <h2 id="resetting-a-fork" tabindex="-1">Resetting a fork</h2>
+    <h2 id="commit" tabindex="-1">Commit</h2>
+<h3 id="amend" tabindex="-1">Amend</h3>
+<pre><code>git commit --amend
+git commit --amend -m &quot;New commit message&quot;
+</code></pre>
+<h2 id="resetting-a-fork" tabindex="-1">Resetting a fork</h2>
 <pre><code class="language-bash">$ <span class="hljs-built_in">cd</span> &lt;your <span class="hljs-built_in">local</span> repo&gt;
 git remote add upstream /url/to/original/repo.git
 git fetch upstream

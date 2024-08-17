@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powershell</title>
+    <title>Office PC Build</title>
     <link rel="icon" href="/assets/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -75,51 +75,30 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">15 Apr 2023</time>
+<time class="font-bold ">11 Aug 2024</time>
 <article class="prose lg:prose-xl my-10">
-    <h1>Powershell</h1>
+    <h1>Office PC Build</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#install-%26-upgrade">Install &amp; Upgrade</a></li><li><a href="#execute">Execute</a></li><li><a href="#chrome-copy-as-ps">Chrome copy as ps</a><ol><li><a href="#save-response">Save response</a></li></ol></li></ol>
+        <ol><li><a href="#bilder">Bilder</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
       </nav></aside>
-    <p>Terminals are a fast and elegant way to manage your system.
-But who can remember all the commands and switches?
-These are notes to my future self.</p>
-<h2 id="install-%26-upgrade" tabindex="-1">Install &amp; Upgrade</h2>
-<pre><code>winget install --id Microsoft.Powershell --source winget
-</code></pre>
-<p><a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows">doc</a></p>
-<h2 id="execute" tabindex="-1">Execute</h2>
-<pre><code>string script = File.ReadAllText(fi.FullName);
-using var ps = PowerShell.Create();
-ps.AddScript(script).Invoke();
-</code></pre>
-<h2 id="chrome-copy-as-ps" tabindex="-1">Chrome copy as ps</h2>
-<pre><code>$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
-$session.UserAgent = &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&quot;
-$session.Cookies.Add((New-Object System.Net.Cookie(&quot;Name&quot;, &quot;2023-04-16-08&quot;, &quot;/&quot;, &quot;.google.ch&quot;)))
-Invoke-WebRequest -UseBasicParsing -Uri &quot;https://www.google.ch/&quot; `
--WebSession $session `
--Headers @{
-&quot;authority&quot;=&quot;www.google.ch&quot;
-  &quot;method&quot;=&quot;GET&quot;
-  &quot;path&quot;=&quot;/&quot;
-  &quot;scheme&quot;=&quot;https&quot;
-  &quot;accept&quot;=&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&quot;
-  &quot;accept-encoding&quot;=&quot;gzip, deflate, br&quot;
-  &quot;accept-language&quot;=&quot;en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7&quot;
-  &quot;cache-control&quot;=&quot;no-cache&quot;
-  ...
-}
-</code></pre>
-<h3 id="save-response" tabindex="-1">Save response</h3>
-<pre><code>$response = Invoke-WebRequest ...
-$stream = [System.IO.StreamWriter]::new('.\response.json', $false, [System.Text.Encoding]::UTF8)
-try {
-    $stream.Write($response.Content)
-} finally {
-    $stream.Dispose()
-}
-</code></pre>
+    <p>Im Auftrag durfte ich seit langem wieder mal einen PC zusammenbauen. Die folgenden Komponenten wurden in das stylische Fractal North Gehäuse gepackt:</p>
+<ul>
+<li>Ryzen 8600G (AM5, 4.30 GHz, 6 -Core)</li>
+<li>ROG Strix B650</li>
+<li>ASUS ROG Strix 850G (850 W)</li>
+<li>Kingston FURY Renegade (2000 GB, M.2 2280)</li>
+<li>Kingston FURY Beast (2 x 16GB, 6000 MHz, DDR5-RAM, DIMM)</li>
+<li>Fractal North</li>
+</ul>
+<p>APU Build und zum Start keine dedizierte Grafikkarte. AM5 Plattform. Netzteil etwas überdimensioniert aber gleich teuer wie die kleiner dimensionierte Variante.</p>
+<h2 id="bilder" tabindex="-1">Bilder</h2>
+<img src="https://i.ibb.co/Fm9prSx/Components.jpg" alt="Components" border="0">
+<img src="https://i.ibb.co/QkVxHYJ/fractal-north.jpg" alt="fractal-north" border="0">
+<img src="https://i.ibb.co/b7BkgbX/fractal-north-open.jpg" alt="fractal-north-open" border="0">
+<img src="https://i.ibb.co/yhNMc0t/fractal-north-panel.jpg" alt="fractal-north-panel" border="0">
+<img src="https://i.ibb.co/5Tpw1jH/Mainboard-M-2.jpg" alt="Mainboard-M-2" border="0">
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://www.amd.com/de/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8600g.html">Ryzen 8600G</a></p>
 
 </article>
 
