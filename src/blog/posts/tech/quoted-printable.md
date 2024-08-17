@@ -3,7 +3,7 @@ layout: post.njk
 title: Thunderbird Source View
 date: 2024-02-11
 description: Decode quoted-printable
-tags: ["front", "rss", "tech", "note"]
+tags: ["rss", "tech", "note"]
 ---  
 
 ## Intro

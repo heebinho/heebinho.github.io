@@ -15,6 +15,8 @@ eleventyExcludeFromCollections: false
 $ cd C:\Program Files\MySQL\MySQL Workbench 8.0 CE
 $ mysql -u root -p
 
+$ mysql -h account.mysql.db.internal  -u account_user -p
+
 mysql> show databases;
 mysql> create database x;
 mysql> use x;

@@ -2,7 +2,7 @@
 layout: post.njk
 title: Mautic
 date: 2024-04-19
-description: Ad Blocking
+description: Notes
 tags: ["tech", "note"]
 eleventyExcludeFromCollections: false
 ---  

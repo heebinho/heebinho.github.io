@@ -7,6 +7,14 @@ tags: ["tech", "note"]
 eleventyExcludeFromCollections: false
 ---  
 
+## Commit
+
+### Amend
+```
+git commit --amend
+git commit --amend -m "New commit message"
+```
+
 
 ## Resetting a fork
 

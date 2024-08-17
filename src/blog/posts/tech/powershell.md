@@ -47,3 +47,15 @@ Invoke-WebRequest -UseBasicParsing -Uri "https://www.google.ch/" `
   ...
 }
 ```
+
+### Save response
+
+```
+$response = Invoke-WebRequest ...
+$stream = [System.IO.StreamWriter]::new('.\response.json', $false, [System.Text.Encoding]::UTF8)
+try {
+    $stream.Write($response.Content)
+} finally {
+    $stream.Dispose()
+}
+```
