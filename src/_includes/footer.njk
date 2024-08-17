@@ -5,13 +5,17 @@
             {% if contact.socialLinks %}
               {% for item in contact.socialLinks %}
                 {% set externalAttribute = '' %}
+                {% set strike = '' %}
 
                 {% if item.external %}
                   {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
                 {% endif %}
+                {% if item.name == 'goodreads' %}
+                  {% set strike = 'style="text-decoration: line-through" ' %}
+                {% endif %}
 
                 <li>
-                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.name }}</a>
+                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} {{ strike | safe }} >{{ item.name }}</a>
                 </li>
               {% endfor %}
             {% endif %}

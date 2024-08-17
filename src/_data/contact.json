@@ -16,6 +16,11 @@
             "external": true
         },
         {
+            "name": "bookwyrm",
+            "url": "https://bookwyrm.social/user/heebinho",
+            "external": true
+        },
+        {
             "name": "strava",
             "url": "https://www.strava.com/athletes/heebinho",
             "external": true
