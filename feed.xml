@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-08-17T22:29:29Z</updated>
+    <updated>2024-08-18T08:54:52Z</updated>
   
   <id>https://renatoheeb.com</id>
   <author>
@@ -331,6 +331,31 @@ Auseinandergebaut, Lüfter gereinigt, neue Wärmeleitpaste aufgetragen und ein H
 <img src="https://i.ibb.co/dk5bJbC/chrome-flags-dark-mode.png" alt="chrome-flags-dark-mode" border="0">
 <h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
 <p><a href="https://developer.chrome.com/docs/web-platform/chrome-flags">Chrome flags</a></p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Bookwyrm</title>
+      <link href="https://renatoheeb.com/blog/posts/social/bookwyrm/"/>
+      <updated>2024-08-18T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/social/bookwyrm/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Bücher können inspirieren und neue Ideen entfalten. Ich zähle mich nicht zu den grossen Lesern, dennoch möchte ich meine Bücherlisten online pflegen und Leseempfehlungen sammeln. Bis anhin tat ich das sporadisch mit Goodreads. Nun kommt der Wechsel auf Bookwyrm und damit ins Fediverse.</p>
+<h2 id="why" tabindex="-1">Why</h2>
+<blockquote>
+<p>Track your reading, talk about books, write reviews, and discover what to read next. Always ad-free, anti-corporate, and community-oriented, BookWyrm is human-scale software, designed to stay small and personal</p>
+</blockquote>
+<p>Eine etwas ausführlichere Beschreibung findet man unter <a href="https://joinfediverse.wiki/What_is_BookWyrm%3F/de">joinfediverse.wiki</a></p>
+<h2 id="migration" tabindex="-1">Migration</h2>
+<p>Die Migration ist einfacher als ich gedacht hätte. Die Daten aus Goodreads als csv exportieren und auf Bookwyrm importieren.<br>
+Es kann natürlich sein, dass das eine oder andere Buch nicht erkannt wird; Buch erfassen und den Import nochmals starten - voilà.</p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://bookwyrm.social/user/heebinho">My Bookwyrm</a><br>
+<a href="https://joinfediverse.wiki/What_is_BookWyrm%3F/de">joinfediverse.wiki</a></p>
 
     ]]>
       </content>
