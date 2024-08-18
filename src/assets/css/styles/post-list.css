@@ -35,9 +35,7 @@
   border-top: 1px solid rgba(230, 230, 230, 1);
 }
 
-.post-list__item:last-child {
-  border-bottom: 1px solid rgba(230, 230, 230, 1);
-}
+
 
 .post-list__title {
   font-size: var(--text-2xl);
