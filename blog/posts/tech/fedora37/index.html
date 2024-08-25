@@ -96,14 +96,14 @@ wsl -l -v
 Get-ItemProperty Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*\ DistributionName | Where-Object -Property DistributionName -eq fedora37  | Set-ItemProperty -Name DefaultUid -Value 1000
 </code></pre>
 <pre><code class="language-bash">
-[heebinho@thinktank ~]$ sudo dnf copr <span class="hljs-built_in">enable</span> wslutilities/wslu
-[sudo] password <span class="hljs-keyword">for</span> heebinho:
+[heebinho@thinktank ~]$ <span class="hljs-built_in">sudo</span> dnf copr <span class="hljs-built_in">enable</span> wslutilities/wslu
+[<span class="hljs-built_in">sudo</span>] password <span class="hljs-keyword">for</span> heebinho:
 Enabling a Copr repository. Please note that this repository is not part
 of the main distribution, and quality may vary.
 
 The Fedora Project does not exercise any power over the contents of
 this repository beyond the rules outlined <span class="hljs-keyword">in</span> the Copr FAQ at
-&lt;https://docs.pagure.org/copr.copr/user_documentation.html<span class="hljs-comment">#what-i-can-build-in-copr&gt;,</span>
+&lt;https://docs.pagure.org/copr.copr/user_documentation.html#what-i-can-build-in-copr&gt;,
 and packages are not held to any quality or security level.
 
 Please <span class="hljs-keyword">do</span> not file bug reports about these packages <span class="hljs-keyword">in</span> Fedora
