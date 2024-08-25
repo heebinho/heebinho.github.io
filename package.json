@@ -1,7 +1,7 @@
 {
-  "name": "eleventy",
-  "version": "1.0.0",
-  "description": "",
+  "name": "renatoheeb.com",
+  "version": "1.1.0",
+  "description": "Website renatoheeb.com",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf _site",
