@@ -4,6 +4,7 @@ const tocPlugin = require("eleventy-plugin-toc");
 const anchor = require("markdown-it-anchor");
 var hljs = require('highlight.js'); // https://highlightjs.org
 
+
 const markdownit = require('markdown-it')({
   html:         true,        // Enable HTML tags in source
   xhtmlOut:     false,        // Use '/' to close single tags (<br />).
