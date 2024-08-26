@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: Thunderbird Source View
-date: 2024-02-11
+date: 2024-02-12
 description: Decode quoted-printable
 tags: ["rss", "tech", "note"]
 ---  
