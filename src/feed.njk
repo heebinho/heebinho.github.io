@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
   <link href="{{ site.url }}{{ permalink }}" rel="self"/>
   <link href="{{ site.url }}/"/>
   {% if collections.posts | length %}
-    <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc822 }}</updated>
+    <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   {% endif %}
   <id>{{ site.url }}</id>
   <author>
