@@ -1,12 +1,12 @@
 {
     "socialLinks": [
         {
-            "name": "Mastodon",
+            "name": "mastodon",
             "url": "https://mstdn.social/@heebelcraft",
             "external": true
         },
         {
-            "name": "GitHub",
+            "name": "github",
             "url": "https://github.com/heebinho",
             "external": true
         },

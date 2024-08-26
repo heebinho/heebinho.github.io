@@ -6,6 +6,7 @@
               {% for item in contact.socialLinks %}
                 {% set externalAttribute = '' %}
                 {% set strike = '' %}
+                {% set verification = '' %}
 
                 {% if item.external %}
                   {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
@@ -13,9 +14,12 @@
                 {% if item.name == 'goodreads' %}
                   {% set strike = 'style="text-decoration: line-through" ' %}
                 {% endif %}
+                {% if item.name == 'mastodon' %}
+                  {% set verification = 'rel="me" ' %}
+                {% endif %}
 
                 <li>
-                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} {{ strike | safe }} >{{ item.name }}</a>
+                  <a {{ verification | safe }} href="{{ item.url | url }}" {{ externalAttribute | safe }} {{ strike | safe }} >{{ item.name }}</a>
                 </li>
               {% endfor %}
             {% endif %}
