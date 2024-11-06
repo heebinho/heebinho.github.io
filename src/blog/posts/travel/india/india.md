@@ -25,4 +25,7 @@ tags: ["front", "rss", "travel", "country"]
 
 ## Jaipur (आगरा)
 
-<a href="https://photos.app.goo.gl/8Dzo8KoJknUpAMYKA"><img src="" alt="Jaipur" border="0"></a>
+<a href="https://photos.app.goo.gl/8Dzo8KoJknUpAMYKA"><img src="https://i.ibb.co/wCm72NC/Jaipur.jpg" alt="Jaipur" border="0"></a>
+
+
+
