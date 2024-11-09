@@ -31,8 +31,10 @@ Pink city.
 
 ## Pushkar (पुष्कर)
 
-Camel fair. (coming soon)
+Camel fair.
 
-<a href="https://photos.app.goo.gl/1ibwYtuWDyH37Buc7">Pushkar</a>
+<a href="https://photos.app.goo.gl/1ibwYtuWDyH37Buc7"><img src="https://i.ibb.co/3T88Ysk/Pushkar-web.jpg" alt="Pushkar" border="0"></a>
+
+
 
 
