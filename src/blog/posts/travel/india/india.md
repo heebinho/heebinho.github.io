@@ -21,7 +21,7 @@ tags: ["front", "rss", "travel", "country"]
 
  Taj mahal & co.
 
-<a href="https://photos.app.goo.gl/NUCWJYZdTrdPGC4s9"><img src="https://i.ibb.co/SXj72FK/Agra-web.jpg" alt="Agra" border="0"></a>
+<a href="https://photos.app.goo.gl/NUCWJYZdTrdPGC4s9"><img src="https://i.ibb.co/DCv94ky/Tah-mahal-Gradient.jpg" alt="Agra" border="0"></a>
 
 ## Jaipur (जयगढ़ दुर्ग)
 
@@ -40,9 +40,6 @@ Camel fair.
 
 
 <a href="https://photos.app.goo.gl/mbdiT9rztWtf251e6">
-<!-- <img src="https://i.ibb.co/3T88Ysk/Pushkar-web.jpg" alt="Udaipur" border="0"> -->
-Udaipur (coming soon)
+<img src="https://i.ibb.co/cvJczpD/Udaipur-web.jpg" alt="Udaipur" border="0">
 </a>
-
-
 
