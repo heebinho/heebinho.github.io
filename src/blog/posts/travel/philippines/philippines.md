@@ -23,7 +23,14 @@ Lost paradise
 Hidden gem
 
 <a href="https://photos.app.goo.gl/vLkZDz1qLsF9Sqcn6">
-<!-- <img src="https://i.ibb.co/KDZw2XH/Siquijor-web.jpg" alt="Delhi" border="0"> -->
-Bantayan
+<img src="https://i.ibb.co/sjYX1wT/Bantayan-web.jpg" alt="Bantayan-web" border="0">
+</a>
+
+## Boracay Island
+
+Little Korea
+
+<a href="https://photos.app.goo.gl/uc2EyaRmCmQzEbAMA">
+<img src="https://i.ibb.co/6Dtncpq/Boracay-web.jpg" alt="Boracay-web" border="0">
 </a>
 
