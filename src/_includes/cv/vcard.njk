@@ -1,0 +1,57 @@
+<div class="vcard h-card">
+    {% if contact.avatar %}
+        {%- set avatarUrl -%}/assets/img/{{ contact.avatar }}{% endset %}
+        <img class="vcard__avatar u-photo" src="{{ avatarUrl | base64 }}" width="200" height="200" alt="{{ contact.name }}" />
+    {% endif %}
+
+    <div class="vcard__content">
+        <div class="vcard__title">
+            <h1 class="p-name">{{ contact.name }}</h1>
+            {% if contact.pronouns %}
+                <em class="vcard__pronouns p-gender-identity">({{ contact.pronouns }})</em>
+            {% endif %}
+        </div>
+
+        <p class="vcard__subtitle lead">
+            <span class="p-job-title">{{ contact.occupation }}</span>
+            {% if contact.location %}
+                <span aria-hidden="true">&middot;</span>
+                <span class="p-locality">{{ contact.location }}</span>
+            {% endif %}
+        </p> 
+
+        <div class="vcard__contact p-contact">
+            {% if contact.email %}
+                <a class="vcard__link u-email" aria-label="Email" href="mailto:{{ contact.email }}">
+                    {% svg "email" %}
+                    <span class="vcard__link-text">{{ contact.email }}</span>
+                </a>
+            {% endif %}
+            {% if contact.mobile %}
+                <a class="vcard__link p-tel" aria-label="Telephone" href="tel:{{ contact.mobile }}">
+                    {% svg "telephone" %}
+                    <span class="vcard__link-text">{{ contact.mobile }}</span>
+                </a>
+            {% endif %}
+            {% if contact.web %}
+                <a class="vcard__link u-url" aria-label="Website" href="{{ contact.web }}">
+                    {% svg "laptop" %}
+                    <span class="vcard__link-text">{{ contact.web }}</span>
+                </a>
+            {% endif %}
+
+            {% if contact.social %}
+                <div class="vcard__social">
+                    {% for social in contact.social %}
+                        <a class="vcard__link" href="{{ social.url }}" aria-label="{{ social.name }}" rel="me">
+                            {%- set isSocialIcon = true -%}
+                            {%- svg social.name, isSocialIcon -%}
+                            <span class="vcard__link-text p-nickname">{{- social.user -}}</span>
+                            <span class="sr-only">on {{ social.name }}</a>
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %} 
+        </div>
+    </div>
+</div>

@@ -123,6 +123,24 @@ git merge --help
 
 ```
 
+## Clean
+```
+git clean -n -d
+git clean -f
+```
+[git-clean]  
+
+
+
+## Credential store
+```
+git config --global credential.helper store
+git pull
+ git config --global credential.helper forget
+```
+
+
+
 ## Git Layers
 * Persistant Map
 * Content Tracker
@@ -197,3 +215,14 @@ no changes added to commit (use "git add" and/or "git commit -a")
 So a branch is just a reference to a commit.  
 And HEAD is just a reference to a branch. (a pointer to a pointer)  
 A checkout moves the HEAD and updates the working area
+
+
+
+## Links & Referenzen  
+[git-clean]  
+ 
+
+
+
+
+[git-clean]: https://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-from-the-current-git-working-tree  

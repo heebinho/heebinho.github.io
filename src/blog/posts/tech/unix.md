@@ -15,6 +15,15 @@ cat /etc/os-release
 uname --help
 ```
 
+### Group
+
+```
+getent group #get-entries
+cat /etc/group
+groups $USER
+```
+
+
 ### Profile
 
 > the original rc affix and extension both meant **run commands**.   
@@ -67,6 +76,15 @@ man bash
 shopt login_shell #login_shell off
 ```
 [Shell optional behavior](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html)
+
+
+## scp
+
+```
+scp .\Downloads\JetBrainsGateway-2024.2.3.tar.gz heebinho@powercube:/home/heebinho/JetBrainsGateway.tar.gz
+
+
+```
 
 ## Links & Referenzen  
 [gnu Bash manual]  

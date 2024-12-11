@@ -7,10 +7,12 @@ tags: ["tech","notes"]
 eleventyExcludeFromCollections: false
 ---  
 
-## SSH
+## Drush Setup
 
 ```
-ssh user@domain.com -i .ssh/id_rsa
+vendor/bin/drush --version
+ddev drush describe
+
 ```
 
 

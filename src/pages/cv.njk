@@ -1,0 +1,47 @@
+---
+title: Curiculum vitae
+layout: 
+permalink: /cv/
+---
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- set title -%}
+        {{ author.name }} - {{ author.occupation }}
+    {%- endset -%}
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/cv.css"/>
+</head>
+<body style="--primary-color:#8097a6;--secondary-color:#dd7a7a;">
+    
+    {% svgsprite %}
+
+    {# 
+    {% svg "github" %}
+    {% svg "linkedin", "galloway" %} 
+    #}
+
+    <div class="layout h-resume" role="document">
+    
+        <header class="header">
+            <div class="container">
+                {% include "cv/vcard.njk" %}
+            </div>
+        </header>
+        {% include "cv/main.njk" %}
+        {% include "cv/sidebar.njk" %}
+        
+        <footer class="footer">
+            <div class="container utl-space-between">
+                <p>&copy; Renato Heeb</p>
+                <p>{{ strings.labels.lastUpdated }}: {{ build.timestamp }}</p>
+ 
+            </div>
+        </footer>
+    </div> {#end layout #}
+
+    {# <script src="{{ '/assets/cv.js' | url }}"></script> #}
+</body>
+</html>

@@ -1,4 +1,25 @@
 {
+    "name": "Renato Heeb",
+    "occupation": "Software Entwickler & Wirtschaftsinformatiker",
+    "location": "Zürich | Chur",
+    "avatar": "avatar.png",
+    "email": "renato@renatoheeb.com",
+    "mobile": "(+41) 078 657 17 09",
+    "web": "renatoheeb.com",
+    "languages": [
+        {
+            "name": "Deutsch",
+            "level": "native"
+        },
+        {
+            "name": "Englisch",
+            "level": "fluent"
+        },
+        {
+            "name": "Italienisch",
+            "level": "basic"
+        }
+    ],
     "socialLinks": [
         {
             "name": "mastodon",

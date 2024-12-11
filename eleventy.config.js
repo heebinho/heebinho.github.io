@@ -9,6 +9,11 @@ import markdownItAnchor from "markdown-it-anchor";
 
 import hljs from "highlight.js";
 
+import svgSprite from "eleventy-plugin-svg-sprite";
+import mime from 'mime/lite';
+import * as fs from 'node:fs';
+import { isNull } from "node:util";
+
 
 //callback function
 export default function(eleventyConfig) {
@@ -16,6 +21,12 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(navigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(tocPlugin, { tags: ["h2", "h3"] });
+  //render collection  -> {% svgsprite %}
+  //render svg         -> {% svg "github", "custom-class" %}
+  eleventyConfig.addPlugin(svgSprite, {
+    path: "./src/assets/svg",
+  });
+
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "/img" });
   eleventyConfig.addPassthroughCopy("src/assets/favicon");
   eleventyConfig.addPassthroughCopy("src/assets/css/*");
@@ -23,6 +34,8 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/fontawesome");
   eleventyConfig.addPassthroughCopy('CNAME');
   eleventyConfig.addPassthroughCopy('.well-known');
+
+
 
 
   // Customize Markdown library and settings:
@@ -78,11 +91,16 @@ export default function(eleventyConfig) {
     eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {
       zone: 'utc'
-    }).toFormat("d MMM yyyy");
+    }).toFormat("d MMMM yyyy");
     });
 
-    eleventyConfig.addGlobalData("year", () => {
-      return new Date().getFullYear();
+    eleventyConfig.addGlobalData("year", (dateObj) => {
+      if(dateObj === null || dateObj === undefined){
+        return new Date().getFullYear();
+      }else{
+        return dateObj.toFormat('yyyy');
+      }
+      
     });
 
     eleventyConfig.addFilter('excerpt', (post) => {
@@ -118,6 +136,14 @@ export default function(eleventyConfig) {
       return [...tagSet];
     });
 
+    eleventyConfig.addFilter('base64', (file) => {
+      const filepath = `src/${file}`;
+      const mimeType = mime.getType(file);
+      const buffer = Buffer.from(fs.readFileSync(filepath));
+      return `data:${mimeType};base64,${buffer.toString('base64')}`;
+    });
+    
+    
 
   return {
     dir: { input: 'src', output: '_site' }

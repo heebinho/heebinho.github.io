@@ -7,15 +7,17 @@
     {% set navPages = collections.all | eleventyNavigation %}
     <ul class="text-right">
       {% for entry in navPages %}
-        <li class="inline">
-          <a
-          href="{{ entry.url }}"
-          class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
-          {{'bg-yellow-100 text-black' if entry.url in page.url
-          else 'text-white hover:text-gray-900'}}">
-          {{ entry.title }}
-        </a>
-        </li>
+        {% if not entry.hide %}
+          <li class="inline">
+            <a
+            href="{{ entry.url }}"
+            class="uppercase text-sm py-1 px-2 rounded mr-4 inline-block
+            {{'bg-yellow-100 text-black' if entry.url in page.url
+            else 'text-white hover:text-gray-900'}}">
+            {{ entry.title }}
+          </a>
+          </li>
+        {% endif %}
       {% endfor %}
   </ul>
 
