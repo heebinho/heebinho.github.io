@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fedora</title>
+    <link rel="icon" href="/assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Feed">
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/fontawesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/brands.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/solid.min.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="/assets/highlight/styles/ascetic.css"/>
+    <script src="/assets/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    
+          <header class="header">
+        <div class="header__content">
+          <h1 class="site-title-lowercase">
+            <a href=/>
+              renatoheeb.com
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog/posts/travel/"  >Travel Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog/posts/tech/"  >Tech Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about/"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+      <main class="main">
+        
+<time class="font-bold ">13 October 2024</time>
+<article class="prose lg:prose-xl my-10">
+    <h1>Fedora</h1>
+    <aside class="prose lg:prose-xl my-5"><nav class="toc" >
+        <ol><li><a href="#get-fedora">Get Fedora</a></li><li><a href="#keygen">Keygen</a></li><li><a href="#problem%3A-system-suspends-after-15-minutes">Problem: System suspends after 15 minutes</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
+      </nav></aside>
+    <h2 id="get-fedora" tabindex="-1">Get Fedora</h2>
+<p><a href="https://fedoraproject.org/en/workstation/download">download</a></p>
+<ul>
+<li>Use Fedora Media Writer, to write an iso to a usb-stick</li>
+<li>Boot Live System, Install</li>
+</ul>
+<h2 id="keygen" tabindex="-1">Keygen</h2>
+<pre><code>ssh-keygen -t rsa -b 4096
+</code></pre>
+<h2 id="problem%3A-system-suspends-after-15-minutes" tabindex="-1">Problem: System suspends after 15 minutes</h2>
+<p>Allthough connected via ssh the system suspends after 15 minutes</p>
+<pre><code>Broadcast message from gdm@powercube on tty1 (Sun 2024-10-13 12:45:58 CEST):
+
+The system will suspend now!
+</code></pre>
+<p>Fix</p>
+<pre><code>sudo -u gdm dbus-run-session gsettings list-recursively org.gnome.settings-daemon.plugins.power | grep sleep # Show relevant settings
+
+sudo -u gdm dbus-run-session gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 1800 # In seconds | O disabled
+
+</code></pre>
+<p><a href="https://discussion.fedoraproject.org/t/gnome-suspends-after-15-minutes-of-user-inactivity-even-on-ac-power/79801">suspend-fix</a></p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://fedoraproject.org/en/workstation/download">download</a><br>
+<a href="https://discussion.fedoraproject.org/t/gnome-suspends-after-15-minutes-of-user-inactivity-even-on-ac-power/79801">suspend-fix</a></p>
+
+</article>
+
+      </main>
+          <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                
+                  
+                
+
+                <li>
+                  <a rel="me"  href="https://mstdn.social/@heebelcraft" target="_blank" rel="noopener noreferrer"  >mastodon</a>
+                </li>
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                
+
+                <li>
+                  <a  href="https://github.com/heebinho" target="_blank" rel="noopener noreferrer"  >github</a>
+                </li>
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                  
+                
+                
+
+                <li>
+                  <a  href="https://www.goodreads.com/heebinho" target="_blank" rel="noopener noreferrer" style="text-decoration: line-through"  >goodreads</a>
+                </li>
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                
+
+                <li>
+                  <a  href="https://bookwyrm.social/user/heebinho" target="_blank" rel="noopener noreferrer"  >bookwyrm</a>
+                </li>
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                
+
+                <li>
+                  <a  href="https://www.strava.com/athletes/heebinho" target="_blank" rel="noopener noreferrer"  >strava</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+          <p class="footer__attribution">Copyright © 1984-2025 Renato Heeb. All rights reserved.</a></p>
+          
+          
+
+
+        </div>
+
+      </footer>
+
+
+
+
+
+
+
+    
+
+    <script src="/assets/main.js"></script>
+  </body>
+</html>

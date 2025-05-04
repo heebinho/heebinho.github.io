@@ -75,13 +75,28 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">12 Dec 2022</time>
+<time class="font-bold ">12 December 2022</time>
 <article class="prose lg:prose-xl my-10">
     <h1>ddev</h1>
-    <aside class="prose lg:prose-xl my-5"></aside>
-    <p>ddev start
-ddev launch</p>
+    <aside class="prose lg:prose-xl my-5"><nav class="toc" >
+        <ol><li><a href="#quickstart">Quickstart</a></li><li><a href="#docker">Docker</a></li></ol>
+      </nav></aside>
+    <h2 id="quickstart" tabindex="-1">Quickstart</h2>
 <p>https://ddev.readthedocs.io/en/latest/users/quickstart/</p>
+<p>´´´
+ddev config --project-type=drupal --php-version=8.3 --docroot=web</p>
+<p>ddev start</p>
+<p>#Network ddev_default created</p>
+<p>ddev launch</p>
+<p>´´´</p>
+<h2 id="docker" tabindex="-1">Docker</h2>
+<p>´´´
+docker ps
+docker exec -it ddev-drupal-web sh #</p>
+<p>docker context ls
+docker context use desktop-linux
+docker context use default</p>
+<p>´´´</p>
 
 </article>
 
@@ -185,7 +200,7 @@ ddev launch</p>
           </ul>
 
           
-          <p class="footer__attribution">Copyright © 1984-2024 Renato Heeb. All rights reserved.</a></p>
+          <p class="footer__attribution">Copyright © 1984-2025 Renato Heeb. All rights reserved.</a></p>
           
           
 

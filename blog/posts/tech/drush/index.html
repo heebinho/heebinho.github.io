@@ -75,14 +75,16 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">12 Dec 2022</time>
+<time class="font-bold ">12 December 2022</time>
 <article class="prose lg:prose-xl my-10">
     <h1>Drush</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#ssh">SSH</a></li><li><a href="#drush-functional">Drush functional</a><ol><li><a href="#modules">Modules</a></li><li><a href="#routes">Routes</a></li><li><a href="#config">Config</a></li><li><a href="#php-cli">PHP CLI</a></li><li><a href="#delete-locked-field">Delete locked field</a></li><li><a href="#scripts">Scripts</a></li></ol></li><li><a href="#links-und-referenzen">Links und Referenzen</a></li></ol>
+        <ol><li><a href="#drush-setup">Drush Setup</a></li><li><a href="#drush-functional">Drush functional</a><ol><li><a href="#modules">Modules</a></li><li><a href="#routes">Routes</a></li><li><a href="#config">Config</a></li><li><a href="#php-cli">PHP CLI</a></li><li><a href="#delete-locked-field">Delete locked field</a></li><li><a href="#scripts">Scripts</a></li></ol></li><li><a href="#links-und-referenzen">Links und Referenzen</a></li></ol>
       </nav></aside>
-    <h2 id="ssh" tabindex="-1">SSH</h2>
-<pre><code>ssh user@domain.com -i .ssh/id_rsa
+    <h2 id="drush-setup" tabindex="-1">Drush Setup</h2>
+<pre><code>vendor/bin/drush --version
+ddev drush describe
+
 </code></pre>
 <h2 id="drush-functional" tabindex="-1">Drush functional</h2>
 <pre><code>$ drush status
@@ -282,7 +284,7 @@ $ drush scr clean_permissions.php
           </ul>
 
           
-          <p class="footer__attribution">Copyright © 1984-2024 Renato Heeb. All rights reserved.</a></p>
+          <p class="footer__attribution">Copyright © 1984-2025 Renato Heeb. All rights reserved.</a></p>
           
           
 

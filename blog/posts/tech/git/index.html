@@ -75,11 +75,11 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">9 Nov 2019</time>
+<time class="font-bold ">9 November 2019</time>
 <article class="prose lg:prose-xl my-10">
     <h1>Git</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#commit">Commit</a><ol><li><a href="#amend">Amend</a></li></ol></li><li><a href="#resetting-a-fork">Resetting a fork</a></li><li><a href="#undo-a-commit--no-trace">Undo a commit -no trace</a></li><li><a href="#embed-gist">Embed gist</a></li><li><a href="#configuring-a-remote-for-a-fork">Configuring a remote for a fork</a></li><li><a href="#syncing-a-fork">Syncing a fork</a></li><li><a href="#fork-mismatched-to-upstream-master">Fork mismatched to upstream master</a></li><li><a href="#merge-to-rebase">Merge to Rebase</a></li><li><a href="#branch">Branch</a></li><li><a href="#tags">Tags</a></li><li><a href="#stash">Stash</a></li><li><a href="#merge">Merge</a></li><li><a href="#git-layers">Git Layers</a><ol><li><a href="#git-as-a-%22persistant-map%22">Git as a &quot;Persistant Map&quot;</a></li></ol></li><li><a href="#git's-straightforward-object-model">Git's straightforward object model</a><ol><li><a href="#as-a-revision-control-system">As a revision control system</a></li></ol></li></ol>
+        <ol><li><a href="#commit">Commit</a><ol><li><a href="#amend">Amend</a></li></ol></li><li><a href="#resetting-a-fork">Resetting a fork</a></li><li><a href="#undo-a-commit--no-trace">Undo a commit -no trace</a></li><li><a href="#embed-gist">Embed gist</a></li><li><a href="#configuring-a-remote-for-a-fork">Configuring a remote for a fork</a></li><li><a href="#syncing-a-fork">Syncing a fork</a></li><li><a href="#fork-mismatched-to-upstream-master">Fork mismatched to upstream master</a></li><li><a href="#merge-to-rebase">Merge to Rebase</a></li><li><a href="#branch">Branch</a></li><li><a href="#tags">Tags</a></li><li><a href="#stash">Stash</a></li><li><a href="#merge">Merge</a></li><li><a href="#clean">Clean</a></li><li><a href="#credential-store">Credential store</a></li><li><a href="#git-layers">Git Layers</a><ol><li><a href="#git-as-a-%22persistant-map%22">Git as a &quot;Persistant Map&quot;</a></li></ol></li><li><a href="#git's-straightforward-object-model">Git's straightforward object model</a><ol><li><a href="#as-a-revision-control-system">As a revision control system</a></li></ol></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
       </nav></aside>
     <h2 id="commit" tabindex="-1">Commit</h2>
 <h3 id="amend" tabindex="-1">Amend</h3>
@@ -160,6 +160,16 @@ git stash pop
 
 
 </code></pre>
+<h2 id="clean" tabindex="-1">Clean</h2>
+<pre><code>git clean -n -d
+git clean -f
+</code></pre>
+<p><a href="https://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-from-the-current-git-working-tree">git-clean</a></p>
+<h2 id="credential-store" tabindex="-1">Credential store</h2>
+<pre><code>git config --global credential.helper store
+git pull
+ git config --global credential.helper forget
+</code></pre>
 <h2 id="git-layers" tabindex="-1">Git Layers</h2>
 <ul>
 <li>Persistant Map</li>
@@ -227,6 +237,8 @@ no changes added to commit (use <span class="hljs-string">&quot;git add&quot;</s
 <p>So a branch is just a reference to a commit.<br>
 And HEAD is just a reference to a branch. (a pointer to a pointer)<br>
 A checkout moves the HEAD and updates the working area</p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://stackoverflow.com/questions/61212/how-do-i-remove-local-untracked-files-from-the-current-git-working-tree">git-clean</a></p>
 
 </article>
 
@@ -330,7 +342,7 @@ A checkout moves the HEAD and updates the working area</p>
           </ul>
 
           
-          <p class="footer__attribution">Copyright © 1984-2024 Renato Heeb. All rights reserved.</a></p>
+          <p class="footer__attribution">Copyright © 1984-2025 Renato Heeb. All rights reserved.</a></p>
           
           
 

@@ -75,16 +75,21 @@
       </header>
       <main class="main">
         
-<time class="font-bold ">12 Feb 2024</time>
+<time class="font-bold ">12 February 2024</time>
 <article class="prose lg:prose-xl my-10">
     <h1>GNU / Linux / Unix</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#environment">Environment</a><ol><li><a href="#profile">Profile</a></li></ol></li><li><a href="#system-maintenance-%26-package-manager">System maintenance &amp; Package manager</a></li><li><a href="#shell">Shell</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
+        <ol><li><a href="#environment">Environment</a><ol><li><a href="#group">Group</a></li><li><a href="#profile">Profile</a></li></ol></li><li><a href="#system-maintenance-%26-package-manager">System maintenance &amp; Package manager</a></li><li><a href="#shell">Shell</a></li><li><a href="#scp">scp</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
       </nav></aside>
     <h2 id="environment" tabindex="-1">Environment</h2>
 <pre><code>whoami 
 cat /etc/os-release
 uname --help
+</code></pre>
+<h3 id="group" tabindex="-1">Group</h3>
+<pre><code>getent group #get-entries
+cat /etc/group
+groups $USER
 </code></pre>
 <h3 id="profile" tabindex="-1">Profile</h3>
 <blockquote>
@@ -149,6 +154,11 @@ $ sudo do-release-upgrade
 shopt login_shell #login_shell off
 </code></pre>
 <p><a href="https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html">Shell optional behavior</a></p>
+<h2 id="scp" tabindex="-1">scp</h2>
+<pre><code>scp .\Downloads\JetBrainsGateway-2024.2.3.tar.gz heebinho@powercube:/home/heebinho/JetBrainsGateway.tar.gz
+
+
+</code></pre>
 <h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
 <p><a href="https://www.gnu.org/software/bash/manual/html_node/">gnu Bash manual</a></p>
 
@@ -254,7 +264,7 @@ shopt login_shell #login_shell off
           </ul>
 
           
-          <p class="footer__attribution">Copyright © 1984-2024 Renato Heeb. All rights reserved.</a></p>
+          <p class="footer__attribution">Copyright © 1984-2025 Renato Heeb. All rights reserved.</a></p>
           
           
 

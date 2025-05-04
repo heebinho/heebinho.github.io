@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2024-11-29T14:17:29Z</updated>
+    <updated>2025-05-04T12:22:22Z</updated>
   
   <id>https://renatoheeb.com/</id>
   <author>
@@ -356,6 +356,67 @@ Es kann natürlich sein, dass das eine oder andere Buch nicht erkannt wird; Buch
 <h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
 <p><a href="https://bookwyrm.social/user/heebinho">My Bookwyrm</a><br>
 <a href="https://joinfediverse.wiki/What_is_BookWyrm%3F/de">joinfediverse.wiki</a></p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Fedora</title>
+      <link href="https://renatoheeb.com/blog/posts/tech/fedora/"/>
+      <updated>2024-10-13T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/tech/fedora/</id>
+      <content type="html">
+        <![CDATA[
+      <h2 id="get-fedora" tabindex="-1">Get Fedora</h2>
+<p><a href="https://fedoraproject.org/en/workstation/download">download</a></p>
+<ul>
+<li>Use Fedora Media Writer, to write an iso to a usb-stick</li>
+<li>Boot Live System, Install</li>
+</ul>
+<h2 id="keygen" tabindex="-1">Keygen</h2>
+<pre><code>ssh-keygen -t rsa -b 4096
+</code></pre>
+<h2 id="problem%3A-system-suspends-after-15-minutes" tabindex="-1">Problem: System suspends after 15 minutes</h2>
+<p>Allthough connected via ssh the system suspends after 15 minutes</p>
+<pre><code>Broadcast message from gdm@powercube on tty1 (Sun 2024-10-13 12:45:58 CEST):
+
+The system will suspend now!
+</code></pre>
+<p>Fix</p>
+<pre><code>sudo -u gdm dbus-run-session gsettings list-recursively org.gnome.settings-daemon.plugins.power | grep sleep # Show relevant settings
+
+sudo -u gdm dbus-run-session gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 1800 # In seconds | O disabled
+
+</code></pre>
+<p><a href="https://discussion.fedoraproject.org/t/gnome-suspends-after-15-minutes-of-user-inactivity-even-on-ac-power/79801">suspend-fix</a></p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://fedoraproject.org/en/workstation/download">download</a><br>
+<a href="https://discussion.fedoraproject.org/t/gnome-suspends-after-15-minutes-of-user-inactivity-even-on-ac-power/79801">suspend-fix</a></p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Chromebook</title>
+      <link href="https://renatoheeb.com/blog/posts/tech/chromebook/"/>
+      <updated>2024-10-18T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/tech/chromebook/</id>
+      <content type="html">
+        <![CDATA[
+      <h2 id="system" tabindex="-1">System</h2>
+<h2 id="delete-key" tabindex="-1">Delete key</h2>
+<p>Launcher + Backspace</p>
+<pre><code>
+sudo apt-get install gnome-software gnome-packagekit
+
+</code></pre>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p><a href="https://medium.com/@jeffrey.cardillo/using-intellij-and-other-linux-apps-on-your-chromebook-51fd7fadb9db">linux</a><br>
+<a href="https://discussion.fedoraproject.org/t/gnome-suspends-after-15-minutes-of-user-inactivity-even-on-ac-power/79801">suspend-fix</a></p>
 
     ]]>
       </content>
