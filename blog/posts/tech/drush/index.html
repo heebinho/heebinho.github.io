@@ -66,6 +66,17 @@
                     <a href="/about/"  >About</a>
                   </li>
                 
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/privacy/"  >Privacy</a>
+                  </li>
+                
               </ul>
             </nav>
 
@@ -79,7 +90,7 @@
 <article class="prose lg:prose-xl my-10">
     <h1>Drush</h1>
     <aside class="prose lg:prose-xl my-5"><nav class="toc" >
-        <ol><li><a href="#drush-setup">Drush Setup</a></li><li><a href="#drush-functional">Drush functional</a><ol><li><a href="#modules">Modules</a></li><li><a href="#routes">Routes</a></li><li><a href="#config">Config</a></li><li><a href="#php-cli">PHP CLI</a></li><li><a href="#delete-locked-field">Delete locked field</a></li><li><a href="#scripts">Scripts</a></li></ol></li><li><a href="#links-und-referenzen">Links und Referenzen</a></li></ol>
+        <ol><li><a href="#drush-setup">Drush Setup</a></li><li><a href="#drush-functional">Drush functional</a><ol><li><a href="#modules">Modules</a></li><li><a href="#routes">Routes</a></li><li><a href="#config">Config</a></li><li><a href="#config-export">Config export</a></li><li><a href="#php-cli">PHP CLI</a></li><li><a href="#delete-locked-field">Delete locked field</a></li><li><a href="#scripts">Scripts</a></li></ol></li><li><a href="#links-und-referenzen">Links und Referenzen</a></li></ol>
       </nav></aside>
     <h2 id="drush-setup" tabindex="-1">Drush Setup</h2>
 <pre><code>vendor/bin/drush --version
@@ -120,6 +131,26 @@ $ drush route --path=https://www.ride-mtb.com/de/admin/structure/webform/manage/
 <p>Delete config key</p>
 <pre><code>$ drush config:delete core.extension module.clever_reach
 $ drush config:delete clever_reach.settings
+</code></pre>
+<h3 id="config-export" tabindex="-1">Config export</h3>
+<pre><code>
+$ drush config:export --help
+
+# Status
+drush config:status
+
+# Export to site's config directory
+drush config:export
+
+# Show diff upfront and affirm upfront
+drush config:export --diff
+
+# Export to specific directory
+drush config:export --destination=config_backup
+
+# Export specific config
+drush config:get views.view.touren &gt; touren.yml
+
 </code></pre>
 <h3 id="php-cli" tabindex="-1">PHP CLI</h3>
 <pre><code>$ drush php:cli
@@ -278,6 +309,14 @@ $ drush scr clean_permissions.php
 
                 <li>
                   <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+                
+
+                
+
+                <li>
+                  <a href="/privacy"  >Privacy</a>
                 </li>
               
             
