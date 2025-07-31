@@ -5,13 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "clean": "rimraf _site",
-    "serve:webpack": "webpack --mode development --watch",
-    "serve:eleventy": "eleventy --serve",
-    "serve": "npm-run-all clean --parallel serve:*",
-    "build:webpack": "webpack --mode production",
-    "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
-    "build": "cross-env NODE_ENV=production run-s clean build:*"
+    "build": "npx @11ty/eleventy",
+		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+		"start": "npx @11ty/eleventy --serve --quiet",
+		"start-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/ --serve --quiet",
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+
   },
   "keywords": [],
   "author": "",
@@ -36,9 +38,7 @@
     "prettier-plugin-tailwindcss": "^0.6.6",
     "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.10",
-    "vinyl": "^3.0.0",
-    "webpack": "^5.94.0",
-    "webpack-cli": "^5.1.4"
+    "vinyl": "^3.0.0"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.14",

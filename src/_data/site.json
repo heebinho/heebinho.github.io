@@ -23,6 +23,11 @@
         "text": "RSS",
         "url": "/feed.xml",
         "external": true
+      },
+      {
+        "text": "Privacy",
+        "url": "/privacy",
+        "external": false
       }
     ]
   }
