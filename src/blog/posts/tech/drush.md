@@ -65,6 +65,29 @@ $ drush config:delete core.extension module.clever_reach
 $ drush config:delete clever_reach.settings
 ```
 
+### Config export
+
+```
+
+$ drush config:export --help
+
+# Status
+drush config:status
+
+# Export to site's config directory
+drush config:export
+
+# Show diff upfront and affirm upfront
+drush config:export --diff
+
+# Export to specific directory
+drush config:export --destination=config_backup
+
+# Export specific config
+drush config:get views.view.touren > touren.yml
+
+```
+
 
 ### PHP CLI
 
