@@ -36,3 +36,18 @@ Eine Woche Griechenland; die Vorbereitung und Auseinandersetzung mit der griechi
 ## Troja
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/1NYkkpDLPyovYca9BuNH4s?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
+
+
+## Maps
+
+[Athens](https://santorinidave.com/athens-map)
+
+
+## Sightseeing
+
+Sunset at [Mount Lycabettus](https://whyathens.com/lycabettus-hill/)  
+Akropolis [(Parthenon, ...)](https://www.acropolis-tickets.com/de/acropolis-parthenon-greece/)
+Delphi & Wanderung [Mount Parnassus](https://theplanetgreece.com/mount-parnassus-vargiani-and-nymph-cave/)
+
