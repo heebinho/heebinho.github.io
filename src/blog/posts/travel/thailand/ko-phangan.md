@@ -8,8 +8,8 @@ tags: ["front", "rss", "travel", "country"]
 
 
 Ein paar Eindrücke aus Ko Samui und Ko Phangan.  
-Immernoch schön.  
-Immernoch herzlich.  
+Immer noch schön.  
+Immer noch herzlich.  
 Busy. 
 Busy. 
 Busy.   
