@@ -53,7 +53,7 @@ $ drush en commerce_webform_order
 ## PHPStorm  
 
 
-<img class="" src="/img/phpstorm-composer-settings.png"/>
+<img eleventy:ignore class="" src="/img/phpstorm-composer-settings.png"/>
 
 
 

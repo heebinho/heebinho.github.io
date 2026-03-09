@@ -13,6 +13,7 @@ import svgSprite from "eleventy-plugin-svg-sprite";
 import mime from 'mime/lite';
 import * as fs from 'node:fs';
 import { isNull } from "node:util";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 
 //callback function
@@ -26,6 +27,8 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(svgSprite, {
     path: "./src/assets/svg",
   });
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+  eleventyConfig.ignores.add("src/assets/highlight/README.md");
 
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "/img" });
   eleventyConfig.addPassthroughCopy("src/assets/favicon");

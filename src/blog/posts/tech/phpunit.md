@@ -51,7 +51,7 @@ final class EmailTest extends TestCase {
 $ composer dump-autoload
 ```
 
-<img class="" src="/img/phpstorm-test_frameworks-settings.png"/>
+<img eleventy:ignore class="" src="/img/phpstorm-test_frameworks-settings.png"/>
 
 
 [Test Frameworks](https://www.jetbrains.com/help/phpstorm/2024.1/php-test-frameworks.html?utm_source=product&utm_medium=link&utm_campaign=PS&utm_content=2024.1#PHP_test_frameworks_PHPUnit)
