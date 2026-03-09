@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2025-09-11T09:52:59Z</updated>
+    <updated>2026-03-09T04:19:50Z</updated>
   
   <id>https://renatoheeb.com/</id>
   <author>
@@ -216,14 +216,14 @@ Auseinandergebaut, Lüfter gereinigt, neue Wärmeleitpaste aufgetragen und ein H
 <p>Mal schauen, wie sich das entwickelt. 😅</p>
 <h2 id="cleaning" tabindex="-1">Cleaning</h2>
 <p>Disconnect:
-<img class="" src="/img/x1x-c-disconnect.png"/></p>
+<img eleventy:ignore class="" src="/img/x1x-c-disconnect.png"/></p>
 <p>Remove:
-<img class="" src="/img/x1x-c-cooler.png"/></p>
+<img eleventy:ignore class="" src="/img/x1x-c-cooler.png"/></p>
 <p>Clean:
-<img class="" src="/img/x1x-c-dirty.png"/>
-<img class="" src="/img/x1x-c-c.png"/></p>
-<img src="https://i.ibb.co/PgQ28kM/PXL-20240305-172316210.jpg" alt="PXL-20240305-172316210" border="0">
-<img src="https://i.ibb.co/P4Qtkq8/PXL-20240305-172714852.jpg" alt="PXL-20240305-172714852" border="0">
+<img eleventy:ignore class="" src="/img/x1x-c-dirty.png"/>
+<img eleventy:ignore class="" src="/img/x1x-c-c.png"/></p>
+<img eleventy:ignore src="https://i.ibb.co/PgQ28kM/PXL-20240305-172316210.jpg" alt="PXL-20240305-172316210" border="0">
+<img eleventy:ignore src="https://i.ibb.co/P4Qtkq8/PXL-20240305-172714852.jpg" alt="PXL-20240305-172714852" border="0">
 <!-- <img src="https://i.ibb.co/JyvFTfH/PXL-20240305-172722810.jpg" alt="PXL-20240305-172722810" border="0">
 <img src="https://i.ibb.co/2sy4wcm/PXL-20240305-173445946.jpg" alt="PXL-20240305-173445946" border="0">
 <img src="https://i.ibb.co/Jq7GPQ4/PXL-20240305-173455638-MP.jpg" alt="PXL-20240305-173455638-MP" border="0">
@@ -231,8 +231,8 @@ Auseinandergebaut, Lüfter gereinigt, neue Wärmeleitpaste aufgetragen und ein H
 <h2 id="cinebench-2024" tabindex="-1">Cinebench 2024</h2>
 <p>Die Temperaturentwicklung scheint nun auch unter Belastung wieder in einem vernüftigen Rahmen zu sein. (THM0 Max. 94°).</p>
 <p>Die Benchmark ist nicht schmeichelhaft, aber für ein Notebook aus dem Jahr 2020 ...</p>
-<img class="" src="/img/x1x-cinebench24-single.png"/>
-<img class="" src="/img/x1x-cinebench24-multi.png"/>
+<img eleventy:ignore class="" src="/img/x1x-cinebench24-single.png"/>
+<img eleventy:ignore class="" src="/img/x1x-cinebench24-multi.png"/>
 <h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
 <p><a href="https://psref.lenovo.com/Product/ThinkPad/ThinkPad_X1_Extreme_Gen_3?ch=20TKCTO1WW&amp;country=">Thinkpad x1x3</a><br>
 <a href="https://www.arctic.de/mx2">Arctic MX-2</a><br>
@@ -533,6 +533,74 @@ Delphi &amp; Wanderung <a href="https://theplanetgreece.com/mount-parnassus-varg
       <p>Eine Woche Erholung in Griechenland - ein paar Eindrücke aus</p>
 <h2 id="aegina-%26-athens" tabindex="-1">Aegina &amp; Athens</h2>
 <p><a href="https://photos.app.goo.gl/kZhfZtE9mYH15f1XA"><img src="https://i.ibb.co/990wf5M6/Aegina-umbrellas-web.jpg" alt="Agra" border="0"></a></p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Drupal module default_content</title>
+      <link href="https://renatoheeb.com/blog/posts/tech/drupal_default_content/"/>
+      <updated>2025-12-05T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/tech/drupal_default_content/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Content von einem Backup in ein Live-System zu übertragen sollte mit Drupal einfach sein. In der Praxis aber doch ein Aufwand der nicht zu unterschätzen ist.</p>
+<h2 id="backup-%26-local-dev-environment" tabindex="-1">Backup &amp; Local dev environment</h2>
+<p>Zuerst geht es darum das Backup ausfindig zu machen und in einer lokalen Entwicklungsumgebung zum Laufen zu bringen. Ein Task der seine Tücken haben kann; mit ddev, ssh und git kommt man aber sein Ziel. Details dazu ggf. mal in einer separaten Note.</p>
+<h2 id="modul-default-content" tabindex="-1">Modul Default content</h2>
+<p>Wie üblich kann das Drupal von Haus aus nicht, was fragwürdig ist ... oder ich habe schlicht nicht gesehen wie. Mein Recherchen hielten sich auch in Grenzen. Mein Glück versuchte ich mit dem Modul Default content.</p>
+<p>Modul installation und export einer Node:</p>
+<pre><code>ddev composer require drupal/default_content
+ddev drush en default_content
+ddev drush dcer node 39406 --folder=content
+
+sudo dnf install jpegoptim
+</code></pre>
+<p>Natürlich hat das nicht auf Anhieb geklappt.
+Man benötigt ein paar Packages und muss den Pfad zu GraphicsMagick in Drupal setzen:</p>
+<pre><code>sudo dnf install GraphicsMagick
+sudo dnf install jpegoptim
+which gm
+#/usr/bin/gm
+</code></pre>
+<p>Den Pfad setzt man in /admin/config/media/image-toolkit</p>
+<h2 id="import" tabindex="-1">Import</h2>
+<p>Für den Import habe ich kein Drush (Drupal shell)-Kommando gesehen. Die Idee scheint zu sein den Content (die .yml-Files) in ein Modul zu verpacken und das Modul zu installieren.
+Der export hat ein Sammelsurium von yml-files ausgespuckt; diejenigen die man benötigt pack man in ein neuen Modul in den Ordner content.
+Also beispielsweise:</p>
+<pre><code>web/modules/migration/backup_module/content/node/45f14f57-ea72-4b5b-8510-92ac8e205a38.yml
+</code></pre>
+<p>Danach wird das Modul installiert.</p>
+<h2 id="fazit" tabindex="-1">Fazit</h2>
+<p>Hat funktioniert, war aber umständlich obwohl ich grundsätzlich gut vorbereitet war.
+Vermutlich gibt es einfachere Varianten.</p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p>[download]</p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Ko Samui &amp; Ko Phangan 2026</title>
+      <link href="https://renatoheeb.com/blog/posts/travel/thailand/ko-phangan/"/>
+      <updated>2026-02-23T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/travel/thailand/ko-phangan/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Ein paar Eindrücke aus Ko Samui und Ko Phangan.<br>
+Immernoch schön.<br>
+Immernoch herzlich.<br>
+Busy.
+Busy.
+Busy.</p>
+<a href="https://photos.app.goo.gl/dVapxLs7GZS5UDdr8" target="_blank">
+<img alt="A palm at a beach" src="/assets/img/palm.jpg">
+Album Thailand 2026
+</a>
 
     ]]>
       </content>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drupal module default_content</title>
+    <link rel="icon" href="/assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Feed">
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/brands.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome/css/solid.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/assets/highlight/styles/ascetic.css">
+    <script src="/assets/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    
+          <header class="header">
+        <div class="header__content">
+          <h1 class="site-title-lowercase">
+            <a href="/">
+              renatoheeb.com
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog/posts/travel/">Travel Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/blog/posts/tech/">Tech Blog</a>
+                  </li>
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about/">About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+      <main class="main">
+        
+<time class="font-bold ">5 December 2025</time>
+<article class="prose lg:prose-xl my-10">
+    <h1>Drupal module default_content</h1>
+    <aside class="prose lg:prose-xl my-5"><nav class="toc">
+        <ol><li><a href="#backup-%26-local-dev-environment">Backup &amp; Local dev environment</a></li><li><a href="#modul-default-content">Modul Default content</a></li><li><a href="#import">Import</a></li><li><a href="#fazit">Fazit</a></li><li><a href="#links-%26-referenzen">Links &amp; Referenzen</a></li></ol>
+      </nav></aside>
+    <p>Content von einem Backup in ein Live-System zu übertragen sollte mit Drupal einfach sein. In der Praxis aber doch ein Aufwand der nicht zu unterschätzen ist.</p>
+<h2 id="backup-%26-local-dev-environment" tabindex="-1">Backup &amp; Local dev environment</h2>
+<p>Zuerst geht es darum das Backup ausfindig zu machen und in einer lokalen Entwicklungsumgebung zum Laufen zu bringen. Ein Task der seine Tücken haben kann; mit ddev, ssh und git kommt man aber sein Ziel. Details dazu ggf. mal in einer separaten Note.</p>
+<h2 id="modul-default-content" tabindex="-1">Modul Default content</h2>
+<p>Wie üblich kann das Drupal von Haus aus nicht, was fragwürdig ist ... oder ich habe schlicht nicht gesehen wie. Mein Recherchen hielten sich auch in Grenzen. Mein Glück versuchte ich mit dem Modul Default content.</p>
+<p>Modul installation und export einer Node:</p>
+<pre><code>ddev composer require drupal/default_content
+ddev drush en default_content
+ddev drush dcer node 39406 --folder=content
+
+sudo dnf install jpegoptim
+</code></pre>
+<p>Natürlich hat das nicht auf Anhieb geklappt.
+Man benötigt ein paar Packages und muss den Pfad zu GraphicsMagick in Drupal setzen:</p>
+<pre><code>sudo dnf install GraphicsMagick
+sudo dnf install jpegoptim
+which gm
+#/usr/bin/gm
+</code></pre>
+<p>Den Pfad setzt man in /admin/config/media/image-toolkit</p>
+<h2 id="import" tabindex="-1">Import</h2>
+<p>Für den Import habe ich kein Drush (Drupal shell)-Kommando gesehen. Die Idee scheint zu sein den Content (die .yml-Files) in ein Modul zu verpacken und das Modul zu installieren.
+Der export hat ein Sammelsurium von yml-files ausgespuckt; diejenigen die man benötigt pack man in ein neuen Modul in den Ordner content.
+Also beispielsweise:</p>
+<pre><code>web/modules/migration/backup_module/content/node/45f14f57-ea72-4b5b-8510-92ac8e205a38.yml
+</code></pre>
+<p>Danach wird das Modul installiert.</p>
+<h2 id="fazit" tabindex="-1">Fazit</h2>
+<p>Hat funktioniert, war aber umständlich obwohl ich grundsätzlich gut vorbereitet war.
+Vermutlich gibt es einfachere Varianten.</p>
+<h2 id="links-%26-referenzen" tabindex="-1">Links &amp; Referenzen</h2>
+<p>[download]</p>
+
+</article>
+
+      </main>
+          <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                
+                  
+                
+
+                <li>
+                  <a rel="me" href="https://mstdn.social/@heebelcraft" target="_blank">mastodon</a>
+                </li>
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                
+
+                <li>
+                  <a href="https://github.com/heebinho" target="_blank" rel="noopener noreferrer">github</a>
+                </li>
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                  
+                
+                
+
+                <li>
+                  <a href="https://www.goodreads.com/heebinho" target="_blank" rel="noopener noreferrer" style="text-decoration: line-through">goodreads</a>
+                </li>
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                
+
+                <li>
+                  <a href="https://bookwyrm.social/user/heebinho" target="_blank" rel="noopener noreferrer">bookwyrm</a>
+                </li>
+              
+                
+                
+                
+
+                
+                  
+                
+                
+                
+
+                <li>
+                  <a href="https://www.strava.com/athletes/heebinho" target="_blank" rel="noopener noreferrer">strava</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer">RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+          <p class="footer__attribution">Copyright © 1984-2026 Renato Heeb. All rights reserved.</p>
+          
+          
+
+
+        </div>
+
+      </footer>
+
+
+
+
+
+
+
+    
+
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
