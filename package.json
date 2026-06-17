@@ -37,7 +37,7 @@
     "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.10",
     "vinyl": "^3.0.0",
-    "webpack": "^5.94.0",
+    "webpack": "^5.107.2",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {

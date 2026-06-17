@@ -12,7 +12,6 @@ import hljs from "highlight.js";
 import svgSprite from "eleventy-plugin-svg-sprite";
 import mime from 'mime/lite';
 import * as fs from 'node:fs';
-import { isNull } from "node:util";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 
