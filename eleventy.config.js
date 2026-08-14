@@ -30,6 +30,7 @@ export default function(eleventyConfig) {
   eleventyConfig.ignores.add("src/assets/highlight/README.md");
 
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "/img" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/videos": "assets/videos" });
   eleventyConfig.addPassthroughCopy("src/assets/favicon");
   eleventyConfig.addPassthroughCopy("src/assets/css/*");
   eleventyConfig.addPassthroughCopy("src/assets/highlight");
