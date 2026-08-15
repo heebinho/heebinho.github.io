@@ -13,7 +13,7 @@ Allerdings die ideale Ausgangsbasis für einen Gaggimate-Umbau. Der Rebuild/Umba
 
 
 <a href="https://photos.app.goo.gl/XyPnW23JSv5QJScYA" target="_blank">
-<img alt="A " src="/assets/img/rancilio-parts.jpg">
+<img alt="A " src="/assets/img/Rancilio-parts.jpg">
 Rancilio Silvia & Gaggimate
 </a>
 
