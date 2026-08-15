@@ -5,7 +5,7 @@
   <link href="https://renatoheeb.com/feed.xml" rel="self"/>
   <link href="https://renatoheeb.com/"/>
   
-    <updated>2026-06-22T16:16:20Z</updated>
+    <updated>2026-08-15T16:22:28Z</updated>
   
   <id>https://renatoheeb.com/</id>
   <author>
@@ -626,6 +626,31 @@ Seattle während des WC erleben.</p>
 Album FWC 2026
 </a>
 
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Rancilio Silvia Rebuild</title>
+      <link href="https://renatoheeb.com/blog/posts/diy/rancilio/"/>
+      <updated>2026-08-14T00:00:00Z</updated>
+      <id>https://renatoheeb.com/blog/posts/diy/rancilio/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Vor Kurzem konnte ich eine gebrauchte Rancilio Silvia auf Tutti für 250 Franken kaufen.
+Der Haken daran: eine schlecht gewartete Maschine mit viel Rost und Kalk.
+Allerdings die ideale Ausgangsbasis für einen Gaggimate-Umbau. Der Rebuild/Umbau gestaltete sich aufwendiger als gedacht, das Ergebnis ist jedoch top.</p>
+<a href="https://photos.app.goo.gl/XyPnW23JSv5QJScYA" target="_blank">
+<img alt="A " src="/assets/img/Rancilio-parts.jpg">
+Rancilio Silvia & Gaggimate
+</a>
+<p>Nun der schwierige Part - guata Kaffi. 😅</p>
+<video controls width="640" height="360">
+  <source src="/assets/videos/21-replay-legend.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+<!-- Crafted with🤌 in Italy by Caffinnova S.r.l. -->
     ]]>
       </content>
     </entry>
